@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .bar-1 { animation: barGrow 2.2s ease-in-out infinite 0s; transform-origin: bottom; }
+    .bar-2 { animation: barGrow 2.2s ease-in-out infinite 0.3s; transform-origin: bottom; }
+    .bar-3 { animation: barGrow 2.2s ease-in-out infinite 0.6s; transform-origin: bottom; }
+    @keyframes barGrow {
+      0%, 100% { transform: scaleY(0.85); }
+      50% { transform: scaleY(1.1); }
+    }
+  </style>
+  <line x1="3" y1="20" x2="21" y2="20" stroke="#4E70F6" opacity="0.4" />
+  <rect class="bar-1" x="5" y="12" width="3" height="8" rx="1" stroke="#4E70F6" fill="rgba(78, 112, 246, 0.15)" />
+  <rect class="bar-2" x="10.5" y="8" width="3" height="12" rx="1" stroke="#4E70F6" fill="rgba(78, 112, 246, 0.25)" />
+  <rect class="bar-3" x="16" y="4" width="3" height="16" rx="1" stroke="#4E70F6" fill="rgba(78, 112, 246, 0.35)" />
+</svg>
+

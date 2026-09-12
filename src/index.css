@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@400;500;600;700;800&family=League+Gothic&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Teko:wght@300..700&display=swap');
+
+:root {
+  /* Premium Fonts */
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-plus-jakarta: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-fraunces: 'Fraunces', serif;
+  --font-bebas-neue: 'Bebas Neue', sans-serif;
+  --font-oswald: 'Oswald', sans-serif;
+  --font-league-gothic: 'League Gothic', sans-serif;
+  --font-teko: 'Teko', sans-serif;
+  --font-fjalla-one: 'Fjalla One', sans-serif;
+
+  /* Premium Palette */
+  --burnt-orange: #E0680E;
+  --light-slate-blue: #88A5B7;
+  --dark-blue: #112532;
+  --white: #ffffff;
+
+  /* Theme mappings (using Option 2: Royal Navy & Warm Bronze) */
+  --text: var(--navy-bronze-text);
+  --text-h: var(--navy-bronze-primary);
+  --bg: var(--navy-bronze-bg);
+  --border: var(--navy-bronze-border);
+  --code-bg: rgba(10, 25, 47, 0.05);
+  --accent: var(--navy-bronze-accent);
+  --accent-bg: rgba(197, 125, 86, 0.08);
+  --accent-border: rgba(197, 125, 86, 0.4);
+  --social-bg: rgba(10, 25, 47, 0.05);
+  --shadow:
+    rgba(10, 25, 47, 0.08) 0 10px 15px -3px, rgba(10, 25, 47, 0.04) 0 4px 6px -2px;
+
+  /* Card specific colors using new palette */
+  --card-services-bg: var(--burnt-orange);
+  --card-services-text: var(--white);
+  --card-products-bg: var(--light-slate-blue);
+  --card-products-text: var(--white);
+  --card-joinus-bg: var(--dark-blue);
+  --card-joinus-text: var(--white);
+
+  /* Option 2: Royal Navy & Warm Bronze */
+  --navy-bronze-bg: #F8F9FA;
+  --navy-bronze-primary: #0A192F;
+  --navy-bronze-accent: #C57D56;
+  --navy-bronze-surface: #FFFFFF;
+  --navy-bronze-border: #E2E8F0;
+  --navy-bronze-text: #1E293B;
+
+  --sans: var(--font-inter);
+  --heading: var(--font-fraunces);
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TYPOGRAPHY SCALE
+   All rules are scoped to body:not([data-page="talentos"]) so the TalentOS
+   product page (which sets data-page="talentos" on <body>) is never touched.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── 1. CSS custom properties (desktop defaults) ─────────────────────── */
+body:not([data-page="talentos"]) {
+  /* Heading 1 */
+  --h1-size:        52px;
+  --h1-weight:      700;
+  --h1-line-height: 1.2;
+
+  /* Heading 2 */
+  --h2-size:        40px;
+  --h2-weight:      600;
+  --h2-line-height: 1.25;
+
+  /* Heading 3 */
+  --h3-size:        26px;
+  --h3-weight:      600;
+  --h3-line-height: 1.3;
+
+  /* Body / paragraph */
+  --body-size:        17px;
+  --body-weight:      400;
+  --body-line-height: 1.6;
+
+  /* Small text */
+  --small-size:        14px;
+  --small-weight:      400;
+  --small-line-height: 1.5;
+
+  /* Button */
+  --btn-size:   16px;
+  --btn-weight: 600;
+}
+
+/* ── 2. Tablet / medium screens (≤ 1024 px) ──────────────────────────── */
+@media (max-width: 1024px) {
+  body:not([data-page="talentos"]) {
+    --h1-size: 44px;
+    --h2-size: 34px;
+    --h3-size: 24px;
+  }
+}
+
+/* ── 3. Mobile devices (≤ 768 px) ────────────────────────────────────── */
+@media (max-width: 768px) {
+  body:not([data-page="talentos"]) {
+    --h1-size:    36px;
+    --h2-size:    30px;
+    --h3-size:    22px;
+    --body-size:  16px;
+    --small-size: 13px;
+    --btn-size:   15px;
+  }
+}
+
+/* ── 4. Element rules — consume the variables ─────────────────────────── */
+body:not([data-page="talentos"]) h1,
+body:not([data-page="talentos"]) h2 {
+  font-family: var(--heading);
+  color: var(--text-h);
+}
+
+body:not([data-page="talentos"]) h1 {
+  font-size:   var(--h1-size);
+  font-weight: var(--h1-weight);
+  line-height: var(--h1-line-height);
+  letter-spacing: -1.5px;
+  margin: 32px 0;
+}
+
+body:not([data-page="talentos"]) h2 {
+  font-size:   var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: var(--h2-line-height);
+  letter-spacing: -0.5px;
+  margin: 0 0 8px;
+}
+
+body:not([data-page="talentos"]) h3 {
+  font-family: var(--heading);
+  font-size:   var(--h3-size);
+  font-weight: var(--h3-weight);
+  line-height: var(--h3-line-height);
+  color: var(--text-h);
+  margin: 0 0 8px;
+}
+
+body:not([data-page="talentos"]) p {
+  font-size:   var(--body-size);
+  font-weight: var(--body-weight);
+  line-height: var(--body-line-height);
+  margin: 0;
+}
+
+body:not([data-page="talentos"]) small,
+body:not([data-page="talentos"]) .text-small {
+  font-size:   var(--small-size);
+  font-weight: var(--small-weight);
+  line-height: var(--small-line-height);
+}
+
+body:not([data-page="talentos"]) button,
+body:not([data-page="talentos"]) .btn {
+  font-size:   var(--btn-size);
+  font-weight: var(--btn-weight);
+}
+p {
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PARALLAX BACKGROUND LAYER  (shared utility)
+   Absolutely-positioned image div that GSAP ScrollTrigger moves on scroll.
+   Scoped so TalentOS is never touched.
+   ───────────────────────────────────────────────────────────────────────── */
+body:not([data-page="talentos"]) .par-bg {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Dark overlay rendered as ::after — colour set per section */
+body:not([data-page="talentos"]) .par-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+/* ── Mobile: disable transform & fix background position so there's no jank or image cut-off on touch devices ── */
+@media (max-width: 768px) {
+  body:not([data-page="talentos"]) .par-bg,
+  body:not([data-page="talentos"]) .parallax-bg,
+  body:not([data-page="talentos"]) .why-parallax-bg,
+  body:not([data-page="talentos"]) .proven-par-wrapper,
+  body:not([data-page="talentos"]) .enrollment-par-wrapper {
+    top: 0 !important;
+    height: 100% !important;
+    transform: none !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+}
+
+/* ── Reduced motion: freeze all parallax layers ── */
+@media (prefers-reduced-motion: reduce) {
+  body:not([data-page="talentos"]) .par-bg {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}

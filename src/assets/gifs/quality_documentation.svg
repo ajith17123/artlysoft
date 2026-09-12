@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .check-circle { animation: circlePulse 2.6s ease-in-out infinite; transform-origin: center; }
+    .check-mark { animation: checkGlow 2.6s ease-in-out infinite 0.2s; transform-origin: center; }
+    @keyframes circlePulse {
+      0%, 100% { transform: scale(0.96); }
+      50% { transform: scale(1.04); }
+    }
+    @keyframes checkGlow {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+  </style>
+  <circle class="check-circle" cx="12" cy="12" r="10" stroke="#4E70F6" fill="rgba(78, 112, 246, 0.12)" />
+  <polyline class="check-mark" points="9 12 11 14 15 10" stroke="#4E70F6" stroke-width="2.5" />
+</svg>
+

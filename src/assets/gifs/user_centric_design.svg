@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .user-head { animation: userPulse 2.5s ease-in-out infinite alternate; transform-origin: 9px 7px; }
+    .user-body { animation: bodyFloat 2.5s ease-in-out infinite alternate; transform-origin: center; }
+    .secondary-user { animation: userPulse 2.5s ease-in-out infinite alternate 0.4s; }
+    @keyframes userPulse {
+      0%, 100% { transform: scale(0.95); }
+      50% { transform: scale(1.08); }
+    }
+    @keyframes bodyFloat {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+  </style>
+  <path class="user-body" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#4E70F6" />
+  <circle class="user-head" cx="9" cy="7" r="4" stroke="#4E70F6" fill="rgba(78, 112, 246, 0.12)" />
+  <path class="secondary-user" d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="#4E70F6" opacity="0.65" />
+  <path class="secondary-user" d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#4E70F6" opacity="0.65" />
+</svg>
+

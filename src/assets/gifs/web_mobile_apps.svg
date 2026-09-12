@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .monitor-screen { animation: screenFloat 2.6s ease-in-out infinite; transform-origin: center; }
+    .screen-line { animation: linePulse 2s ease-in-out infinite alternate; }
+    @keyframes screenFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-2px); }
+    }
+    @keyframes linePulse {
+      0% { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
+  </style>
+  <rect class="monitor-screen" x="2" y="3" width="20" height="14" rx="2" stroke="#4E70F6" fill="rgba(78, 112, 246, 0.1)" />
+  <line class="monitor-screen" x1="8" y1="21" x2="16" y2="21" stroke="#4E70F6" />
+  <line class="monitor-screen" x1="12" y1="17" x2="12" y2="21" stroke="#4E70F6" />
+  <line class="screen-line" x1="6" y1="8" x2="12" y2="8" stroke="#4E70F6" opacity="0.8" />
+  <line class="screen-line" x1="6" y1="12" x2="18" y2="12" stroke="#4E70F6" opacity="0.6" />
+</svg>
+

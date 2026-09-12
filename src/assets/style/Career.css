@@ -1,0 +1,1426 @@
+/* ==========================================
+   Careers Page CSS Styles
+   ========================================== */
+
+/* ==========================================
+   1. Hero Section Layout (100vh Single Viewport)
+   ========================================== */
+.career-hero-section {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  min-height: 520px;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  margin-top: 60px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-bottom: 3rem;
+}
+
+.career-hero-card {
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+  max-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  border: 1px solid rgba(10, 25, 47, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(10, 25, 47, 0.06), 0 2px 8px rgba(10, 25, 47, 0.04);
+  overflow: hidden;
+}
+
+.career-hero-content {
+  flex: 1 1 50%;
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.career-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: rgba(78, 112, 246, 0.08);
+  border: 1px solid rgba(78, 112, 246, 0.2);
+  color: #4E70F6;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.career-hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4E70F6;
+  box-shadow: 0 0 8px rgba(78, 112, 246, 0.4);
+}
+
+.career-hero-title {
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0A192F;
+  margin: 0 0 1.2rem 0;
+}
+
+.career-hero-desc {
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+  max-width: 520px;
+}
+
+.career-hero-video-wrapper {
+  flex: 1 1 50%;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  background: #ffffff;
+}
+
+.career-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.career-hero-video-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  background: linear-gradient(to right, #ffffff, transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .career-hero-section {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 85px 14px 28px;
+    margin-bottom: 2.5rem !important;
+  }
+
+  .career-hero-card {
+    flex-direction: column;
+    height: auto !important;
+    max-height: none !important;
+    gap: 1.25rem;
+    overflow: hidden;
+  }
+
+  .career-hero-content {
+    padding: 1.75rem 1.25rem 0.5rem;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .career-hero-desc {
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  .career-hero-video-wrapper {
+    height: clamp(260px, 38vh, 340px);
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .career-hero-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background: #ffffff;
+  }
+
+  .career-hero-video-wrapper::before {
+    display: none;
+  }
+}
+
+.careers-page {
+  background-color: #ffffff;
+  color: var(--text);
+  padding: 0 2rem 6rem;
+  margin-top: 0;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.careers-header {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.careers-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.careers-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background-color: var(--navy-bronze-accent);
+  border-radius: 2px;
+}
+
+.careers-subtitle {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1rem;
+  color: #334E68; /* Solid slate charcoal grey */
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.careers-bento-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 4rem auto 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 380px;
+}
+
+.careers-bento-card {
+  position: relative;
+  width: 320px;
+  max-width: 100%;
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 15px 35px rgba(10, 25, 47, 0.06);
+  margin: 0 -35px;
+  z-index: 1;
+}
+
+/* Fan-out stack rotation and translate adjustments matching reference layout */
+.careers-bento-grid:not(:hover) .careers-bento-card:nth-child(1) {
+  transform: rotate(-15deg) translate(35px, 20px);
+  z-index: 1;
+}
+
+.careers-bento-grid:not(:hover) .careers-bento-card:nth-child(2) {
+  transform: rotate(-5deg) translate(0, -10px);
+  z-index: 2;
+}
+
+.careers-bento-grid:not(:hover) .careers-bento-card:nth-child(3) {
+  transform: rotate(15deg) translate(-35px, 20px);
+  z-index: 3;
+}
+
+/* Straighten out and separate on hover of bento-grid */
+.careers-bento-grid:hover .careers-bento-card {
+  transform: rotate(0deg) translate(0, 0);
+  margin: 0 15px;
+  box-shadow: 0 20px 40px rgba(10, 25, 47, 0.1);
+}
+
+/* Card Accent Varieties */
+.careers-bento-card.accent-gold {
+  background-color: #FAF6ED;
+  border: 2px solid rgba(212, 175, 55, 0.28);
+}
+
+.careers-bento-card.accent-slate {
+  background-color: #F1F4F7;
+  border: 2px solid rgba(136, 165, 183, 0.32);
+}
+
+.careers-bento-card.accent-bronze {
+  background-color: #FAF2EC;
+  border: 2px solid rgba(197, 125, 86, 0.28);
+}
+
+/* Icon Box and Icon Styling */
+.careers-icon-box {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 4px 10px rgba(10, 25, 47, 0.02);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: var(--navy-bronze-primary);
+}
+
+.careers-icon-svg {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  transition: all 0.35s ease;
+  stroke-width: 2.25px;
+}
+
+/* Card Content styling */
+.careers-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
+}
+
+.careers-card-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.careers-card-desc {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.92rem;
+  color: #1E293B; /* High-contrast charcoal */
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Rich Feature Tags Styling */
+.careers-features-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+  justify-content: center;
+  padding-top: 0.75rem;
+}
+
+.careers-feature-tag {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  background-color: rgba(10, 25, 47, 0.04);
+  color: var(--navy-bronze-primary);
+  border: 1px solid rgba(10, 25, 47, 0.1);
+  transition: all 0.25s ease;
+}
+
+/* ──────────────────────────────────────────
+   Hover Interactions & Glow Borders
+   ────────────────────────────────────────── */
+
+.careers-bento-card:hover {
+  transform: translateY(-12px) scale(1.04) rotate(0deg) !important;
+  z-index: 10;
+}
+
+.careers-bento-card:hover .careers-icon-box {
+  transform: scale(1.08) rotate(3deg);
+  background-color: #ffffff;
+  box-shadow: 0 8px 18px rgba(10, 25, 47, 0.05);
+}
+
+.careers-bento-card:hover .careers-feature-tag {
+  background-color: #ffffff;
+  border-color: rgba(10, 25, 47, 0.08);
+}
+
+/* Gold card hover */
+.careers-bento-card.accent-gold:hover {
+  background-color: #F7EFE0;
+  border-color: rgba(212, 175, 55, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(212, 175, 55, 0.22), 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.careers-bento-card.accent-gold:hover .careers-icon-box {
+  color: rgba(212, 175, 55, 1);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* Slate card hover */
+.careers-bento-card.accent-slate:hover {
+  background-color: #E6ECF1;
+  border-color: rgba(136, 165, 183, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(136, 165, 183, 0.22), 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.careers-bento-card.accent-slate:hover .careers-icon-box {
+  color: rgba(136, 165, 183, 1);
+  border-color: rgba(136, 165, 183, 0.3);
+}
+
+/* Bronze card hover */
+.careers-bento-card.accent-bronze:hover {
+  background-color: #F7E5D9;
+  border-color: rgba(197, 125, 86, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(197, 125, 86, 0.22), 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.careers-bento-card.accent-bronze:hover .careers-icon-box {
+  color: rgba(197, 125, 86, 1);
+  border-color: rgba(197, 125, 86, 0.3);
+}
+
+
+/* ──────────────────────────────────────────
+   SVG Animations on Card Hover
+   ────────────────────────────────────────── */
+
+/* 1. Creative Environment (Heart Pulse) */
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  12% { transform: scale(1.18); }
+  24% { transform: scale(1.02); }
+  36% { transform: scale(1.22); }
+  60% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+.careers-bento-card.accent-gold:hover .heart-svg {
+  animation: heartPulse 1.25s infinite cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 2. Continuous Learning (Tassel Sway & Cap Tilt) */
+@keyframes capTilt {
+  0%, 100% { transform: rotate(0deg); }
+  30% { transform: rotate(-4deg); }
+  70% { transform: rotate(4deg); }
+}
+
+@keyframes tasselSway {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(20deg); }
+}
+
+.careers-bento-card.accent-slate:hover .cap-svg {
+  animation: capTilt 2s infinite ease-in-out;
+}
+
+.careers-bento-card.accent-slate:hover .cap-tassel {
+  animation: tasselSway 2s infinite ease-in-out;
+  transform-origin: 18px 12.5px; /* Origin near the cap link */
+}
+
+/* 3. Team Collaboration (Bouncing Figures & Expanding Circles) */
+@keyframes userOneBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes userTwoBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+.careers-bento-card.accent-bronze:hover .collab-user-1 {
+  animation: userOneBounce 1.2s infinite ease-in-out;
+}
+
+.careers-bento-card.accent-bronze:hover .collab-user-2 {
+  animation: userTwoBounce 1.2s infinite ease-in-out 0.2s;
+}
+
+
+/* ──────────────────────────────────────────
+   Open Positions Section Styling
+   ────────────────────────────────────────── */
+
+.open-positions-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 6rem auto 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.open-positions-header {
+  text-align: center;
+  max-width: 700px;
+  margin-bottom: 3.5rem;
+}
+
+.open-positions-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4E70F6;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background-color: rgba(78, 112, 246, 0.08);
+  padding: 0.35rem 0.9rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(78, 112, 246, 0.18);
+  margin-bottom: 1rem;
+}
+
+.eyebrow-glow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4E70F6;
+  box-shadow: 0 0 8px #4E70F6;
+}
+
+.open-positions-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 1rem;
+}
+
+.open-positions-subtitle {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.05rem;
+  color: #334E68;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.positions-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.position-card {
+  border-radius: 1.25rem;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.02);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card Top Border Effect */
+.position-card::before,
+.position-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+}
+
+.position-card::before {
+  width: 0;
+  background: var(--card-accent-color);
+  opacity: 0;
+  transition: opacity 0s ease, width 0s ease;
+  transition-delay: 0.5s;
+  z-index: 2;
+}
+
+.position-card::after {
+  width: 100%;
+  background: var(--card-bg);
+  transition: width 0.5s ease;
+  z-index: 1;
+}
+
+.position-card:hover::before {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease, width 0.5s ease;
+  transition-delay: 0s;
+}
+
+.position-card:hover::after {
+  width: 0;
+  opacity: 0;
+  transition: width 0s ease;
+}
+
+/* Card Accent Varieties matching Home.jsx */
+.position-card.accent-gold {
+  --card-bg: #FAF6ED;
+  --card-accent-color: #D4AF37;
+  background-color: var(--card-bg);
+  border: 2px solid rgba(212, 175, 55, 0.28);
+}
+
+.position-card.accent-blue {
+  --card-bg: #F0F4FF;
+  --card-accent-color: #4E70F6;
+  background-color: var(--card-bg);
+  border: 2px solid rgba(78, 112, 246, 0.3);
+}
+
+.position-card.accent-slate {
+  --card-bg: #F1F4F7;
+  --card-accent-color: #88A5B7;
+  background-color: var(--card-bg);
+  border: 2px solid rgba(136, 165, 183, 0.32);
+}
+
+.position-card.accent-bronze {
+  --card-bg: #FAF2EC;
+  --card-accent-color: #C57D56;
+  background-color: var(--card-bg);
+  border: 2px solid rgba(197, 125, 86, 0.28);
+}
+
+.position-card.accent-teal {
+  --card-bg: #F0FDF4;
+  --card-accent-color: #0D9488;
+  background-color: var(--card-bg);
+  border: 2px solid rgba(13, 148, 136, 0.28);
+}
+
+/* Card Hover Interactions & Glow Borders matching Home.jsx */
+.position-card:hover {
+  transform: translateY(-6px);
+}
+
+.position-card.accent-gold:hover {
+  background-color: #F7EFE0;
+  border-color: rgba(212, 175, 55, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(212, 175, 55, 0.22), 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.position-card.accent-blue:hover {
+  background-color: #E6EEFF;
+  border-color: rgba(78, 112, 246, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(78, 112, 246, 0.25), 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.position-card.accent-slate:hover {
+  background-color: #E6ECF1;
+  border-color: rgba(136, 165, 183, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(136, 165, 183, 0.22), 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.position-card.accent-bronze:hover {
+  background-color: #F7E5D9;
+  border-color: rgba(197, 125, 86, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(197, 125, 86, 0.22), 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.position-card.accent-teal:hover {
+  background-color: #DCFCE7;
+  border-color: rgba(13, 148, 136, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(13, 148, 136, 0.22), 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.position-card-top {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.position-hover-content {
+  overflow: hidden;
+  max-height: 0;
+  padding-top: 0;
+  transform: translateY(1rem);
+  opacity: 0;
+  transition: max-height 0.55s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.55s cubic-bezier(0.25, 0.8, 0.25, 1), padding-top 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.position-card:hover .position-hover-content {
+  max-height: 32rem;
+  padding-top: 1.25rem;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* SVG Icon Box & Image Styling matching Home.jsx */
+.position-icon-box {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.position-icon-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.position-card:hover .position-icon-box {
+  transform: scale(1.05);
+}
+
+.position-card:hover .position-icon-image {
+  transform: scale(1.12);
+}
+
+.position-header-text {
+  flex-grow: 1;
+}
+
+.position-card-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy-bronze-primary);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.position-card-desc {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.position-requirements-block {
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.requirements-heading {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--navy-bronze-primary);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.requirements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.requirement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.9rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.requirement-check-icon {
+  color: #4E70F6;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.position-card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(10, 25, 47, 0.08);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.position-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #4E70F6;
+  text-decoration: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(10, 25, 47, 0.12);
+  transition: all 0.25s ease;
+}
+
+.position-apply-btn:hover {
+  background-color: #4E70F6;
+  color: #ffffff;
+  border-color: #4E70F6;
+  box-shadow: 0 4px 12px rgba(78, 112, 246, 0.25);
+}
+
+.apply-btn-icon {
+  font-size: 1em;
+  transition: transform 0.2s ease;
+}
+
+.position-apply-btn:hover .apply-btn-icon {
+  transform: translate(2px, -2px);
+}
+
+/* ──────────────────────────────────────────
+   How To Apply Section Styling
+   ────────────────────────────────────────── */
+
+.how-to-apply-section {
+  width: 100%;
+  max-width: none;               /* full viewport width for image edge-to-edge */
+  padding: 5rem 2rem;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Par3 image overlay colour */
+.career-par-bg::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 25, 47, 0.52) 0%,
+    rgba(10, 25, 47, 0.45) 50%,
+    rgba(10, 25, 47, 0.58) 100%
+  );
+}
+
+.how-to-apply-card {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 1.5rem;
+  padding: 3.5rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.how-to-apply-card.accent-blue {
+  background-color: #F0F4FF;
+  border: 2px solid rgba(78, 112, 246, 0.3);
+}
+
+.how-to-apply-card.accent-blue:hover {
+  transform: translateY(-6px);
+  background-color: #E6EEFF;
+  border-color: rgba(78, 112, 246, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(78, 112, 246, 0.25), 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+/* Glowing Border Corners for How To Apply Card */
+.apply-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.apply-corner--tl {
+  top: 14px;
+  left: 14px;
+  border-top: 2px solid rgba(78, 112, 246, 0.85);
+  border-left: 2px solid rgba(78, 112, 246, 0.85);
+  box-shadow: -3px -3px 10px rgba(78, 112, 246, 0.3);
+}
+
+.apply-corner--tr {
+  top: 14px;
+  right: 14px;
+  border-top: 2px solid rgba(78, 112, 246, 0.85);
+  border-right: 2px solid rgba(78, 112, 246, 0.85);
+  box-shadow: 3px -3px 10px rgba(78, 112, 246, 0.3);
+}
+
+.apply-corner--bl {
+  bottom: 14px;
+  left: 14px;
+  border-bottom: 2px solid rgba(78, 112, 246, 0.85);
+  border-left: 2px solid rgba(78, 112, 246, 0.85);
+  box-shadow: -3px 3px 10px rgba(78, 112, 246, 0.3);
+}
+
+.apply-corner--br {
+  bottom: 14px;
+  right: 14px;
+  border-bottom: 2px solid rgba(78, 112, 246, 0.85);
+  border-right: 2px solid rgba(78, 112, 246, 0.85);
+  box-shadow: 3px 3px 10px rgba(78, 112, 246, 0.3);
+}
+
+/* Make corners expand and glow brighter on card hover */
+.how-to-apply-card:hover .apply-corner {
+  width: 24px;
+  height: 24px;
+}
+
+.how-to-apply-card:hover .apply-corner--tl {
+  border-color: rgba(78, 112, 246, 1);
+  box-shadow: -5px -5px 15px rgba(78, 112, 246, 0.55);
+}
+
+.how-to-apply-card:hover .apply-corner--tr {
+  border-color: rgba(78, 112, 246, 1);
+  box-shadow: 5px -5px 15px rgba(78, 112, 246, 0.55);
+}
+
+.how-to-apply-card:hover .apply-corner--bl {
+  border-color: rgba(78, 112, 246, 1);
+  box-shadow: -5px 5px 15px rgba(78, 112, 246, 0.55);
+}
+
+.how-to-apply-card:hover .apply-corner--br {
+  border-color: rgba(78, 112, 246, 1);
+  box-shadow: 5px 5px 15px rgba(78, 112, 246, 0.55);
+}
+
+.how-to-apply-icon-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 1rem;
+  background-color: #4E70F6;
+  color: #ffffff;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 14px rgba(78, 112, 246, 0.3);
+}
+
+.how-to-apply-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 1.25rem;
+}
+
+.how-to-apply-text {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.1rem;
+  color: #334E68;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+  line-height: 1.5;
+}
+
+.how-to-apply-email {
+  color: #4E70F6;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.how-to-apply-email:hover {
+  color: #2563EB;
+}
+
+.how-to-apply-tagline {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.05rem;
+  color: #64748B;
+  font-weight: 500;
+  margin: 0 0 2rem;
+}
+
+.how-to-apply-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-plus-jakarta);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #4E70F6;
+  padding: 0.85rem 2.25rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(78, 112, 246, 0.35);
+  transition: all 0.25s ease;
+}
+
+.how-to-apply-cta-btn:hover {
+  background-color: #3657D9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(78, 112, 246, 0.45);
+}
+
+.cta-btn-arrow {
+  font-size: 1.1em;
+  transition: transform 0.2s ease;
+}
+
+.how-to-apply-cta-btn:hover .cta-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   Envelope Geometric Wrapper
+   ========================================== */
+.envelope-wrapper {
+  position: relative;
+  z-index: 2;          /* above the par-bg image layer */
+  width: 450px;
+  height: 300px;
+  background-color: #4D6C7E;
+  border: 2px solid #88A5B7; /* Light slate blue border */
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  perspective: 1000px;
+  margin-top: 160px;
+  margin-bottom: 70px;
+}
+
+.envelope-back, .envelope-front, .envelope-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.envelope-back {
+  background-color: #4D6C7E; /* Deep Slate Blue */
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* FIXED FRONT POCKET: 
+   Starts at top-left (0% 0%), dips to center (50% 60%), goes to top-right (100% 0%).
+*/
+.envelope-front {
+  background-color: #88A5B7; /* Main Light Slate Blue Pocket */
+  clip-path: polygon(0% 0%, 50% 60%, 100% 0%, 100% 100%, 0% 100%);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  z-index: 3;
+}
+
+/* FIXED TOP FLAP: 
+   Extends down to 62% in the center. Creates a clean 2% overlap to hide the card.
+*/
+.envelope-top {
+  background-color: #7190A2; /* Medium Slate Blue Flap */
+  clip-path: polygon(0% 0%, 50% 62%, 100% 0%);
+  transform-origin: top;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  z-index: 4;
+  animation: closeFlapAnim 0.6s ease-in-out forwards;
+}
+
+/* ==========================================
+   Action Control Button
+   ========================================== */
+.btn-action {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 145px;
+  height: 44px;
+  background-color: #ffffff;
+  color: #88A5B7;
+  border: 2px solid #88A5B7;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-action:hover {
+  background-color: #88A5B7;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-action.btn-opened {
+  bottom: -65px;
+  background-color: #88A5B7;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* ==========================================
+   State Transformations & Transitions
+   ========================================== */
+.envelope-wrapper.open .envelope-top {
+  animation: openFlapAnim 0.6s ease-in-out forwards;
+}
+
+.envelope-wrapper.open .how-to-apply-card {
+  transform: translateY(-165px); 
+  transition-delay: 0.35s; 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   Advanced Layer Keyframes
+   ========================================== */
+@keyframes openFlapAnim {
+  0% { transform: rotateX(0deg); z-index: 4; }
+  49% { z-index: 4; } 
+  50% { z-index: 1; } 
+  100% { transform: rotateX(180deg); z-index: 1; }
+}
+
+@keyframes closeFlapAnim {
+  0% { transform: rotateX(180deg); z-index: 1; }
+  49% { z-index: 1; }
+  50% { z-index: 4; } 
+  100% { transform: rotateX(0deg); z-index: 4; }
+}
+
+/* ==========================================
+   Envelope Overrides for Invitation Card (How to Apply Card)
+   ========================================== */
+.envelope-wrapper .how-to-apply-card {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  width: 400px;
+  height: 270px;
+  border-radius: 4px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.5rem 1.25rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.envelope-wrapper .how-to-apply-card.accent-blue:hover {
+  transform: none; /* Override default page animation */
+  background-color: #F0F4FF;
+}
+
+.envelope-wrapper.open .how-to-apply-card.accent-blue:hover {
+  transform: translateY(-165px); /* Maintain the open translateY */
+}
+
+.envelope-wrapper .how-to-apply-icon-badge {
+  width: 44px;
+  height: 44px;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.envelope-wrapper .how-to-apply-title {
+  font-size: 1.35rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.envelope-wrapper .how-to-apply-text {
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.envelope-wrapper .how-to-apply-tagline {
+  font-size: 0.85rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.envelope-wrapper .how-to-apply-cta-btn {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.85rem;
+  border-radius: 0.5rem;
+}
+
+/* ──────────────────────────────────────────
+   Live Counter Stats Banner Section
+   ────────────────────────────────────────── */
+
+.career-stats-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 5rem auto 2rem;
+}
+
+.career-stats-container {
+  width: 100%;
+  background: linear-gradient(135deg, #2563EB 0%, #4E70F6 50%, #1D4ED8 100%);
+  border-radius: 1.5rem;
+  padding: 3.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  box-shadow: 0 12px 35px -5px rgba(37, 99, 235, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.career-stats-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.career-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.career-stat-number {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 3.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.career-stat-label {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.01em;
+}
+
+/* ──────────────────────────────────────────
+   Responsive Layout Breakpoints
+   ────────────────────────────────────────── */
+
+@media (max-width: 992px) {
+  .careers-page {
+    padding: 6rem 1.5rem 4rem;
+  }
+  
+  .careers-bento-grid {
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem auto;
+    min-height: auto;
+  }
+
+  .careers-bento-card {
+    margin: 0 !important;
+    transform: none !important;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .careers-bento-grid:hover .careers-bento-card {
+    margin: 0 !important;
+  }
+
+  .positions-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .career-stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem 1.5rem;
+    gap: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .careers-title {
+    font-size: 1.85rem;
+  }
+  
+  .careers-bento-card {
+    padding: 2.25rem 1.5rem;
+  }
+
+  .open-positions-section {
+    margin-top: 4rem;
+  }
+
+  .open-positions-title {
+    font-size: 1.85rem;
+  }
+
+  .position-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .career-stats-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .career-stat-number {
+    font-size: 2.75rem;
+  }
+}
+
+/* ==========================================
+   Envelope Mobile Responsiveness Overrides
+   ========================================== */
+@media (max-width: 500px) {
+  .envelope-wrapper {
+    width: 90vw;
+    height: calc(90vw * 2 / 3);
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  .envelope-wrapper .how-to-apply-card {
+    top: 5%;
+    left: 5.5%;
+    width: 89%;
+    height: 90%;
+    padding: 1rem 0.75rem;
+  }
+
+  .envelope-wrapper.open .how-to-apply-card {
+    transform: translateY(-56%);
+  }
+
+  .envelope-wrapper.open .how-to-apply-card.accent-blue:hover {
+    transform: translateY(-56%);
+  }
+
+  .envelope-wrapper .how-to-apply-icon-badge {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .envelope-wrapper .how-to-apply-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .envelope-wrapper .how-to-apply-text {
+    font-size: 0.78rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .envelope-wrapper .how-to-apply-tagline {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .envelope-wrapper .how-to-apply-cta-btn {
+    padding: 0.4rem 1.1rem;
+    font-size: 0.75rem;
+  }
+
+  .btn-action {
+    width: 120px;
+    height: 36px;
+    font-size: 0.8rem;
+    bottom: 15px;
+  }
+
+  .btn-action.btn-opened {
+    bottom: -50px;
+  }
+}
+
+@media (max-width: 360px) {
+  .envelope-wrapper .how-to-apply-title {
+    font-size: 1rem;
+  }
+  .envelope-wrapper .how-to-apply-text {
+    font-size: 0.72rem;
+  }
+  .envelope-wrapper .how-to-apply-tagline {
+    display: none; /* Hide tagline on micro viewports to avoid text overflow */
+  }
+  .envelope-wrapper .how-to-apply-cta-btn {
+    padding: 0.35rem 0.95rem;
+    font-size: 0.7rem;
+  }
+}

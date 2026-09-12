@@ -1,0 +1,1511 @@
+/* ==========================================
+   Training Page CSS Styles (Pure Vanilla CSS)
+   ========================================== */
+
+/* ==========================================
+   1. Hero Section Layout (100vh Single Viewport)
+   ========================================== */
+.training-hero-section {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  min-height: 520px;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  margin-top: 60px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.training-hero-card {
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+  max-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  border: 1px solid rgba(10, 25, 47, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(10, 25, 47, 0.06), 0 2px 8px rgba(10, 25, 47, 0.04);
+  overflow: hidden;
+}
+
+.training-hero-content {
+  flex: 1 1 50%;
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  z-index: 2;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.training-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: rgba(78, 112, 246, 0.08);
+  border: 1px solid rgba(78, 112, 246, 0.2);
+  color: #4E70F6;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.training-hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4E70F6;
+  box-shadow: 0 0 8px rgba(78, 112, 246, 0.4);
+}
+
+.training-hero-title {
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0A192F;
+  margin: 0 0 1.2rem 0;
+}
+
+.training-hero-desc {
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+  max-width: 520px;
+}
+
+.training-hero-video-wrapper {
+  flex: 1 1 50%;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  background: #ffffff;
+}
+
+.training-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.training-hero-video-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  background: linear-gradient(to right, #ffffff, transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .training-hero-section {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 85px 14px 28px;
+    margin-bottom: 2.5rem !important;
+  }
+
+  .training-hero-card {
+    flex-direction: column;
+    height: auto !important;
+    max-height: none !important;
+    gap: 1.25rem;
+    overflow: hidden;
+  }
+
+  .training-hero-content {
+    padding: 1.75rem 1.25rem 0.5rem;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .training-hero-desc {
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  .training-hero-video-wrapper {
+    height: clamp(260px, 38vh, 340px);
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .training-hero-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background: #ffffff;
+  }
+
+  .training-hero-video-wrapper::before {
+    display: none;
+  }
+}
+
+.training-page {
+  background-color: #ffffff;
+  color: var(--text, #1E293B);
+  padding: 0 0 6rem 0;
+  margin-top: 0;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.training-hero-subtitle {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.1rem;
+  color: #334E68;
+  font-weight: 500;
+  line-height: 1.65;
+  max-width: 800px;
+  margin: 0 0 2rem;
+}
+
+.training-hero-actions {
+  margin-bottom: 3.5rem;
+}
+
+.training-cta-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #4E70F6;
+  padding: 0.9rem 2.5rem;
+  border-radius: 2.5rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(78, 112, 246, 0.35);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.training-cta-primary-btn:hover {
+  background-color: #3b5bdb;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(78, 112, 246, 0.45);
+}
+
+.training-hero-stats-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.hero-stat-card {
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  border: 1.5px solid rgba(78, 112, 246, 0.2);
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.03);
+  transition: all 0.35s ease;
+}
+
+.hero-stat-card:hover {
+  transform: translateY(-5px);
+  border-color: #4E70F6;
+  box-shadow: 0 12px 30px rgba(78, 112, 246, 0.15);
+}
+
+.stat-card-value {
+  font-family: var(--font-plus-jakarta);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #4E70F6;
+  margin-bottom: 0.35rem;
+}
+
+.stat-card-label {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334E68;
+}
+
+/* ──────────────────────────────────────────
+   COMMON SECTION STYLES
+   ────────────────────────────────────────── */
+
+/* ── Enrollment / Contact section parallax wrapper ── */
+.enrollment-par-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Par2 image overlay colour */
+.enrollment-par-bg::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 20, 40, 0.68) 0%,
+    rgba(8, 20, 40, 0.60) 50%,
+    rgba(8, 20, 40, 0.72) 100%
+  );
+}
+
+/* Enrollment section sits above the image layer */
+.enrollment-par-wrapper .enrollment-section {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Title / subtitle contrast on dark bg */
+.enrollment-par-wrapper .training-section-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.enrollment-par-wrapper .training-section-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.training-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.training-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 3.5rem;
+}
+
+.training-section-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+}
+
+.training-section-subtitle {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.05rem;
+  color: #334E68;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Accent Card Styles */
+.accent-gold {
+  background-color: #FAF6ED;
+  border: 2px solid rgba(212, 175, 55, 0.28);
+}
+.accent-gold:hover {
+  background-color: #F7EFE0;
+  border-color: rgba(212, 175, 55, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(212, 175, 55, 0.22);
+}
+
+.accent-slate {
+  background-color: #F1F4F7;
+  border: 2px solid rgba(136, 165, 183, 0.32);
+}
+.accent-slate:hover {
+  background-color: #E6ECF1;
+  border-color: rgba(136, 165, 183, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(136, 165, 183, 0.22);
+}
+
+.accent-teal {
+  background-color: #F0FDF4;
+  border: 2px solid rgba(13, 148, 136, 0.28);
+}
+.accent-teal:hover {
+  background-color: #DCFCE7;
+  border-color: rgba(13, 148, 136, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(13, 148, 136, 0.22);
+}
+
+.accent-blue {
+  background-color: #F0F4FF;
+  border: 2px solid rgba(78, 112, 246, 0.3);
+}
+.accent-blue:hover {
+  background-color: #E6EEFF;
+  border-color: rgba(78, 112, 246, 0.85) !important;
+  box-shadow: 0 12px 35px -10px rgba(78, 112, 246, 0.25);
+}
+
+/* ──────────────────────────────────────────
+   SECTION 2: OUR TRAINING PHILOSOPHY
+   ────────────────────────────────────────── */
+
+.philosophy-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+}
+
+.philosophy-card {
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.philosophy-card:hover {
+  transform: translateY(-6px);
+}
+
+.philosophy-pillar-number {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  font-family: var(--font-plus-jakarta);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(78, 112, 246, 0.15);
+  line-height: 1;
+}
+
+.philosophy-icon-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: transform 0.35s ease;
+}
+
+.philosophy-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.philosophy-card:hover .philosophy-icon-box {
+  transform: scale(1.12);
+}
+
+.philosophy-card-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  margin: 0 0 0.85rem;
+  text-transform: uppercase;
+}
+
+.philosophy-card-desc {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.95rem;
+  color: #1E293B;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────
+   SECTION 3: PROGRAM OVERVIEW
+   ────────────────────────────────────────── */
+
+.overview-summary-box {
+  width: 100%;
+  background-color: #F0F4FF;
+  border-radius: 1.25rem;
+  padding: 2rem 2.5rem;
+  border: 1.5px solid rgba(78, 112, 246, 0.25);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.overview-desc-text {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.05rem;
+  color: #1E293B;
+  font-weight: 500;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.overview-cards-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.overview-card {
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.overview-card:hover {
+  transform: translateY(-6px);
+}
+
+.overview-card-icon-box {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1.25rem;
+}
+
+.overview-card-icon {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.overview-card-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+.overview-card-value {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #4E70F6;
+  margin-bottom: 0.35rem;
+}
+
+.overview-card-detail {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.88rem;
+  color: #334E68;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────
+   SECTION 4: KEY HIGHLIGHTS
+   ────────────────────────────────────────── */
+
+.highlights-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.highlight-card {
+  background-color: #ffffff;
+  border-radius: 1.15rem;
+  padding: 1.75rem 1.25rem;
+  border: 1.5px solid rgba(10, 25, 47, 0.1);
+  box-shadow: 0 4px 16px rgba(10, 25, 47, 0.03);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+  border-color: #4E70F6;
+  box-shadow: 0 10px 25px rgba(78, 112, 246, 0.15);
+}
+
+.highlight-badge-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #F0F4FF;
+  color: #4E70F6;
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.95rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(78, 112, 246, 0.3);
+}
+
+.highlight-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  margin: 0 0 0.6rem;
+  line-height: 1.35;
+}
+
+.highlight-desc {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.88rem;
+  color: #334E68;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────
+   SECTION 5: WHY CHOOSE ARTLYSOFT
+   ────────────────────────────────────────── */
+
+.why-choose-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.why-choose-card {
+  width: 100%;
+  border-radius: 1.25rem;
+  padding: 2.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.why-choose-card:hover {
+  transform: translateY(-4px);
+}
+
+.why-choose-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(10, 25, 47, 0.06);
+}
+
+.why-choose-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.why-choose-text-block {
+  flex-grow: 1;
+}
+
+.why-choose-card-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  margin: 0 0 0.5rem;
+}
+
+.why-choose-card-desc {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.98rem;
+  color: #1E293B;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────
+   SECTION 6: LEARNING PATH (TIMELINE)
+   ────────────────────────────────────────── */
+
+.learning-path-timeline {
+  width: 100%;
+  max-width: 950px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.learning-path-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 28px;
+  width: 3px;
+  background: linear-gradient(180deg, #4E70F6 0%, rgba(78, 112, 246, 0.2) 100%);
+}
+
+.timeline-stage-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-stage-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-stage-node {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 3px solid #4E70F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(78, 112, 246, 0.25);
+}
+
+.node-stage-num {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #4E70F6;
+}
+
+.timeline-stage-card {
+  flex-grow: 1;
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  padding: 1.75rem 2rem;
+  border: 1.5px solid rgba(78, 112, 246, 0.2);
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.03);
+  transition: all 0.35s ease;
+}
+
+.timeline-stage-card:hover {
+  transform: translateX(6px);
+  border-color: #4E70F6;
+  box-shadow: 0 10px 30px rgba(78, 112, 246, 0.15);
+}
+
+.stage-header-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.stage-badge {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  background-color: #4E70F6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.stage-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.stage-desc {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.95rem;
+  color: #334E68;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────
+   SECTION 7: TECHNOLOGY STACK COVERED
+   ────────────────────────────────────────── */
+
+.tech-stack-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+}
+
+.tech-stack-card {
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  padding: 2.25rem 2rem;
+  border: 1.5px solid rgba(78, 112, 246, 0.2);
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.03);
+  transition: all 0.35s ease;
+}
+
+.tech-stack-card:hover {
+  transform: translateY(-6px);
+  border-color: #4E70F6;
+  box-shadow: 0 12px 30px rgba(78, 112, 246, 0.18);
+}
+
+.tech-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(10, 25, 47, 0.08);
+}
+
+.tech-card-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 0.85rem;
+  background-color: #F0F4FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-card-icon {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.tech-card-num {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #4E70F6;
+  display: block;
+}
+
+.tech-card-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  margin: 0;
+}
+
+.tech-stack-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tech-stack-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.tech-item-bullet {
+  color: #4E70F6;
+  font-weight: 800;
+}
+
+.tech-item-name {
+  color: var(--navy-bronze-primary, #0A192F);
+}
+
+.tech-item-detail {
+  color: #334E68;
+}
+
+/* ──────────────────────────────────────────
+   SECTION 8: WHO CAN APPLY
+   ────────────────────────────────────────── */
+
+.who-can-apply-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.apply-card {
+  border-radius: 1.25rem;
+  padding: 2.25rem 2rem;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.02);
+}
+
+.apply-card:hover {
+  transform: translateY(-5px);
+}
+
+.apply-card-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  margin: 0 0 1.25rem;
+  text-transform: uppercase;
+}
+
+.apply-points-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.apply-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.95rem;
+  color: #1E293B;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.point-dot {
+  color: #4E70F6;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* ──────────────────────────────────────────
+   SECTION 9: CAREER OPPORTUNITIES
+   ────────────────────────────────────────── */
+
+.career-roles-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.career-role-card {
+  background-color: #ffffff;
+  border-radius: 1.15rem;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  border: 1.5px solid rgba(78, 112, 246, 0.2);
+  box-shadow: 0 4px 16px rgba(10, 25, 47, 0.03);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.career-role-card:hover {
+  transform: translateY(-6px);
+  border-color: #4E70F6;
+  box-shadow: 0 12px 28px rgba(78, 112, 246, 0.18);
+}
+
+.role-icon-box {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 1.15rem;
+}
+
+.role-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.role-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.role-desc {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.85rem;
+  color: #334E68;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.salary-banner-card {
+  width: 100%;
+  background-color: #FAF6ED;
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  border-radius: 1.25rem;
+  padding: 1.75rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+}
+
+.salary-icon-box {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.salary-icon {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.salary-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+}
+
+.salary-value {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #D4AF37;
+  margin: 0;
+}
+
+.salary-subnote {
+  font-size: 0.88rem;
+  color: #334E68;
+  font-weight: 500;
+}
+
+.job-demand-card {
+  width: 100%;
+  background-color: #F0F4FF;
+  border-radius: 1.25rem;
+  padding: 2rem 2.5rem;
+  border: 1.5px solid rgba(78, 112, 246, 0.3);
+  text-align: center;
+}
+
+.job-demand-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #4E70F6;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+}
+
+.job-demand-desc {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1rem;
+  color: #1E293B;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────
+   SECTION 10: CONTACT US & ENROLLMENT (ENQUIRY FORM)
+   ────────────────────────────────────────── */
+
+.contact-info-cards-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.contact-info-card {
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1.5px solid rgba(78, 112, 246, 0.2);
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.35s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px);
+  border-color: #4E70F6;
+  box-shadow: 0 10px 28px rgba(78, 112, 246, 0.15);
+}
+
+.contact-info-icon-box {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 1rem;
+}
+
+.contact-info-icon {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.contact-info-label {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  margin: 0 0 0.5rem;
+}
+
+.contact-info-value {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #4E70F6;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.contact-info-value:hover {
+  color: #2563EB;
+  text-decoration: underline;
+}
+
+/* Program Banner Block inside Section 10 */
+.program-banner-block {
+  width: 100%;
+  background-color: #F0F4FF;
+  border-radius: 1.5rem;
+  padding: 3.5rem 2.5rem;
+  border: 2px solid rgba(78, 112, 246, 0.3);
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(78, 112, 246, 0.08);
+}
+
+.program-banner-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 1.25rem;
+  max-width: 850px;
+  line-height: 1.3;
+}
+
+.program-banner-subtitle {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.05rem;
+  color: #334E68;
+  font-weight: 500;
+  line-height: 1.65;
+  max-width: 750px;
+  margin: 0 0 2rem;
+}
+
+.program-banner-actions {
+  margin-bottom: 3rem;
+}
+
+.enrollment-process-block {
+  width: 100%;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.process-block-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin: 0 0 2rem;
+  text-transform: uppercase;
+}
+
+.enrollment-steps-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.enroll-step-card {
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  border: 1.5px solid rgba(78, 112, 246, 0.2);
+  box-shadow: 0 4px 18px rgba(10, 25, 47, 0.03);
+  text-align: center;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.enroll-step-card:hover {
+  transform: translateY(-5px);
+  border-color: #4E70F6;
+  box-shadow: 0 10px 25px rgba(78, 112, 246, 0.15);
+}
+
+.enroll-step-num {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #4E70F6;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.enroll-step-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  margin: 0 0 0.5rem;
+}
+
+.enroll-step-desc {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.88rem;
+  color: #334E68;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ENQUIRY FORM CONTAINER */
+.enquiry-form-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 2px solid rgba(78, 112, 246, 0.3);
+  box-shadow: 0 10px 35px rgba(10, 25, 47, 0.06);
+  background-color: #ffffff;
+}
+
+.brochure-preview-side {
+  background-color: #4E70F6;
+  color: #ffffff;
+  padding: 3.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.brochure-icon-box {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.brochure-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.brochure-side-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  letter-spacing: 0.04em;
+}
+
+.brochure-side-desc {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin: 0 0 2rem;
+}
+
+.brochure-download-note {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.88rem;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.18);
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.enquiry-form-side {
+  padding: 3.5rem 3rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.enquiry-form-title {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--navy-bronze-primary, #0A192F);
+  margin: 0 0 0.5rem;
+}
+
+.enquiry-form-subtitle {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.95rem;
+  color: #334E68;
+  font-weight: 500;
+  margin: 0 0 2rem;
+}
+
+.form-success-alert {
+  background-color: #DCFCE7;
+  color: #15803D;
+  border: 1.5px solid rgba(21, 128, 61, 0.3);
+  padding: 1rem 1.25rem;
+  border-radius: 0.85rem;
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.form-error-alert {
+  background-color: #FEE2E2;
+  color: #B91C1C;
+  border: 1.5px solid rgba(185, 28, 28, 0.3);
+  padding: 1rem 1.25rem;
+  border-radius: 0.85rem;
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.training-enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field-label {
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy-bronze-primary, #0A192F);
+}
+
+.form-input-field,
+.form-select-field,
+.form-textarea-field {
+  width: 100%;
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.95rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0.75rem;
+  border: 1.5px solid rgba(10, 25, 47, 0.2);
+  background-color: #F8FAFC;
+  color: #1E293B;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.form-input-field:focus,
+.form-select-field:focus,
+.form-textarea-field:focus {
+  border-color: #4E70F6;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(78, 112, 246, 0.15);
+}
+
+.form-textarea-field {
+  resize: vertical;
+}
+
+.form-submit-btn {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #4E70F6;
+  padding: 0.95rem 2rem;
+  border-radius: 0.85rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(78, 112, 246, 0.35);
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.form-submit-btn:hover {
+  background-color: #3b5bdb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(78, 112, 246, 0.45);
+}
+
+/* ──────────────────────────────────────────
+   RESPONSIVE BREAKPOINTS
+   ────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .highlights-grid,
+  .career-roles-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .training-hero-stats-grid,
+  .overview-cards-grid,
+  .enrollment-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .philosophy-grid,
+  .tech-stack-grid,
+  .contact-info-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .enquiry-form-container {
+    grid-template-columns: 1fr;
+  }
+
+  .brochure-preview-side {
+    padding: 2.5rem 2rem;
+  }
+
+  .enquiry-form-side {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .training-page {
+    padding: 6rem 1.25rem 4rem;
+  }
+
+  .training-hero-title {
+    font-size: 1.85rem;
+  }
+
+  .training-section-title {
+    font-size: 1.65rem;
+  }
+
+  .philosophy-grid,
+  .tech-stack-grid,
+  .who-can-apply-grid,
+  .highlights-grid,
+  .career-roles-grid,
+  .contact-info-cards-grid,
+  .enrollment-steps-grid,
+  .training-hero-stats-grid,
+  .overview-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .form-row-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-path-timeline::before {
+    left: 20px;
+  }
+
+  .timeline-stage-node {
+    width: 44px;
+    height: 44px;
+  }
+
+  .node-stage-num {
+    font-size: 0.95rem;
+  }
+
+  .salary-banner-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.75rem 1.5rem;
+  }
+}
+

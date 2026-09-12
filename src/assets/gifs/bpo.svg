@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .chat-bubble { animation: bubblePulse 2.4s infinite ease-in-out; }
+    .chat-lines { animation: linesFade 1.8s infinite ease-in-out; }
+    @keyframes bubblePulse {
+      0%, 100% { transform: scale(1); transform-origin: center; }
+      50% { transform: scale(1.04); transform-origin: center; }
+    }
+    @keyframes linesFade {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+  </style>
+  <!-- Non-Voice Chat / Document Bubble -->
+  <path class="chat-bubble" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#0D9488" stroke-width="2" />
+  <!-- Text lines representing non-voice processing -->
+  <line class="chat-lines" x1="8" y1="8" x2="16" y2="8" stroke="#0A192F" stroke-width="2" />
+  <line class="chat-lines" x1="8" y1="12" x2="13" y2="12" stroke="#0A192F" stroke-width="2" />
+</svg>

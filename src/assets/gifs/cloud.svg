@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .cloud-pulse { animation: cloudPulse 2.5s infinite ease-in-out; }
+    .arrow-float { animation: arrowFloat 1.5s infinite ease-in-out; }
+    @keyframes cloudPulse {
+      0%, 100% { transform: scale(1); transform-origin: center; }
+      50% { transform: scale(1.05); transform-origin: center; }
+    }
+    @keyframes arrowFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-2px); }
+    }
+  </style>
+  <path class="cloud-pulse" d="M18 10h-.09A6 6 0 0 0 6 5.66A5 5 0 0 0 6 15h12a4 4 0 0 0 0-8z" stroke="#D4AF37" />
+  <path class="arrow-float" d="M12 15V9" stroke="#0A192F" />
+  <path class="arrow-float" d="M9 12l3-3 3 3" stroke="#0A192F" />
+</svg>

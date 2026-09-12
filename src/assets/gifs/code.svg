@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .brackets { animation: pulseBrackets 2s infinite ease-in-out; }
+    .slash { animation: pulseSlash 2s infinite ease-in-out; }
+    @keyframes pulseBrackets {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(1px); }
+    }
+    @keyframes pulseSlash {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+  </style>
+  <polyline class="brackets" points="16 18 22 12 16 6" stroke="#D4AF37" />
+  <polyline class="brackets" points="8 6 2 12 8 18" stroke="#D4AF37" style="animation-delay: -1s;" />
+  <line class="slash" x1="14" y1="4" x2="10" y2="20" stroke="#0A192F" />
+</svg>

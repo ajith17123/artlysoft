@@ -1,0 +1,43 @@
+/* =====================================================
+   ArtlyTitle — letter-by-letter color wave
+   Palette: sky blue (#87CEEB) ↔ dark blue (#0A192F)
+   Wave travels left → right via staggered --i index.
+   ===================================================== */
+
+.animated-logo-text {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  /* Prevent the parent from clipping the glow */
+  overflow: visible;
+}
+
+/* Each individual letter */
+.animated-logo-text .letter {
+  display: inline-block;
+  color: #87CEEB;                 /* resting: sky blue */
+  animation: artlyWave 2s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.08s);
+  /* will-change for GPU compositing */
+  will-change: color, text-shadow;
+}
+
+/* Non-breaking space — no animation needed */
+.animated-logo-text .letter.space {
+  animation: none;
+  color: transparent;
+  min-width: 0.3em;
+}
+
+@keyframes artlyWave {
+  0%, 100% {
+    color: #87CEEB;               /* sky blue  */
+    text-shadow: none;
+  }
+  45%, 55% {
+    color: #0A192F;               /* dark blue peak */
+    text-shadow:
+      0 0 6px rgba(10, 25, 47, 0.5),
+      0 0 12px rgba(10, 25, 47, 0.25);
+  }
+}
