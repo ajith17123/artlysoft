@@ -172,7 +172,7 @@ const About = () => {
     if (isCandHovered) return;
     const timer = setInterval(() => {
       nextCandidate();
-    }, 3500);
+    }, 2000);
     return () => clearInterval(timer);
   }, [nextCandidate, isCandHovered]);
 
@@ -743,11 +743,9 @@ const About = () => {
                       <img src={cand.img} alt={cand.name} loading="lazy" />
                       <div className="candidate-img-overlay" />
                     </div>
-                    {isCenter && (
-                      <div className="candidate-info-box">
-                        <h3 className="candidate-name">{cand.name}</h3>
-                      </div>
-                    )}
+                    <div className="candidate-info-box">
+                      <h3 className="candidate-name">{cand.name}</h3>
+                    </div>
                   </div>
                 </div>
               );

@@ -389,13 +389,40 @@ const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 10000);
+    }, 4500);
     return () => clearInterval(interval);
   }, [isPaused]);
+
+  const handleTouchStart = (e) => {
+    setIsPaused(true);
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = null;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    setIsPaused(false);
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const deltaX = touchEndX.current - touchStartX.current;
+    const minSwipeDistance = 35;
+    if (deltaX < -minSwipeDistance) {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    } else if (deltaX > minSwipeDistance) {
+      setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
   const heroSectionRef = useRef(null);
   const heroBgRef = useRef(null);
@@ -599,8 +626,9 @@ const Home = () => {
             className="hero-carousel-container"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            onTouchStart={() => setIsPaused(true)}
-            onTouchEnd={() => setIsPaused(false)}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             {/* Side Navigation Arrows (Left & Right) */}
             <button
