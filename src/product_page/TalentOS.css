@@ -534,8 +534,8 @@ body {
    RESPONSIVE — Tablet & Mobile
    ============================================================ */
 @media (max-width: 1024px) {
-  .nav-links,
-  .nav-actions {
+  .nav-sec .nav-links,
+  .nav-sec .nav-actions {
     display: none !important;
   }
 

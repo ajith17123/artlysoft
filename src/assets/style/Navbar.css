@@ -388,11 +388,14 @@
     height: 36px !important;
     min-width: 36px !important;
     min-height: 36px !important;
-    border-radius: 50% !important;
+    border-radius: 0 !important;
     align-items: center !important;
     justify-content: center !important;
-    background-color: rgba(78, 112, 246, 0.08) !important;
-    border: 1px solid rgba(78, 112, 246, 0.2) !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
   }
 
   .card-nav-cta-button.icon-only.call-icon-btn {
@@ -404,10 +407,16 @@
   }
 
   .card-nav-cta-button.icon-only img {
-    width: 22px !important;
-    height: 22px !important;
+    width: 24px !important;
+    height: 24px !important;
     object-fit: contain !important;
     display: block !important;
+  }
+
+  .mobile-phone-icon {
+    font-size: 1.25rem !important;
+    color: #4E70F6 !important;
+    stroke: #4E70F6 !important;
   }
 
   .card-nav-content {

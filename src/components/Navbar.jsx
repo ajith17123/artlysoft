@@ -225,12 +225,12 @@ const Navbar = ({
 
 
           <div className="nav-actions">
-            <Link to="/contact" className="card-nav-cta-button icon-only call-icon-btn" aria-label="Contact Us" onClick={closeMenu}>
-              <FiPhone className="mobile-phone-icon" />
-            </Link>
-
             <Link to="/" className="card-nav-cta-button icon-only home-icon-btn" aria-label="Home" onClick={closeMenu}>
               <img src={homeGif} alt="Home" />
+            </Link>
+
+            <Link to="/contact" className="card-nav-cta-button icon-only call-icon-btn" aria-label="Contact Us" onClick={closeMenu}>
+              <FiPhone className="mobile-phone-icon" />
             </Link>
             
             <Link
