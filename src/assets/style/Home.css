@@ -642,17 +642,16 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
   /* Slide grid structure - Video on top, text below for consistent slide height */
   .hero-slide-grid {
     display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
     gap: 0.85rem !important;
     width: 100% !important;
     flex: 1 !important;
   }
 
-  .hero-slide-grid.layout-right {
-    flex-direction: column-reverse !important;
-  }
-
-  .hero-slide-grid.layout-left {
-    flex-direction: column !important;
+  .hero-slide-grid.layout-right .col-right,
+  .hero-slide-grid.layout-left .col-left {
+    order: -1 !important;
   }
 
   .hero-grid-col {
