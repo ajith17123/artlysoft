@@ -188,11 +188,11 @@ function mod(n, m) {
 }
 
 const SLOTS = {
-  "top-left": { translateX: -415, translateY: -92, scale: 1, zIndex: 4, opacity: 0.95 },
-  "bottom-left": { translateX: -415, translateY: 92, scale: 1, zIndex: 4, opacity: 0.95 },
+  "top-left": { translateX: -380, translateY: -80, scale: 1, zIndex: 4, opacity: 0.95 },
+  "bottom-left": { translateX: -380, translateY: 80, scale: 1, zIndex: 4, opacity: 0.95 },
   "center": { translateX: 0, translateY: 0, scale: 1, zIndex: 10, opacity: 1 },
-  "top-right": { translateX: 415, translateY: -92, scale: 1, zIndex: 4, opacity: 0.95 },
-  "bottom-right": { translateX: 415, translateY: 92, scale: 1, zIndex: 4, opacity: 0.95 },
+  "top-right": { translateX: 380, translateY: -80, scale: 1, zIndex: 4, opacity: 0.95 },
+  "bottom-right": { translateX: 380, translateY: 80, scale: 1, zIndex: 4, opacity: 0.95 },
   "hidden": { translateX: 0, translateY: 0, scale: 0.5, zIndex: 0, opacity: 0 },
 };
 
@@ -280,6 +280,7 @@ const HERO_SLIDES = [
     id: 1,
     badge: "Next-Gen Digital Solutions",
     headline: "Softly Shaping Software Solutions for the AI Era",
+    headlineClass: "headline-lg",
     subheadline: "Empowering forward-thinking businesses through intelligent automation, cloud engineering, and scalable enterprise platforms.",
     ctaText: "Explore Our Vision",
     ctaLink: "#/about",
@@ -290,11 +291,11 @@ const HERO_SLIDES = [
     videoPosition: "right",
     highlights: (
       <div className="hero-slide-highlights highlights-brand">
-        <div className="highlight-metric-card">
+        <div className="brand-pillar-pill">
           <span className="metric-val">200+</span>
-          <span className="metric-label">Projects Delivered</span>
+          <span className="metric-label">Projects Delivered Worldwide</span>
         </div>
-        <div className="highlight-text-card">
+        <div className="brand-pillar-pill">
           <span className="highlight-icon">⚡</span>
           <span className="highlight-text-desc">Multi-Cloud & AI-Ready Architecture</span>
         </div>
@@ -315,10 +316,22 @@ const HERO_SLIDES = [
     videoPosition: "left",
     highlights: (
       <div className="hero-slide-highlights highlights-services">
-        <span className="service-pillar-tag">Product Engineering</span>
-        <span className="service-pillar-tag">Data & AI</span>
-        <span className="service-pillar-tag">Intelligent Automation</span>
-        <span className="service-pillar-tag">Cloud Architecture</span>
+        <div className="service-pillar-card">
+          <span className="pillar-icon">⚡</span>
+          <span>Product Engineering</span>
+        </div>
+        <div className="service-pillar-card">
+          <span className="pillar-icon">🧠</span>
+          <span>Data & AI</span>
+        </div>
+        <div className="service-pillar-card">
+          <span className="pillar-icon">🤖</span>
+          <span>Intelligent Automation</span>
+        </div>
+        <div className="service-pillar-card">
+          <span className="pillar-icon">☁️</span>
+          <span>Cloud Architecture</span>
+        </div>
       </div>
     )
   },
@@ -338,11 +351,11 @@ const HERO_SLIDES = [
     videoPosition: "right",
     highlights: (
       <div className="hero-slide-highlights highlights-talentos">
-        <div className="bullet-highlight">
+        <div className="bullet-highlight-pill">
           <span className="bullet-title">AI Semantic Matching:</span>
           <span className="bullet-text">Precision candidate-to-role scoring</span>
         </div>
-        <div className="bullet-highlight">
+        <div className="bullet-highlight-pill">
           <span className="bullet-title">Automated ATS Pipeline:</span>
           <span className="bullet-text">Sourcing, vetting, and interview workflows in one place</span>
         </div>
@@ -365,15 +378,15 @@ const HERO_SLIDES = [
       <div className="hero-slide-highlights highlights-careers">
         <div className="career-pill">
           <span className="career-dot"></span>
-          Software Development
+          <span>Software Development</span>
         </div>
         <div className="career-pill">
           <span className="career-dot"></span>
-          DevOps & Cloud
+          <span>DevOps & Cloud</span>
         </div>
         <div className="career-pill">
           <span className="career-dot"></span>
-          AI / ML Engineering
+          <span>AI / ML Engineering</span>
         </div>
       </div>
     )
@@ -476,24 +489,11 @@ const Home = () => {
         );
       }
 
-      // 2. Our Core Capabilities Parallax Card Staggering
+      // 2. Our Core Capabilities (GSAP parallax staggering disabled to prevent card header overlap)
       if (capabilitiesSectionRef.current) {
-        const speeds = [-30, -60, -40, -50, -30, -70];
-        capCardsRef.current.forEach((card, idx) => {
+        capCardsRef.current.forEach((card) => {
           if (!card) return;
-          gsap.fromTo(card,
-            { y: 0 },
-            {
-              y: speeds[idx % speeds.length],
-              ease: 'none',
-              scrollTrigger: {
-                trigger: capabilitiesSectionRef.current,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true
-              }
-            }
-          );
+          gsap.set(card, { y: 0 });
         });
       }
 
@@ -673,7 +673,7 @@ const Home = () => {
                         {HERO_SLIDES[currentSlide].badge}
                       </div>
 
-                      <h1 className="hero-headline">
+                      <h1 className={`hero-headline ${HERO_SLIDES[currentSlide].headlineClass || ''}`}>
                         {HERO_SLIDES[currentSlide].headline}
                       </h1>
 
@@ -736,7 +736,7 @@ const Home = () => {
                         {HERO_SLIDES[currentSlide].badge}
                       </div>
 
-                      <h1 className="hero-headline">
+                      <h1 className={`hero-headline ${HERO_SLIDES[currentSlide].headlineClass || ''}`}>
                         {HERO_SLIDES[currentSlide].headline}
                       </h1>
 
@@ -784,20 +784,15 @@ const Home = () => {
             data-aos="fade-up"
             data-aos-duration="1000"
           >
-            <div className="cap-icon-box">
-              <img src={codeIcon} alt="Product Engineering" className="cap-icon-image" />
-            </div>
-            <div className="cap-card-content">
-              <h3 className="cap-card-title">PRODUCT ENGINEERING</h3>
-              <p className="cap-card-desc">
-                Full-stack development with modern frameworks, scalable architectures, and best practices for web and mobile applications.
-              </p>
-              <div className="cap-features-container">
-                <span className="cap-feature-tag">Custom Software</span>
-                <span className="cap-feature-tag">API Integration</span>
-                <span className="cap-feature-tag">Legacy Modernization</span>
+            <div className="cap-card-header">
+              <div className="cap-icon-box">
+                <img src={codeIcon} alt="Product Engineering" className="cap-icon-image" />
               </div>
+              <h3 className="cap-card-title">PRODUCT ENGINEERING</h3>
             </div>
+            <p className="cap-card-desc">
+              Full-stack development with modern frameworks, scalable architectures, and best practices for web and mobile applications.
+            </p>
           </div>
 
           {/* Card 2: Data & AI */}
@@ -808,22 +803,15 @@ const Home = () => {
             data-aos-delay="150"
             data-aos-duration="1000"
           >
-            <div className="cap-icon-box">
-              <img src={aimlIcon} alt="Data & AI" className="cap-icon-image" />
-            </div>
-            <div className="cap-card-content">
-              <h3 className="cap-card-title">DATA & AI</h3>
-              <p className="cap-card-desc">
-                Advanced analytics, machine learning, and AI-powered solutions to unlock insights from your data.
-              </p>
-              <div className="cap-features-container">
-                <span className="cap-feature-tag">Predictive Analytics</span>
-                <span className="cap-feature-tag">NLP & Custom LLMs</span>
-                <span className="cap-feature-tag">Data Warehousing</span>
-                <span className="cap-feature-tag">BI Dashboards</span>
-                <span className="cap-feature-tag">Machine Learning</span>
+            <div className="cap-card-header">
+              <div className="cap-icon-box">
+                <img src={aimlIcon} alt="Data & AI" className="cap-icon-image" />
               </div>
+              <h3 className="cap-card-title">DATA & AI</h3>
             </div>
+            <p className="cap-card-desc">
+              Advanced analytics, machine learning, and AI-powered solutions to unlock insights from your data.
+            </p>
           </div>
 
           {/* Card 3: Intelligent Automation */}
@@ -834,20 +822,15 @@ const Home = () => {
             data-aos-delay="300"
             data-aos-duration="1000"
           >
-            <div className="cap-icon-box">
-              <img src={automationIcon} alt="Intelligent Automation" className="cap-icon-image" />
-            </div>
-            <div className="cap-card-content">
-              <h3 className="cap-card-title">INTELLIGENT AUTOMATION</h3>
-              <p className="cap-card-desc">
-                RPA, process mining, and AI-driven automation to streamline operations and boost efficiency.
-              </p>
-              <div className="cap-features-container">
-                <span className="cap-feature-tag">Workflow Automation</span>
-                <span className="cap-feature-tag">RPA Systems</span>
-                <span className="cap-feature-tag">Document AI</span>
+            <div className="cap-card-header">
+              <div className="cap-icon-box">
+                <img src={automationIcon} alt="Intelligent Automation" className="cap-icon-image" />
               </div>
+              <h3 className="cap-card-title">INTELLIGENT AUTOMATION</h3>
             </div>
+            <p className="cap-card-desc">
+              RPA, process mining, and AI-driven automation to streamline operations and boost efficiency.
+            </p>
           </div>
 
           {/* Card 4: Cloud Services */}
@@ -858,20 +841,15 @@ const Home = () => {
             data-aos-delay="100"
             data-aos-duration="1000"
           >
-            <div className="cap-icon-box">
-              <img src={cloudIcon} alt="Cloud Services" className="cap-icon-image" />
-            </div>
-            <div className="cap-card-content">
-              <h3 className="cap-card-title">CLOUD SERVICES</h3>
-              <p className="cap-card-desc">
-                Multi-cloud expertise across AWS, Azure, and GCP for scalable, secure, and cost-effective solutions.
-              </p>
-              <div className="cap-features-container">
-                <span className="cap-feature-tag">Cloud Migration</span>
-                <span className="cap-feature-tag">DevOps & CI/CD</span>
-                <span className="cap-feature-tag">Serverless Solutions</span>
+            <div className="cap-card-header">
+              <div className="cap-icon-box">
+                <img src={cloudIcon} alt="Cloud Services" className="cap-icon-image" />
               </div>
+              <h3 className="cap-card-title">CLOUD SERVICES</h3>
             </div>
+            <p className="cap-card-desc">
+              Multi-cloud expertise across AWS, Azure, and GCP for scalable, secure, and cost-effective solutions.
+            </p>
           </div>
 
           {/* Card 5: Cybersecurity */}
@@ -882,20 +860,15 @@ const Home = () => {
             data-aos-delay="200"
             data-aos-duration="1000"
           >
-            <div className="cap-icon-box">
-              <img src={securityIcon} alt="Cybersecurity" className="cap-icon-image" />
-            </div>
-            <div className="cap-card-content">
-              <h3 className="cap-card-title">CYBERSECURITY</h3>
-              <p className="cap-card-desc">
-                Comprehensive security solutions to protect your digital assets and ensure compliance.
-              </p>
-              <div className="cap-features-container">
-                <span className="cap-feature-tag">Threat Monitoring</span>
-                <span className="cap-feature-tag">Pen Testing</span>
-                <span className="cap-feature-tag">Compliance Audits</span>
+            <div className="cap-card-header">
+              <div className="cap-icon-box">
+                <img src={securityIcon} alt="Cybersecurity" className="cap-icon-image" />
               </div>
+              <h3 className="cap-card-title">CYBERSECURITY</h3>
             </div>
+            <p className="cap-card-desc">
+              Comprehensive security solutions to protect your digital assets and ensure compliance.
+            </p>
           </div>
 
           {/* Card 6: Digital Transformation */}
@@ -906,20 +879,15 @@ const Home = () => {
             data-aos-delay="100"
             data-aos-duration="1000"
           >
-            <div className="cap-icon-box">
-              <img src={transformIcon} alt="Digital Transformation" className="cap-icon-image" />
-            </div>
-            <div className="cap-card-content">
-              <h3 className="cap-card-title">DIGITAL TRANSFORMATION</h3>
-              <p className="cap-card-desc">
-                End-to-end digital transformation strategies to modernize your business processes.
-              </p>
-              <div className="cap-features-container">
-                <span className="cap-feature-tag">CX Strategy</span>
-                <span className="cap-feature-tag">Modernization Roadmaps</span>
-                <span className="cap-feature-tag">IT Consulting</span>
+            <div className="cap-card-header">
+              <div className="cap-icon-box">
+                <img src={transformIcon} alt="Digital Transformation" className="cap-icon-image" />
               </div>
+              <h3 className="cap-card-title">DIGITAL TRANSFORMATION</h3>
             </div>
+            <p className="cap-card-desc">
+              End-to-end digital transformation strategies to modernize your business processes.
+            </p>
           </div>
         </div>
       </section>
@@ -981,12 +949,10 @@ const Home = () => {
           {/* Left Column: Key Features List */}
           <div className="why-left-col">
             {[
-              "1+ years of industry experience across multiple domains",
+              "1.5+ years of industry experience across multiple domains",
               "Agile development methodology with rapid delivery cycles",
               "24/7 support and maintenance for all deployed solutions",
-              "Certified experts in leading cloud platforms and technologies",
-              "Proven track record with 200+ successful project deliveries",
-              "Cost-effective solutions with transparent pricing models"
+              "Certified experts in leading cloud platforms and technologies"
             ].map((text, idx) => (
               <div
                 key={idx}
@@ -1078,7 +1044,6 @@ const Home = () => {
 
           {/* Header */}
           <div className="creative-lab-header" data-aos="fade-up">
-            <span className="creative-lab-subheading">Crafted with Intent</span>
             <h2 className="creative-lab-heading">Creative Lab</h2>
             <p className="creative-lab-para">
               A glance into our product design process, brand design sprints, and motion concepts.

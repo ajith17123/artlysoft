@@ -135,11 +135,11 @@
 }
 
 .logo-text {
-  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: -0.01em;
-  /* color is controlled by AnimatedLogoText gradient */
+  font-family: var(--font-space-grotesk), 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  color: var(--navy-bronze-primary);
   white-space: nowrap;
 }
 
@@ -294,16 +294,16 @@
 
 .nav-card-link {
   font-family: var(--font-plus-jakarta);
-  font-size: 0.82rem;
+  font-size: 1.08rem;
   font-weight: 600;
   color: inherit;
-  opacity: 0.85;
+  opacity: 0.9;
   cursor: pointer;
   text-decoration: none;
   transition: transform 0.2s ease, opacity 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 .nav-card-link:hover {
@@ -349,12 +349,12 @@
   }
 
   .logo-image {
-    height: 20px;
+    height: 22px;
     flex-shrink: 0;
   }
 
   .logo-text {
-    font-size: clamp(0.8rem, 3.2vw, 1rem);
+    font-size: clamp(1.05rem, 4.2vw, 1.25rem);
     letter-spacing: -0.02em;
     white-space: nowrap;
     overflow: hidden;
@@ -449,7 +449,7 @@
   }
 
   .nav-card-link {
-    font-size: 0.85rem;
+    font-size: 1.05rem;
   }
 }
 

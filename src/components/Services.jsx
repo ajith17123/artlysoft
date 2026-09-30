@@ -359,10 +359,12 @@ const Services = () => {
               data-aos-delay={(idx + 1) * 150}
               data-aos-duration="1000"
             >
-              <div className="sub-card-icon-box">
-                <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+              <div className="sub-card-header">
+                <div className="sub-card-icon-box">
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                </div>
+                <h3 className="sub-card-title">{card.title}</h3>
               </div>
-              <h3 className="sub-card-title">{card.title}</h3>
               <p className="sub-card-desc">{card.description}</p>
             </div>
           ))}
@@ -405,10 +407,12 @@ const Services = () => {
               data-aos-delay={(idx + 1) * 150}
               data-aos-duration="1000"
             >
-              <div className="sub-card-icon-box">
-                <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+              <div className="sub-card-header">
+                <div className="sub-card-icon-box">
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                </div>
+                <h3 className="sub-card-title">{card.title}</h3>
               </div>
-              <h3 className="sub-card-title">{card.title}</h3>
               <p className="sub-card-desc">{card.description}</p>
             </div>
           ))}
@@ -451,10 +455,12 @@ const Services = () => {
               data-aos-delay={(idx + 1) * 150}
               data-aos-duration="1000"
             >
-              <div className="sub-card-icon-box">
-                <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+              <div className="sub-card-header">
+                <div className="sub-card-icon-box">
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                </div>
+                <h3 className="sub-card-title">{card.title}</h3>
               </div>
-              <h3 className="sub-card-title">{card.title}</h3>
               <p className="sub-card-desc">{card.description}</p>
             </div>
           ))}
@@ -497,10 +503,12 @@ const Services = () => {
               data-aos-delay={(idx + 1) * 150}
               data-aos-duration="1000"
             >
-              <div className="sub-card-icon-box">
-                <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+              <div className="sub-card-header">
+                <div className="sub-card-icon-box">
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                </div>
+                <h3 className="sub-card-title">{card.title}</h3>
               </div>
-              <h3 className="sub-card-title">{card.title}</h3>
               <p className="sub-card-desc">{card.description}</p>
             </div>
           ))}
@@ -543,10 +551,12 @@ const Services = () => {
               data-aos-delay={(idx + 1) * 150}
               data-aos-duration="1000"
             >
-              <div className="sub-card-icon-box">
-                <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+              <div className="sub-card-header">
+                <div className="sub-card-icon-box">
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                </div>
+                <h3 className="sub-card-title">{card.title}</h3>
               </div>
-              <h3 className="sub-card-title">{card.title}</h3>
               <p className="sub-card-desc">{card.description}</p>
             </div>
           ))}
@@ -580,7 +590,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="modernization-sub-grid">
+        <div className="modernization-sub-grid modernization-sub-grid-5">
           {intelligentAutomationSubCards.map((card, idx) => (
             <div
               key={card.id}
@@ -589,10 +599,12 @@ const Services = () => {
               data-aos-delay={(idx + 1) * 150}
               data-aos-duration="1000"
             >
-              <div className="sub-card-icon-box">
-                <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+              <div className="sub-card-header">
+                <div className="sub-card-icon-box">
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                </div>
+                <h3 className="sub-card-title">{card.title}</h3>
               </div>
-              <h3 className="sub-card-title">{card.title}</h3>
               <p className="sub-card-desc">{card.description}</p>
             </div>
           ))}
@@ -635,10 +647,12 @@ const Services = () => {
               data-aos-delay={(idx + 1) * 150}
               data-aos-duration="1000"
             >
-              <div className="sub-card-icon-box">
-                <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+              <div className="sub-card-header">
+                <div className="sub-card-icon-box">
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                </div>
+                <h3 className="sub-card-title">{card.title}</h3>
               </div>
-              <h3 className="sub-card-title">{card.title}</h3>
               <p className="sub-card-desc">{card.description}</p>
             </div>
           ))}

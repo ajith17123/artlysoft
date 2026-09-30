@@ -5,11 +5,11 @@ import '../assets/style/FloatingNav.css';
 
 const PAGE_ORDER = [
   { name: 'Home', path: '/', match: (p) => p === '/' },
-  { name: 'Services', path: '/services', match: (p) => p === '/services' },
-  { name: 'Careers', path: '/careers', match: (p) => p === '/careers' || p === '/joinus/career' },
   { name: 'About', path: '/about', match: (p) => p === '/about' },
+  { name: 'Services', path: '/services', match: (p) => p === '/services' },
+  { name: 'Product (TalentOS)', path: '/products/talent-os', match: (p) => p === '/products/talent-os' },
   { name: 'Training', path: '/training', match: (p) => p === '/training' || p === '/joinus/training' || p === '/courses' },
-  { name: 'TalentOS', path: '/products/talent-os', match: (p) => p === '/products/talent-os' },
+  { name: 'Career', path: '/careers', match: (p) => p === '/careers' || p === '/joinus/career' },
   { name: 'Contact Us', path: '/contact', match: (p) => p === '/contact' }
 ];
 

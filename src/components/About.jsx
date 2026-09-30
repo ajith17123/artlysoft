@@ -18,11 +18,11 @@ import imgAbisheik from '../assets/images/Team/Abisheik.jpg';
 import imgAjith from '../assets/images/Team/Ajith.png';
 import imgPreethi from '../assets/images/Team/Preethi.png';
 import imgTamil from '../assets/images/Team/Tamil.jpg';
-import imgHemaMalini from '../assets/images/Team/HemaMalini Sakthivel.jpg';
-import imgKamali from '../assets/images/Team/Kamali D S.jpeg';
+import imgHemaMalini from '../assets/images/Team/HemaMalini Sakthivel1.png';
+import imgKamali from '../assets/images/Team/Kamali D S1.png';
 import imgDineshkumar from '../assets/images/Team/Dineshkumar Baskaran.jpeg';
-import imgMohanapriya from '../assets/images/Team/Mohanapriya R.jpg';
-import imgShobha from '../assets/images/Team/Shobha S.jpeg';
+import imgMohanapriya from '../assets/images/Team/Mohanapriya R.png';
+import imgShobha from '../assets/images/Team/Shobha S.png';
 
 // Candidate Images
 import candAravind from '../assets/images/Candidates/Aravind Kumar R.jpg';
@@ -72,7 +72,7 @@ const TEAM = [
     name: "Bharani B",
     role: "Business Analyst",
     img: imgBharani,
-    linkedin: "https://www.linkedin.com/in/bharani-shankar-b-8101b3228?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    linkedin: "https://www.linkedin.com/in/bharanishankar",
   },
   {
     name: "Abisheik V",
@@ -106,34 +106,33 @@ const TEAM = [
     name: "HemaMalini Sakthivel",
     role: "Web Developer",
     img: imgHemaMalini,
-    linkedin: "https://www.linkedin.com/",
-    github: "https://github.com/",
+    linkedin: "http://www.linkedin.com/in/hemamalini-python-full-stack-developer-753a7835a",
+    github: "https://github.com/Hema-1712",
   },
   {
     name: "Kamali D S",
     role: "Web Developer",
     img: imgKamali,
-    linkedin: "https://www.linkedin.com/",
-    github: "https://github.com/",
+    
   },
   {
     name: "Dineshkumar Baskaran",
-    role: "Web Developer",
+    role: "Fullstack Developer",
     img: imgDineshkumar,
-    linkedin: "https://www.linkedin.com/",
-    github: "https://github.com/",
+    linkedin: "http://www.linkedin.com/in/dinesh-kumar-b-ba7996251",
+    github: "https://github.com/DineshkumarBaskaran",
   },
   {
     name: "Mohanapriya R",
-    role: "Web Developer",
+    role: "Marketing Associate",
     img: imgMohanapriya,
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/mohanapriyaramalingam",
   },
   {
     name: "Shobha S",
-    role: "Web Developer",
+    role: "Inside sales executive",
     img: imgShobha,
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/shobha-rakesh",
   },
 ];
 
@@ -154,27 +153,7 @@ const About = () => {
   const [selectedSocialIndex, setSelectedSocialIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 640);
 
-  // Candidate Showcase Carousel State
-  const [candIndex, setCandIndex] = useState(0);
-  const [isCandHovered, setIsCandHovered] = useState(false);
 
-  const candCount = CANDIDATES.length;
-
-  const nextCandidate = useCallback(() => {
-    setCandIndex((prev) => (prev + 1) % candCount);
-  }, [candCount]);
-
-  const prevCandidate = useCallback(() => {
-    setCandIndex((prev) => (prev - 1 + candCount) % candCount);
-  }, [candCount]);
-
-  useEffect(() => {
-    if (isCandHovered) return;
-    const timer = setInterval(() => {
-      nextCandidate();
-    }, 2000);
-    return () => clearInterval(timer);
-  }, [nextCandidate, isCandHovered]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -475,11 +454,13 @@ const About = () => {
             data-aos="fade-up"
             data-aos-duration="1000"
           >
-            <div 
-              className="value-icon-wrapper"
-              dangerouslySetInnerHTML={{ __html: valueBulbSvg }}
-            />
-            <h3 className="value-title">INNOVATION & INTEGRITY</h3>
+            <div className="value-card-header">
+              <div 
+                className="value-icon-wrapper"
+                dangerouslySetInnerHTML={{ __html: valueBulbSvg }}
+              />
+              <h3 className="value-title">INNOVATION & INTEGRITY</h3>
+            </div>
             <p className="value-description">
               We embrace cutting-edge technologies and creative solutions while maintaining transparency, honesty, and ethical practices in all our business dealings.
             </p>
@@ -493,11 +474,13 @@ const About = () => {
             data-aos-delay="150"
             data-aos-duration="1000"
           >
-            <div 
-              className="value-icon-wrapper"
-              dangerouslySetInnerHTML={{ __html: valueShieldSvg }}
-            />
-            <h3 className="value-title">COMMITMENT TO QUALITY</h3>
+            <div className="value-card-header">
+              <div 
+                className="value-icon-wrapper"
+                dangerouslySetInnerHTML={{ __html: valueShieldSvg }}
+              />
+              <h3 className="value-title">COMMITMENT TO QUALITY</h3>
+            </div>
             <p className="value-description">
               We maintain the highest standards in everything we do, from code quality to client service.
             </p>
@@ -511,11 +494,13 @@ const About = () => {
             data-aos-delay="300"
             data-aos-duration="1000"
           >
-            <div 
-              className="value-icon-wrapper"
-              dangerouslySetInnerHTML={{ __html: valueHandshakeSvg }}
-            />
-            <h3 className="value-title">CUSTOMER-CENTRIC APPROACH</h3>
+            <div className="value-card-header">
+              <div 
+                className="value-icon-wrapper"
+                dangerouslySetInnerHTML={{ __html: valueHandshakeSvg }}
+              />
+              <h3 className="value-title">CUSTOMER-CENTRIC APPROACH</h3>
+            </div>
             <p className="value-description">
               We build long-term relationships with our clients, acting as trusted technology partners focused on their success.
             </p>
@@ -529,11 +514,13 @@ const About = () => {
             data-aos-delay="450"
             data-aos-duration="1000"
           >
-            <div 
-              className="value-icon-wrapper"
-              dangerouslySetInnerHTML={{ __html: teamCollabSvg }}
-            />
-            <h3 className="value-title">TEAM COLLABORATION</h3>
+            <div className="value-card-header">
+              <div 
+                className="value-icon-wrapper"
+                dangerouslySetInnerHTML={{ __html: teamCollabSvg }}
+              />
+              <h3 className="value-title">TEAM COLLABORATION</h3>
+            </div>
             <p className="value-description">
               We faster a collaborative environment where teamwork and shared knowledge drive exceptional results.
             </p>
@@ -709,48 +696,55 @@ const About = () => {
       <div className="about-candidates-container">
         {/* Section Header */}
         <header className="about-candidates-header">
-          <div className="candidates-eyebrow-pill" data-aos="fade-up">
-            <span className="candidates-glow-dot"></span>
-            Talent Showcase
-          </div>
-          <h2 className="candidates-main-title" data-aos="fade-up" data-aos-delay="100">
+          <h2 className="candidates-main-title" data-aos="fade-up">
             MEET OUR CANDIDATES
           </h2>
-          <p className="candidates-section-subtitle" data-aos="fade-up" data-aos-delay="150">
+          <p className="candidates-section-subtitle" data-aos="fade-up" data-aos-delay="100">
             Promising tech professionals trained and empowered to drive enterprise digital transformation.
           </p>
         </header>
 
-        {/* Candidate 3x3 Grid Showcase (9 Cards, Row 2 Col 2 Center Active) */}
-        <div 
-          className="candidates-grid-stage"
-          onMouseEnter={() => setIsCandHovered(true)}
-          onMouseLeave={() => setIsCandHovered(false)}
-        >
-          <div className="candidates-grid-container">
-            {Array.from({ length: 9 }).map((_, slotIdx) => {
-              const candIndexForSlot = (candIndex + slotIdx) % candCount;
-              const cand = CANDIDATES[candIndexForSlot];
-              const isCenter = slotIdx === 4; // Row 2, Col 2 (Middle slot)
+        {/* Infinite Marquee Track Showcase */}
+        <div className="candidates-marquee-container">
+          <div className="candidates-marquee-fade left" aria-hidden="true" />
+          <div className="candidates-marquee-fade right" aria-hidden="true" />
 
-              return (
-                <div
-                  key={`slot-${slotIdx}-${cand.id}`}
-                  className={`candidate-grid-card ${isCenter ? 'is-center active' : ''}`}
-                >
+          {/* Marquee Row 1 (Left Scroll) */}
+          <div className="candidates-marquee-row">
+            <div className="candidates-marquee-track">
+              {[...CANDIDATES.slice(0, 6), ...CANDIDATES.slice(0, 6), ...CANDIDATES.slice(0, 6)].map((cand, idx) => (
+                <div key={`r1-${idx}-${cand.id}`} className="candidate-marquee-card">
                   <div className="candidate-card-inner">
                     <div className="candidate-img-wrapper">
                       <img src={cand.img} alt={cand.name} loading="lazy" />
-                      <div className="candidate-img-overlay" />
                     </div>
                     <div className="candidate-info-box">
                       <h3 className="candidate-name">{cand.name}</h3>
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
+
+          {/* Marquee Row 2 (Right Scroll) */}
+          <div className="candidates-marquee-row">
+            <div className="candidates-marquee-track track-reverse">
+              {[...CANDIDATES.slice(6, 12), ...CANDIDATES.slice(6, 12), ...CANDIDATES.slice(6, 12)].map((cand, idx) => (
+                <div key={`r2-${idx}-${cand.id}`} className="candidate-marquee-card">
+                  <div className="candidate-card-inner">
+                    <div className="candidate-img-wrapper">
+                      <img src={cand.img} alt={cand.name} loading="lazy" />
+                    </div>
+                    <div className="candidate-info-box">
+                      <h3 className="candidate-name">{cand.name}</h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -839,7 +833,7 @@ const About = () => {
           </article>
 
           {/* Card 4: Global Horizon */}
-          <article className="story-card" data-aos="fade-up" data-aos-delay="400">
+          <article className="story-card story-card-featured" data-aos="fade-up" data-aos-delay="400">
             <div className="story-card-top-bar" />
             <div className="story-card-header">
               <span className="story-badge badge-horizon">2027 & BEYOND</span>

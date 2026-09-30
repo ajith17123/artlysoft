@@ -4,7 +4,6 @@ import { gsap } from 'gsap';
 import { GoArrowUpRight } from 'react-icons/go';
 import { FiPhone } from 'react-icons/fi';
 import artlyLogo from '../assets/images/ARTLY.png';
-import ArtlyTitle from './ArtlyTitle';
 import '../assets/style/Navbar.css';
 import homeGif from "../assets/gifs/home_icon.gif";
 import callSvg from "../assets/gifs/call_icon.svg";
@@ -216,7 +215,7 @@ const Navbar = ({
 
           <div className="logo-container">
             <img src={artlyLogo} alt="Artlysoft Logo" className="logo-image" />
-            <ArtlyTitle className="logo-text" />
+            <span className="logo-text">Artlysoft</span>
           </div>
 
 

@@ -418,10 +418,12 @@ const Training = () => {
           {philosophyPillars.map((pillar) => (
             <div key={pillar.number} className={`philosophy-card ${pillar.accent}`}>
               <div className="philosophy-pillar-number">{pillar.number}</div>
-              <div className="philosophy-icon-box">
-                <img src={pillar.icon} alt={pillar.title} className="philosophy-icon" />
+              <div className="philosophy-card-header">
+                <div className="philosophy-icon-box">
+                  <img src={pillar.icon} alt={pillar.title} className="philosophy-icon" />
+                </div>
+                <h3 className="philosophy-card-title">{pillar.title}</h3>
               </div>
-              <h3 className="philosophy-card-title">{pillar.title}</h3>
               <p className="philosophy-card-desc">{pillar.description}</p>
             </div>
           ))}
@@ -446,14 +448,14 @@ const Training = () => {
         <div className="overview-cards-grid">
           {overviewCards.map((card, idx) => (
             <div key={idx} className={`overview-card ${card.accent}`}>
-              <div className="overview-card-icon-box">
-                <img src={card.icon} alt={card.title} className="overview-card-icon" />
-              </div>
-              <div className="overview-card-content">
+              <div className="overview-card-header">
+                <div className="overview-card-icon-box">
+                  <img src={card.icon} alt={card.title} className="overview-card-icon" />
+                </div>
                 <h3 className="overview-card-title">{card.title}</h3>
-                <div className="overview-card-value">{card.value}</div>
-                <p className="overview-card-detail">{card.detail}</p>
               </div>
+              <div className="overview-card-value">{card.value}</div>
+              <p className="overview-card-detail">{card.detail}</p>
             </div>
           ))}
         </div>
@@ -471,8 +473,10 @@ const Training = () => {
         <div className="highlights-grid">
           {keyHighlights.map((item) => (
             <div key={item.id} className="highlight-card">
-              <div className="highlight-badge-num">{item.id}</div>
-              <h3 className="highlight-title">{item.title}</h3>
+              <div className="highlight-card-header">
+                <div className="highlight-badge-num">{item.id}</div>
+                <h3 className="highlight-title">{item.title}</h3>
+              </div>
               <p className="highlight-desc">{item.desc}</p>
             </div>
           ))}
@@ -491,13 +495,13 @@ const Training = () => {
         <div className="why-choose-list">
           {whyChooseReasons.map((reason, idx) => (
             <div key={idx} className={`why-choose-card ${reason.accent}`}>
-              <div className="why-choose-icon-box">
-                <img src={reason.icon} alt={reason.title} className="why-choose-icon" />
-              </div>
-              <div className="why-choose-text-block">
+              <div className="why-choose-card-header">
+                <div className="why-choose-icon-box">
+                  <img src={reason.icon} alt={reason.title} className="why-choose-icon" />
+                </div>
                 <h3 className="why-choose-card-title">{reason.title}</h3>
-                <p className="why-choose-card-desc">{reason.desc}</p>
               </div>
+              <p className="why-choose-card-desc">{reason.desc}</p>
             </div>
           ))}
         </div>
@@ -824,7 +828,7 @@ const Training = () => {
                   onChange={handleChange}
                   placeholder="Tell us about your career goals or specific questions..."
                   className="form-textarea-field"
-                  rows="3"
+                  rows="2"
                 ></textarea>
               </div>
 

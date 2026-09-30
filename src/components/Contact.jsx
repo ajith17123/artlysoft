@@ -326,7 +326,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   placeholder="How Can We Help You?"
                   className="form-textarea"
-                  rows="4"
+                  rows="2"
                 />
               </div>
 

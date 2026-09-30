@@ -31,7 +31,7 @@ const Particles = () => {
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          radius: Math.random() * 2.2 + 2.0,
+          radius: Math.random() * 1.0 + 1.0,
           vx: (Math.random() - 0.5) * 0.45,
           vy: - (Math.random() * 0.4 + 0.2), // Gentle upward floating
           alpha: Math.random() * 0.2 + 0.15,
@@ -75,7 +75,7 @@ const Particles = () => {
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${PARTICLE_COLOR.r}, ${PARTICLE_COLOR.g}, ${PARTICLE_COLOR.b}, ${clampedAlpha})`;
         ctx.shadowColor = `rgba(${PARTICLE_COLOR.r}, ${PARTICLE_COLOR.g}, ${PARTICLE_COLOR.b}, 0.25)`;
-        ctx.shadowBlur = 8;
+        ctx.shadowBlur = 4;
         ctx.fill();
 
         // Reset shadow for performance

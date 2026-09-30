@@ -217,30 +217,30 @@ const Career = () => {
           data-aos-delay="100"
           data-aos-duration="1000"
         >
-          <div className="careers-icon-box">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="careers-icon-svg heart-svg" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2.25" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </div>
-          <div className="careers-card-content">
-            <h3 className="careers-card-title">Creative Environment</h3>
-            <p className="careers-card-desc">
-              Work in an environment that encourages innovation and creative problem-solving.
-            </p>
-            <div className="careers-features-container">
-              <span className="careers-feature-tag">Innovation First</span>
-              <span className="careers-feature-tag">Flexible Hours</span>
-              <span className="careers-feature-tag">Modern Workspace</span>
+          <div className="careers-card-header">
+            <div className="careers-icon-box">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="careers-icon-svg heart-svg" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2.25" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
             </div>
+            <h3 className="careers-card-title">Creative Environment</h3>
+          </div>
+          <p className="careers-card-desc">
+            Work in an environment that encourages innovation and creative problem-solving.
+          </p>
+          <div className="careers-features-container">
+            <span className="careers-feature-tag">Innovation First</span>
+            <span className="careers-feature-tag">Flexible Hours</span>
+            <span className="careers-feature-tag">Modern Workspace</span>
           </div>
         </div>
 
@@ -251,35 +251,35 @@ const Career = () => {
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          <div className="careers-icon-box">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="careers-icon-svg cap-svg" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2.25" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              {/* Mortarboard Cap Top */}
-              <path d="M2 10L12 5l10 5-10 5z" />
-              {/* Mortarboard Cap Base */}
-              <path d="M6 12.5V16a6 6 0 0 0 12 0v-3.5" />
-              {/* Mortarboard Cap Tassel */}
-              <path className="cap-tassel" d="M18 12.5V19c0 .5.5 1 1 1s1-.5 1-1v-6.5" />
-            </svg>
-          </div>
-          <div className="careers-card-content">
-            <h3 className="careers-card-title">Continuous Learning</h3>
-            <p className="careers-card-desc">
-              Access to training, workshops, and opportunities to work with cutting-edge technologies.
-            </p>
-            <div className="careers-features-container">
-              <span className="careers-feature-tag">Tech Workshops</span>
-              <span className="careers-feature-tag">Certifications</span>
-              <span className="careers-feature-tag">Mentorship</span>
+          <div className="careers-card-header">
+            <div className="careers-icon-box">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="careers-icon-svg cap-svg" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2.25" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                {/* Mortarboard Cap Top */}
+                <path d="M2 10L12 5l10 5-10 5z" />
+                {/* Mortarboard Cap Base */}
+                <path d="M6 12.5V16a6 6 0 0 0 12 0v-3.5" />
+                {/* Mortarboard Cap Tassel */}
+                <path className="cap-tassel" d="M18 12.5V19c0 .5.5 1 1 1s1-.5 1-1v-6.5" />
+              </svg>
             </div>
+            <h3 className="careers-card-title">Continuous Learning</h3>
+          </div>
+          <p className="careers-card-desc">
+            Access to training, workshops, and opportunities to work with cutting-edge technologies.
+          </p>
+          <div className="careers-features-container">
+            <span className="careers-feature-tag">Tech Workshops</span>
+            <span className="careers-feature-tag">Certifications</span>
+            <span className="careers-feature-tag">Mentorship</span>
           </div>
         </div>
 
@@ -290,35 +290,35 @@ const Career = () => {
           data-aos-delay="300"
           data-aos-duration="1000"
         >
-          <div className="careers-icon-box">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="careers-icon-svg" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2.25" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              {/* First Figure */}
-              <path className="collab-user-1" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle className="collab-user-1" cx="9" cy="7" r="4" />
-              {/* Second Figure (Slightly Offset/Behind) */}
-              <path className="collab-user-2" d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path className="collab-user-2" d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-          </div>
-          <div className="careers-card-content">
-            <h3 className="careers-card-title">Team Collaboration</h3>
-            <p className="careers-card-desc">
-              Work alongside talented professionals in a collaborative and supportive team environment.
-            </p>
-            <div className="careers-features-container">
-              <span className="careers-feature-tag">Diverse Teams</span>
-              <span className="careers-feature-tag">Supportive Culture</span>
-              <span className="careers-feature-tag">Cross-functional</span>
+          <div className="careers-card-header">
+            <div className="careers-icon-box">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="careers-icon-svg" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2.25" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                {/* First Figure */}
+                <path className="collab-user-1" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle className="collab-user-1" cx="9" cy="7" r="4" />
+                {/* Second Figure (Slightly Offset/Behind) */}
+                <path className="collab-user-2" d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path className="collab-user-2" d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
             </div>
+            <h3 className="careers-card-title">Team Collaboration</h3>
+          </div>
+          <p className="careers-card-desc">
+            Work alongside talented professionals in a collaborative and supportive team environment.
+          </p>
+          <div className="careers-features-container">
+            <span className="careers-feature-tag">Diverse Teams</span>
+            <span className="careers-feature-tag">Supportive Culture</span>
+            <span className="careers-feature-tag">Cross-functional</span>
           </div>
         </div>
 

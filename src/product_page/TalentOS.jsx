@@ -2301,7 +2301,7 @@ function Home() {
               <div className="pricing-card-price">
                 <div className="price-amount-wrapper">
                   <span className="price-currency">₹</span>
-                  <span className="price-val">{isAnnual ? '4,999' : '5,999'}</span>
+                  <span className="price-val">XXXX</span>
                   <span className="price-period">/month</span>
                 </div>
                 <p className={`price-billed-info ${isAnnual ? 'visible' : ''}`}>
@@ -2333,7 +2333,7 @@ function Home() {
               <div className="pricing-card-price">
                 <div className="price-amount-wrapper">
                   <span className="price-currency">₹</span>
-                  <span className="price-val">{isAnnual ? '12,999' : '15,999'}</span>
+                  <span className="price-val">XXXX</span>
                   <span className="price-period">/month</span>
                 </div>
                 <p className={`price-billed-info ${isAnnual ? 'visible' : ''}`}>
@@ -2583,16 +2583,13 @@ function Home() {
                 The AI-powered Education Management Platform for forward-thinking institutions.
               </p>
               <div className="footer-socials">
-                <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Twitter X">
-                  <BsTwitterX />
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/artlysoft-private-limited/products/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
                   <BsLinkedin />
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="YouTube">
+                <a href="#talent-top" onClick={(e) => { e.preventDefault(); scrollToSection('talent-top'); }} className="social-icon" aria-label="YouTube">
                   <BsYoutube />
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
+                <a href="#talent-top" onClick={(e) => { e.preventDefault(); scrollToSection('talent-top'); }} className="social-icon" aria-label="GitHub">
                   <BsGithub />
                 </a>
               </div>

@@ -1,5 +1,5 @@
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram, FaYoutube, FaGithub, FaLinkedinIn, FaFacebookF, FaHeart } from 'react-icons/fa';
-import footerImg from '../assets/images/Footer.jpg';
+import footerImg from '../assets/images/footer.png';
 import '../assets/style/Footer.css';
 
 const Footer = () => {

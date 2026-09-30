@@ -1,5 +1,5 @@
 /* ==========================================
-   ARTLYSOFT PARTICLE TEXT PRELOADER
+   ARTLYSOFT SEAMLESS VIDEO PRELOADER
    ========================================== */
 .preloader-container {
   position: fixed;
@@ -8,7 +8,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 999999;
-  background: #060d19; /* Root dark blue background */
+  background-color: #ECE6DE; /* Matched background color #ECE6DE */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@
   overflow: hidden;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   user-select: none;
 }
 
@@ -26,96 +26,84 @@
   pointer-events: none;
 }
 
-/* Background Ambient Glows */
-.preloader-glow-top {
-  position: absolute;
-  top: -20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0, 102, 204, 0.25) 0%, rgba(6, 13, 25, 0) 70%);
-  pointer-events: none;
-}
-
-.preloader-glow-bottom {
-  position: absolute;
-  bottom: -20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(6, 13, 25, 0) 70%);
-  pointer-events: none;
-}
-
-/* Canvas Wrapper */
-.preloader-canvas-wrapper {
+/* Video Wrapper & Responsive Sizing - Feathered & Masked Edges */
+.preloader-video-wrapper {
   position: relative;
-  width: 100%;
-  max-width: 1100px;
-  height: 340px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 100vw;
+  height: calc(100vh - 90px);
+  padding: 20px 0;
 }
 
-.preloader-canvas {
-  width: 100%;
-  height: 100%;
+/* Inset Box-Shadow Overlay: Covers rectangular outer borders */
+.preloader-video-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Inner shadow that covers the outer rectangular video borders */
+  box-shadow: inset 0 0 60px 40px #ECE6DE;
+  z-index: 2;
+}
+
+/* Center Video - Radial Transparency Mask & Multiply Blend Mode */
+.preloader-video,
+.center-video {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   display: block;
+  mix-blend-mode: multiply; /* Knock out light video background into #ECE6DE */
+
+  /* Masks all 4 rectangular edges seamlessly into the page background */
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    black 55%,
+    transparent 98%
+  );
+  mask-image: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    black 55%,
+    transparent 98%
+  );
 }
 
-/* Tagline & Progress Indicator */
+/* Tagline Footer - Positioned underneath cleanly */
 .preloader-footer {
   position: absolute;
-  bottom: 8%;
+  bottom: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
   z-index: 10;
 }
 
 .preloader-tagline {
   font-family: 'Plus Jakarta Sans', var(--font-plus-jakarta), sans-serif;
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 3px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  text-shadow: 0 0 12px rgba(0, 102, 204, 0.5);
-}
-
-.preloader-progress-track {
-  width: 220px;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.preloader-progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #0066cc 0%, #00d2ff 100%);
-  box-shadow: 0 0 10px #00d2ff;
-  border-radius: 10px;
-  transition: width 0.1s linear;
+  color: #4E70F6; /* Vibrant Royal Blue */
+  text-shadow: 0 2px 12px rgba(236, 230, 222, 0.9);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px 24px;
+  border-radius: 50px;
+  border: 1px solid rgba(78, 112, 246, 0.2);
+  box-shadow: 0 8px 24px rgba(10, 25, 47, 0.08);
 }
 
 @media (max-width: 768px) {
-  .preloader-canvas-wrapper {
-    height: 240px;
-  }
-
   .preloader-tagline {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-  }
-
-  .preloader-progress-track {
-    width: 170px;
+    font-size: 1rem;
+    letter-spacing: 1.8px;
+    padding: 6px 18px;
   }
 }
+
