@@ -1,9 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../assets/style/Preloader.css';
 import preloaderVideo from '../assets/videos/Preloader.mp4';
 
 export default function Preloader({ onComplete }) {
   const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    // Lock scrolling on document and body while preloader is active
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+    };
+  }, []);
 
   const handleVideoEnded = () => {
     setIsFading(true);
@@ -13,7 +27,10 @@ export default function Preloader({ onComplete }) {
   };
 
   return (
-    <div className={`preloader-container ${isFading ? 'fade-out' : ''}`}>
+    <div 
+      className={`preloader-container ${isFading ? 'fade-out' : ''}`}
+      onTouchMove={(e) => e.preventDefault()}
+    >
       <div className="preloader-video-wrapper">
         <video
           src={preloaderVideo}
@@ -31,3 +48,4 @@ export default function Preloader({ onComplete }) {
     </div>
   );
 }
+
