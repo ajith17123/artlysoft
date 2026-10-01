@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../assets/style/Preloader.css';
-import preloaderVideo from '../assets/videos/Preloader.mp4';
+import preloaderVideo from '../assets/videos/Preloader1.mp4';
 
 export default function Preloader({ onComplete }) {
   const [isFading, setIsFading] = useState(false);
@@ -43,10 +43,6 @@ export default function Preloader({ onComplete }) {
           onEnded={handleVideoEnded}
           className="preloader-video center-video"
         />
-      </div>
-
-      <div className="preloader-footer">
-        <div className="preloader-tagline">Welcome To Artlysoft</div>
       </div>
     </div>
   );

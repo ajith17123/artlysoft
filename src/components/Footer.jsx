@@ -66,7 +66,7 @@ const Footer = () => {
             <a href="https://youtube.com/@artlysoftprivatelimited?si=jkp8QbDDpDsLTxX8" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="footer-social-btn">
               <FaYoutube />
             </a>
-            <a href="https://www.linkedin.com/company/artlysoft-private-limited/posts/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-social-btn">
+            <a href="https://www.linkedin.com/company/artlysoft-private-limited/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-social-btn">
               <FaLinkedinIn />
             </a>
             <a href="https://github.com/Artlysoft-Pvt-Ltd" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="footer-social-btn">
