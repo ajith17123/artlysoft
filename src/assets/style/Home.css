@@ -33,7 +33,7 @@
   position: relative;
   height: 100%;
   width: 100%;
-  max-width: 1240px;
+  max-width: var(--container-hero-width, 1280px);
   margin: 0 auto;
 }
 
@@ -817,7 +817,7 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
   background-color: #ffffff; /* Clean white background */
   color: var(--text);
   padding: 1.5rem 1.5rem;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 65px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -870,7 +870,7 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
 }
 
 .bento-grid {
-  max-width: 1100px;
+  max-width: var(--container-max-width, 1260px);
   width: 100%;
   margin: 0 auto;
   display: grid;
@@ -1085,7 +1085,9 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
 }
 
 .about-section {
-  padding: 5rem 2rem 6rem;
+  padding: 2.25rem 1.5rem;
+  min-height: calc(100vh - 65px);
+  box-sizing: border-box;
   background: linear-gradient(180deg, #ffffff 0%, #f5f3ef 100%);
   border-top: 1px solid var(--border);
   display: flex;
@@ -1099,7 +1101,7 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
   border-radius: 1.5rem;
   /* The 3px padding gap becomes the visible "border" thickness */
   padding: 3px;
-  max-width: 960px;
+  max-width: var(--container-card-narrow, 1080px);
   width: 100%;
   /* Rotating conic-gradient that creates the sweeping glow */
   background: conic-gradient(
@@ -1457,7 +1459,7 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
 /* ── Section Container ── */
 .tm-section {
   position: relative;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 65px);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1550,7 +1552,7 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
   position: relative;
   z-index: 5;
   width: 100%;
-  max-width: 1140px;
+  max-width: var(--container-max-width, 1260px);
   height: 330px;
   display: flex;
   align-items: center;
@@ -2201,8 +2203,8 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
   background-color: transparent; /* photo parallax layer provides the background */
   position: relative;
   color: var(--text);
-  padding: 2.5rem 2rem;
-  min-height: calc(100vh - 70px);
+  padding: 2rem 1.5rem;
+  min-height: calc(100vh - 65px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2267,7 +2269,7 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
 }
 
 .why-content-grid {
-  max-width: 1150px;
+  max-width: var(--container-max-width, 1260px);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -2661,8 +2663,8 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
    ========================================== */
 .creative-lab-section {
   background-color: #ffffff;
-  padding: 2rem 2rem 1.5rem;
-  min-height: calc(100vh - 70px);
+  padding: 1.75rem 1.5rem 1.25rem;
+  min-height: calc(100vh - 65px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2672,7 +2674,7 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
 }
 
 .creative-lab-container {
-  max-width: 1320px;
+  max-width: var(--container-max-width, 1260px);
   margin: 0 auto;
   width: 100%;
 }
@@ -2995,5 +2997,34 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
 
   .creative-lab-video-wrapper {
     height: 240px;
+  }
+}
+
+
+/* ──────────────────────────────────────────
+   Large Desktop & Tall Laptop Breakpoints (Fixing Excessive Vertical Gaps)
+   ────────────────────────────────────────── */
+
+/* 1. Large Display Laptops & Tall Viewports (height >= 800px) */
+@media (min-width: 993px) and (min-height: 800px) {
+  .capabilities-section,
+  .about-section,
+  .tm-section,
+  .why-section,
+  .creative-lab-section {
+    min-height: auto;
+    padding: 3.25rem 1.5rem;
+  }
+}
+
+/* 2. Extra-Large Monitors & High-Resolution Displays (1400px and above) */
+@media (min-width: 1400px) {
+  .capabilities-section,
+  .about-section,
+  .tm-section,
+  .why-section,
+  .creative-lab-section {
+    min-height: auto;
+    padding: 3.5rem 1.5rem;
   }
 }

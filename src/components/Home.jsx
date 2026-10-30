@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import codeIcon from '../assets/gifs/code.svg';
 import aimlIcon from '../assets/gifs/aiml.svg';
 import automationIcon from '../assets/gifs/automation.svg';
@@ -283,7 +284,7 @@ const HERO_SLIDES = [
     headlineClass: "headline-lg",
     subheadline: "Empowering forward-thinking businesses through intelligent automation, cloud engineering, and scalable enterprise platforms.",
     ctaText: "Explore Our Vision",
-    ctaLink: "#/about",
+    ctaLink: "/about",
     themeClass: "hero-theme-brand",
     accentColor: "rgba(0, 198, 255, 1)",
     gradient: "linear-gradient(135deg, rgba(0, 114, 243, 0.15) 0%, rgba(0, 198, 255, 0.15) 100%)",
@@ -308,7 +309,7 @@ const HERO_SLIDES = [
     headline: "Engineering Scalable Systems from Cloud to AI",
     subheadline: "Accelerate your digital roadmap with enterprise-grade Product Engineering, Multi-Cloud integration (AWS, Azure, GCP), Data Analytics, and RPA.",
     ctaText: "View All Services",
-    ctaLink: "#/services",
+    ctaLink: "/services",
     themeClass: "hero-theme-services",
     accentColor: "rgba(224, 104, 14, 1)",
     gradient: "linear-gradient(135deg, rgba(224, 104, 14, 0.15) 0%, rgba(255, 156, 51, 0.15) 100%)",
@@ -341,9 +342,9 @@ const HERO_SLIDES = [
     headline: "The AI-Powered Operating System for Smart Hiring",
     subheadline: "Transform recruitment with intelligent candidate matching, automated parsing, and skill intelligence designed to hire top talent faster.",
     ctaText: "Explore TalentOS",
-    ctaLink: "#/products/talent-os",
+    ctaLink: "/products/talent-os",
     secondaryCtaText: "Book a Demo →",
-    secondaryCtaLink: "#/contact",
+    secondaryCtaLink: "/contact",
     themeClass: "hero-theme-talentos",
     accentColor: "rgba(168, 85, 247, 1)",
     gradient: "linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(192, 132, 252, 0.15) 100%)",
@@ -368,7 +369,7 @@ const HERO_SLIDES = [
     headline: "Build the Future of Intelligent Tech With Us",
     subheadline: "Join a passionate team of developers, cloud architects, and AI pioneers building innovative software for global industries.",
     ctaText: "Explore Open Roles",
-    ctaLink: "#/joinus/career",
+    ctaLink: "/joinus/career",
     themeClass: "hero-theme-careers",
     accentColor: "rgba(16, 185, 129, 1)",
     gradient: "linear-gradient(135deg, rgba(5, 150, 105, 0.15) 0%, rgba(52, 211, 153, 0.15) 100%)",
@@ -686,13 +687,13 @@ const Home = () => {
                       </div>
 
                       <div className="hero-actions">
-                        <a href={HERO_SLIDES[currentSlide].ctaLink} className="hero-cta-btn primary-btn">
+                        <Link to={HERO_SLIDES[currentSlide].ctaLink} className="hero-cta-btn primary-btn">
                           {HERO_SLIDES[currentSlide].ctaText}
-                        </a>
+                        </Link>
                         {HERO_SLIDES[currentSlide].secondaryCtaText && (
-                          <a href={HERO_SLIDES[currentSlide].secondaryCtaLink} className="hero-cta-btn secondary-btn">
+                          <Link to={HERO_SLIDES[currentSlide].secondaryCtaLink} className="hero-cta-btn secondary-btn">
                             {HERO_SLIDES[currentSlide].secondaryCtaText}
-                          </a>
+                          </Link>
                         )}
                       </div>
                     </div>
@@ -749,13 +750,13 @@ const Home = () => {
                       </div>
 
                       <div className="hero-actions">
-                        <a href={HERO_SLIDES[currentSlide].ctaLink} className="hero-cta-btn primary-btn">
+                        <Link to={HERO_SLIDES[currentSlide].ctaLink} className="hero-cta-btn primary-btn">
                           {HERO_SLIDES[currentSlide].ctaText}
-                        </a>
+                        </Link>
                         {HERO_SLIDES[currentSlide].secondaryCtaText && (
-                          <a href={HERO_SLIDES[currentSlide].secondaryCtaLink} className="hero-cta-btn secondary-btn">
+                          <Link to={HERO_SLIDES[currentSlide].secondaryCtaLink} className="hero-cta-btn secondary-btn">
                             {HERO_SLIDES[currentSlide].secondaryCtaText}
-                          </a>
+                          </Link>
                         )}
                       </div>
                     </div>
@@ -912,9 +913,9 @@ const Home = () => {
               {/* Top-Right curved arrow (points ↙ toward button) */}
               <span style={{ display: 'contents' }} dangerouslySetInnerHTML={{ __html: aboutArrowTrSvg }} />
 
-              <a href="#/about" className="about-read-btn" id="about-read-more-btn">
+              <Link to="/about" className="about-read-btn" id="about-read-more-btn">
                 Read more about us
-              </a>
+              </Link>
 
               {/* Bottom-Left curved arrow (points ↗ toward button) */}
               <span style={{ display: 'contents' }} dangerouslySetInnerHTML={{ __html: aboutArrowBlSvg }} />

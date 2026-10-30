@@ -7,9 +7,9 @@
    ========================================== */
 .career-hero-section {
   width: 100vw;
-  height: clamp(380px, 55vh, 460px);
-  min-height: 380px;
-  max-height: 460px;
+  height: calc(100vh - 65px);
+  min-height: calc(100vh - 65px);
+  max-height: calc(100vh - 65px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,12 +21,12 @@
   overflow: hidden;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
 }
 
 .career-hero-card {
   width: 100%;
-  max-width: 1280px;
+  max-width: var(--container-hero-width, 1280px);
   height: 100%;
   max-height: 100%;
   display: flex;
@@ -239,7 +239,7 @@
 
 .careers-bento-grid {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-max-width, 1260px);
   margin: 1.5rem auto 1rem;
   display: flex;
   justify-content: center;
@@ -510,11 +510,15 @@
 
 .open-positions-section {
   width: 100%;
-  max-width: 1200px;
-  margin: 2rem auto 1.5rem;
+  max-width: var(--container-max-width, 1260px);
+  margin: 0 auto;
+  min-height: calc(100vh - 65px);
+  padding: 2.25rem 1.5rem;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .open-positions-header {
@@ -885,15 +889,18 @@
    ────────────────────────────────────────── */
 
 .how-to-apply-section {
-  width: 100%;
-  max-width: none;               /* full viewport width for image edge-to-edge */
-  padding: 5rem 2rem;
-  margin: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: none;
+  min-height: calc(100vh - 65px);
+  padding: 3rem 1.5rem;
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 /* Par3 image overlay colour */
@@ -1275,8 +1282,14 @@
 
 .career-stats-section {
   width: 100%;
-  max-width: 1200px;
-  margin: 5rem auto 2rem;
+  max-width: var(--container-max-width, 1260px);
+  margin: 0 auto;
+  min-height: calc(100vh - 65px);
+  padding: 2.25rem 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .career-stats-container {
@@ -1484,5 +1497,34 @@
   .envelope-wrapper .how-to-apply-cta-btn {
     padding: 0.35rem 0.95rem;
     font-size: 0.7rem;
+  }
+}
+
+
+/* ──────────────────────────────────────────
+   Large Desktop & Tall Laptop Breakpoints (Fixing Excessive Vertical Gaps)
+   ────────────────────────────────────────── */
+
+/* 1. Large Display Laptops & Tall Viewports (height >= 800px) */
+@media (min-width: 993px) and (min-height: 800px) {
+  .open-positions-section,
+  .how-to-apply-section,
+  .career-stats-section {
+    min-height: auto;
+    padding: 3.25rem 1.5rem;
+  }
+}
+
+/* 2. Extra-Large Monitors & High-Resolution Displays (1400px and above) */
+@media (min-width: 1400px) {
+  .career-hero-section {
+    max-height: 720px;
+  }
+
+  .open-positions-section,
+  .how-to-apply-section,
+  .career-stats-section {
+    min-height: auto;
+    padding: 3.5rem 1.5rem;
   }
 }

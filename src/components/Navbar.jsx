@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { GoArrowUpRight } from 'react-icons/go';
 import { FiPhone } from 'react-icons/fi';
@@ -14,8 +14,8 @@ const defaultItems = [
     bgColor: "var(--card-services-bg)",
     textColor: "var(--card-services-text)",
     links: [
-      { label: "About", href: "#/about", ariaLabel: "About Page" },
-      { label: "Services", href: "#/services", ariaLabel: "Our Services" }
+      { label: "About", href: "/about", ariaLabel: "About Page" },
+      { label: "Services", href: "/services", ariaLabel: "Our Services" }
     ]
   },
   {
@@ -23,7 +23,7 @@ const defaultItems = [
     bgColor: "var(--card-products-bg)",
     textColor: "var(--card-products-text)",
     links: [
-      { label: "TalentOs", href: "#/products/talent-os", ariaLabel: "TalentOs Product" }
+      { label: "TalentOs", href: "/products/talent-os", ariaLabel: "TalentOs Product" }
     ]
   },
   {
@@ -31,8 +31,8 @@ const defaultItems = [
     bgColor: "var(--card-joinus-bg)",
     textColor: "var(--card-joinus-text)",
     links: [
-      { label: "Career", href: "#/joinus/career", ariaLabel: "Careers" },
-      { label: "Training", href: "#/joinus/training", ariaLabel: "Training" }
+      { label: "Career", href: "/joinus/career", ariaLabel: "Careers" },
+      { label: "Training", href: "/joinus/training", ariaLabel: "Training" }
     ]
   }
 ];
@@ -53,6 +53,7 @@ const Navbar = ({
   const tlRef = useRef(null);
   
   const location = useLocation();
+  const navigate = useNavigate();
 
   const closeMenu = () => {
     const tl = tlRef.current;
@@ -213,10 +214,10 @@ const Navbar = ({
             <div className="hamburger-line" />
           </div>
 
-          <div className="logo-container">
+          <Link to="/" className="logo-container" onClick={closeMenu} style={{ textDecoration: 'none' }}>
             <img src={artlyLogo} alt="Artlysoft Logo" className="logo-image" />
             <span className="logo-text">Artlysoft</span>
-          </div>
+          </Link>
 
 
 
@@ -258,25 +259,25 @@ const Navbar = ({
                 className="nav-card-label"
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
-                  if (item.label === "Services") { window.location.hash = "#/services"; closeMenu(); }
-                  else if (item.label === "Products") { window.location.hash = "#/products/talent-os"; closeMenu(); }
-                  else if (item.label === "JoinUs") { window.location.hash = "#/joinus/career"; closeMenu(); }
+                  if (item.label === "Services") { navigate("/services"); closeMenu(); }
+                  else if (item.label === "Products") { navigate("/products/talent-os"); closeMenu(); }
+                  else if (item.label === "JoinUs") { navigate("/joinus/career"); closeMenu(); }
                 }}
               >
                 {item.label}
               </div>
               <div className="nav-card-links">
                 {item.links?.map((lnk, i) => (
-                  <a
+                  <Link
                     key={`${lnk.label}-${i}`}
                     className="nav-card-link"
-                    href={lnk.href}
+                    to={lnk.href || lnk.to}
                     aria-label={lnk.ariaLabel}
                     onClick={closeMenu}
                   >
                     <GoArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
                     {lnk.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

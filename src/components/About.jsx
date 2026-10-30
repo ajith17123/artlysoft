@@ -265,36 +265,7 @@ const About = () => {
     return () => window.removeEventListener('hashchange', handleScrollTarget);
   }, []);
 
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
 
-    let ctx = gsap.context(() => {
-      if (valuesSectionRef.current) {
-        const speeds = [-30, -60, -40, -50];
-        valueCardsRef.current.forEach((card, idx) => {
-          if (!card) return;
-          gsap.fromTo(card,
-            { y: 0 },
-            {
-              y: speeds[idx % speeds.length],
-              ease: 'none',
-              scrollTrigger: {
-                trigger: valuesSectionRef.current,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true
-              }
-            }
-          );
-        });
-      }
-    });
-
-    return () => {
-      ctx.revert();
-    };
-  }, []);
 
   return (
     <>
@@ -433,14 +404,14 @@ const About = () => {
       </section>
 
       {/* Our Core Values Section */}
-      <section className="about-values-section parallax-section" ref={valuesSectionRef}>
+      <section className="about-values-section">
         <div className="about-values-container">
           {/* Section Header */}
           <header className="about-values-header">
-            <h2 className="about-values-title" data-aos="fade-up" data-aos-duration="1000">
+            <h2 className="about-values-title">
               OUR CORE VALUES
             </h2>
-            <p className="about-values-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <p className="about-values-subtitle">
               These fundamental principles guide everything we do and shape our company culture
             </p>
           </header>
@@ -448,12 +419,7 @@ const About = () => {
           {/* Grid Layout */}
           <div className="about-values-grid">
             {/* Card 1: Innovation & Integrity */}
-            <div
-              className="about-value-card accent-gold parallax-layer"
-              ref={el => valueCardsRef.current[0] = el}
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
+            <div className="about-value-card accent-gold">
               <div className="value-card-header">
                 <div
                   className="value-icon-wrapper"
@@ -467,13 +433,7 @@ const About = () => {
             </div>
 
             {/* Card 2: Commitment to Quality */}
-            <div
-              className="about-value-card accent-slate parallax-layer"
-              ref={el => valueCardsRef.current[1] = el}
-              data-aos="fade-up"
-              data-aos-delay="150"
-              data-aos-duration="1000"
-            >
+            <div className="about-value-card accent-slate">
               <div className="value-card-header">
                 <div
                   className="value-icon-wrapper"
@@ -487,13 +447,7 @@ const About = () => {
             </div>
 
             {/* Card 3: Customer-Centric Approach */}
-            <div
-              className="about-value-card accent-bronze parallax-layer"
-              ref={el => valueCardsRef.current[2] = el}
-              data-aos="fade-up"
-              data-aos-delay="300"
-              data-aos-duration="1000"
-            >
+            <div className="about-value-card accent-bronze">
               <div className="value-card-header">
                 <div
                   className="value-icon-wrapper"
@@ -507,13 +461,7 @@ const About = () => {
             </div>
 
             {/* Card 4: Team Collaboration */}
-            <div
-              className="about-value-card accent-gold parallax-layer"
-              ref={el => valueCardsRef.current[3] = el}
-              data-aos="fade-up"
-              data-aos-delay="450"
-              data-aos-duration="1000"
-            >
+            <div className="about-value-card accent-gold">
               <div className="value-card-header">
                 <div
                   className="value-icon-wrapper"

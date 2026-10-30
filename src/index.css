@@ -47,6 +47,12 @@
   --navy-bronze-border: #E2E8F0;
   --navy-bronze-text: #1E293B;
 
+  /* Global Layout Container Max-Width Scale (Calibrated Balance) */
+  --container-max-width: 1260px;
+  --container-nav-width: 1280px;
+  --container-hero-width: 1280px;
+  --container-card-narrow: 1080px;
+
   --sans: var(--font-inter);
   --heading: var(--font-inter);
   --mono: ui-monospace, Consolas, monospace;
@@ -63,6 +69,34 @@
 
   @media (max-width: 1024px) {
     font-size: 14px;
+  }
+}
+
+/* Responsive Container Scaling for Large Desktops & Gaming Laptops */
+@media (min-width: 1440px) {
+  :root {
+    --container-max-width: 1400px;
+    --container-nav-width: 1400px;
+    --container-hero-width: 1400px;
+    --container-card-narrow: 1200px;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --container-max-width: 1540px;
+    --container-nav-width: 1540px;
+    --container-hero-width: 1540px;
+    --container-card-narrow: 1320px;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --container-max-width: 1680px;
+    --container-nav-width: 1680px;
+    --container-hero-width: 1680px;
+    --container-card-narrow: 1440px;
   }
 }
 

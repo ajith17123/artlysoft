@@ -1,19 +1,22 @@
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram, FaYoutube, FaGithub, FaLinkedinIn, FaFacebookF, FaHeart } from 'react-icons/fa';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import footerImg from '../assets/images/footer.png';
 import '../assets/style/Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleTeamClick = (e) => {
-    const isAboutPage = window.location.hash.startsWith('#/about');
-    if (isAboutPage) {
-      e.preventDefault();
-      window.location.hash = '#/about#our-team';
+    e.preventDefault();
+    if (location.pathname === '/about') {
       const teamEl = document.getElementById('our-team');
       if (teamEl) {
         teamEl.scrollIntoView({ behavior: 'smooth' });
       }
+    } else {
+      navigate('/about#our-team');
     }
   };
 
@@ -31,12 +34,12 @@ const Footer = () => {
         <div className="footer-right-content" data-aos="fade-left" data-aos-duration="1000">
           {/* Top: 3-column x 2-row Navigation Buttons */}
           <div className="footer-buttons-grid">
-            <a href="#/about" className="footer-nav-btn">About</a>
-            <a href="#/products/talent-os" className="footer-nav-btn">Talent OS</a>
-            <a href="#/joinus/career" className="footer-nav-btn">Career</a>
-            <a href="#/contact" className="footer-nav-btn">Contact Us</a>
-            <a href="#/services" className="footer-nav-btn">Services</a>
-            <a href="#/joinus/training" className="footer-nav-btn">Training</a>
+            <Link to="/about" className="footer-nav-btn">About</Link>
+            <Link to="/products/talent-os" className="footer-nav-btn">Talent OS</Link>
+            <Link to="/joinus/career" className="footer-nav-btn">Career</Link>
+            <Link to="/contact" className="footer-nav-btn">Contact Us</Link>
+            <Link to="/services" className="footer-nav-btn">Services</Link>
+            <Link to="/joinus/training" className="footer-nav-btn">Training</Link>
           </div>
 
           {/* Middle: Contact Details Links */}
@@ -86,9 +89,9 @@ const Footer = () => {
         </p>
         <p className="footer-credits-text">
           Designed with <FaHeart className="footer-heart-icon" aria-hidden="true" /> by{' '}
-          <a href="#/about#our-team" className="footer-team-link" onClick={handleTeamClick}>
+          <Link to="/about#our-team" className="footer-team-link" onClick={handleTeamClick}>
             Artlysoft Team
-          </a>
+          </Link>
         </p>
       </div>
     </footer>

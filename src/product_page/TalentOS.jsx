@@ -2638,11 +2638,11 @@ function Home() {
             <div className="footer-col links-col">
               <h4 className="footer-title">Company</h4>
               <ul className="footer-links">
-                <li><a href="#talent-top" onClick={(e) => { e.preventDefault(); scrollToSection('talent-top'); }}>About Artlysoft</a></li>
-                <li><a href="#talent-top" onClick={(e) => { e.preventDefault(); scrollToSection('talent-top'); }}>Careers</a></li>
+                <li><Link to="/about">About Artlysoft</Link></li>
+                <li><Link to="/careers">Careers</Link></li>
                 <li><a href="#talent-top" onClick={(e) => { e.preventDefault(); scrollToSection('talent-top'); }}>Press Kit</a></li>
                 <li><a href="#talent-top" onClick={(e) => { e.preventDefault(); scrollToSection('talent-top'); }}>Partners</a></li>
-                <li><a href="#talent-top" onClick={(e) => { e.preventDefault(); scrollToSection('talent-top'); }}>Contact Us</a></li>
+                <li><Link to="/contact">Contact Us</Link></li>
                 <li><a href="#talent-top" onClick={(e) => { e.preventDefault(); scrollToSection('talent-top'); }}>Legal</a></li>
               </ul>
             </div>

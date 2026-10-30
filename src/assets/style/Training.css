@@ -7,9 +7,9 @@
    ========================================== */
 .training-hero-section {
   width: 100vw;
-  height: clamp(380px, 55vh, 460px);
-  min-height: 380px;
-  max-height: 460px;
+  height: calc(100vh - 65px);
+  min-height: calc(100vh - 65px);
+  max-height: calc(100vh - 65px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,12 +21,12 @@
   overflow: hidden;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
 }
 
 .training-hero-card {
   width: 100%;
-  max-width: 1280px;
+  max-width: var(--container-hero-width, 1280px);
   height: 100%;
   max-height: 100%;
   display: flex;
@@ -320,11 +320,15 @@
 
 .training-section {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto 5rem;
+  max-width: var(--container-max-width, 1260px);
+  margin: 0 auto;
+  min-height: calc(100vh - 65px);
+  padding: 2.25rem 1.5rem;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .training-section-header {
@@ -1292,7 +1296,7 @@
 /* ENQUIRY FORM CONTAINER */
 .enquiry-form-container {
   width: 100%;
-  max-width: 1100px;
+  max-width: var(--container-card-narrow, 1080px);
   display: grid;
   grid-template-columns: 1fr 1.6fr;
   border-radius: 1.25rem;
@@ -1697,3 +1701,28 @@
 
 
 
+
+
+/* ──────────────────────────────────────────
+   Large Desktop & Tall Laptop Breakpoints (Fixing Excessive Vertical Gaps)
+   ────────────────────────────────────────── */
+
+/* 1. Large Display Laptops & Tall Viewports (height >= 800px) */
+@media (min-width: 993px) and (min-height: 800px) {
+  .training-section {
+    min-height: auto;
+    padding: 3rem 1.5rem 2rem;
+  }
+}
+
+/* 2. Extra-Large Monitors & High-Resolution Displays (1400px and above) */
+@media (min-width: 1400px) {
+  .training-hero-section {
+    max-height: 720px;
+  }
+
+  .training-section {
+    min-height: auto;
+    padding: 3.25rem 1.5rem 2.25rem;
+  }
+}

@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, HashRouter, Outlet, useLocation } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, Outlet, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
@@ -60,7 +60,7 @@ function App () {
   return(
     <>
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
-      <HashRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Particles />
         <ScrollToTop />
         <FloatingNav />
@@ -81,7 +81,7 @@ function App () {
           {/* Dedicated TalentOS Product Page (Standalone Navbar & Footer) */}
           <Route path='/products/talent-os' element={<TalentOS />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </>
   )
 }
