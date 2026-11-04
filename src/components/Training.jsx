@@ -657,24 +657,30 @@ const Training = () => {
             <div className="contact-info-icon-box">
               <img src={activitiesIcon} alt="Email" className="contact-info-icon" />
             </div>
-            <h3 className="contact-info-label">Email</h3>
-            <a href="mailto:hr@artlysoft.com" className="contact-info-value">hr@artlysoft.com</a>
+            <div className="contact-info-text">
+              <h3 className="contact-info-label">Email</h3>
+              <a href="mailto:hr@artlysoft.com" className="contact-info-value">hr@artlysoft.com</a>
+            </div>
           </div>
 
           <div className="contact-info-card">
             <div className="contact-info-icon-box">
               <img src={webMobileIcon} alt="Website" className="contact-info-icon" />
             </div>
-            <h3 className="contact-info-label">Website</h3>
-            <a href="https://www.artlysoft.com" target="_blank" rel="noopener noreferrer" className="contact-info-value">www.artlysoft.com</a>
+            <div className="contact-info-text">
+              <h3 className="contact-info-label">Website</h3>
+              <a href="https://www.artlysoft.com" target="_blank" rel="noopener noreferrer" className="contact-info-value">www.artlysoft.com</a>
+            </div>
           </div>
 
           <div className="contact-info-card">
             <div className="contact-info-icon-box">
               <img src={callIcon} alt="Phone" className="contact-info-icon" />
             </div>
-            <h3 className="contact-info-label">Phone</h3>
-            <a href="tel:9901718700" className="contact-info-value">9901718700</a>
+            <div className="contact-info-text">
+              <h3 className="contact-info-label">Phone</h3>
+              <a href="tel:9901718700" className="contact-info-value">9901718700</a>
+            </div>
           </div>
         </div>
 

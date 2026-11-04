@@ -1164,6 +1164,14 @@
   object-fit: contain;
 }
 
+.contact-info-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
 .contact-info-label {
   font-family: var(--font-plus-jakarta);
   font-size: 1.1rem;
@@ -1584,14 +1592,33 @@
     height: 32px;
   }
 
+  .contact-info-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+    gap: 0.2rem;
+    min-width: 0;
+    flex: 1;
+  }
+
   .contact-info-label {
-    font-size: 0.92rem;
-    margin: 0 0 0.15rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--navy-bronze-primary, #0A192F);
   }
 
   .contact-info-value {
     font-size: 0.9rem;
+    font-weight: 700;
+    color: #4E70F6;
+    margin: 0;
+    line-height: 1.25;
     word-break: break-all;
+    text-decoration: none;
   }
 
   /* Enrollment Process 4 Cards Mobile Optimization - 1 Card per Row with Left & Right Spaces */
