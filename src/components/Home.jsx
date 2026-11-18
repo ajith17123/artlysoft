@@ -723,16 +723,18 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* Column 2 (Right): Constant Image (Zero Reload / No Flicker) */}
+                {/* Column 2 (Right): Constant Image Card */}
                 <div className="hero-grid-col col-image">
-                  <div className="hero-image-pane">
-                    <img
-                      src={artlyMainImg}
-                      alt="Artlysoft Digital Solutions"
-                      className="hero-constant-image"
-                      fetchpriority="high"
-                      decoding="async"
-                    />
+                  <div className="hero-image-card">
+                    <div className="hero-image-pane">
+                      <img
+                        src={artlyMainImg}
+                        alt="Artlysoft Digital Solutions"
+                        className="hero-constant-image"
+                        fetchpriority="high"
+                        decoding="async"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

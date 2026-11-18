@@ -125,6 +125,41 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem 1rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Dedicated Image Card on the Right Side of Hero Container */
+.hero-image-card {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, rgba(234, 242, 253, 0.95) 0%, rgba(216, 231, 252, 0.95) 100%);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 36px -10px rgba(10, 45, 95, 0.12),
+              0 0 0 1px rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0.35rem;
+  box-sizing: border-box;
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hero-image-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 42px -8px rgba(10, 45, 95, 0.16),
+              0 0 0 1px rgba(255, 255, 255, 0.95);
 }
 
 /* Text & Video Panes inside single unified container */
@@ -163,22 +198,19 @@
 .hero-image-pane {
   width: 100%;
   height: 100%;
-  border-radius: 0 1.25rem 1.25rem 0;  /* Matches the card's right corners flush */
+  border-radius: 0.95rem;
   overflow: hidden;
   display: flex;
-  align-items: stretch;
-  justify-content: stretch;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   position: relative;
-  /* Seamless soft blend along the left edge into the text container background */
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 28px, black 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 28px, black 100%);
 }
 
 .hero-constant-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;                   /* Fill 100% height and width without letterboxing */
+  object-fit: contain;                 /* Guarantees 100% full visibility without cropping */
   object-position: center center;
   display: block;
   animation: heroArtworkFloat 6.5s ease-in-out infinite alternate;
@@ -188,12 +220,12 @@
 /* 3D Floating Living Artwork Animation */
 @keyframes heroArtworkFloat {
   0% {
-    transform: translateY(0px) scale(1);
-    filter: drop-shadow(0 8px 18px rgba(0, 114, 243, 0.08));
+    transform: scale(0.99);
+    filter: drop-shadow(0 6px 14px rgba(0, 114, 243, 0.08));
   }
   100% {
-    transform: translateY(-7px) scale(1.008);
-    filter: drop-shadow(0 16px 28px rgba(0, 114, 243, 0.18));
+    transform: scale(1.008);
+    filter: drop-shadow(0 12px 22px rgba(0, 114, 243, 0.16));
   }
 }
 
@@ -721,6 +753,11 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
     gap: 1.25rem;
   }
 
+  .hero-grid-col.col-image {
+    padding: 0 1rem 1rem;
+    height: 320px;
+  }
+
   .hero-content-left {
     padding-bottom: 0.5rem;
     width: 100%;
@@ -795,6 +832,23 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
     width: 100% !important;
     height: 230px !important;
     flex-shrink: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Reset card styling strictly on mobile so view is 100% unchanged */
+  .hero-image-card {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 1.25rem 1.25rem 0 0 !important;
+    overflow: hidden !important;
+    transform: none !important;
   }
 
   .hero-image-pane {
