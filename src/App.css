@@ -1,0 +1,24 @@
+/* Page Transition Loading Bar */
+.page-loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #1e58d2, #3b82f6, #60a5fa);
+  z-index: 99999;
+  animation: pageLoadingAnim 1s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pageLoadingAnim {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

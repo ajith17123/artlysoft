@@ -308,7 +308,7 @@ const Services = () => {
   return (
     <div className="services-page">
       <section className="services-hero-section">
-        <div className="services-hero-card" data-aos="fade-up" data-aos-duration="1000">
+        <div className="services-hero-card" data-aos="fade-up" data-aos-duration="400">
           <div className="services-hero-content">
             <div className="services-hero-badge">
               <span className="services-hero-badge-dot"></span>
@@ -328,6 +328,7 @@ const Services = () => {
               loop
               muted
               playsInline
+              preload="metadata"
               className="services-hero-video"
             />
           </div>

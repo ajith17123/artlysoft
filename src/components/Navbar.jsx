@@ -6,7 +6,7 @@ import { FiPhone } from 'react-icons/fi';
 import artlyLogo from '../assets/images/ARTLY.png';
 import '../assets/style/Navbar.css';
 import homeGif from "../assets/gifs/home_icon.gif";
-import callSvg from "../assets/gifs/call_icon.svg";
+import { preloadRoute } from '../utils/routePreloader';
 
 const defaultItems = [
   {
@@ -214,22 +214,17 @@ const Navbar = ({
             <div className="hamburger-line" />
           </div>
 
-          <Link to="/" className="logo-container" onClick={closeMenu} style={{ textDecoration: 'none' }}>
+          <Link to="/" className="logo-container" onClick={closeMenu} onMouseEnter={() => preloadRoute('/')} onTouchStart={() => preloadRoute('/')} style={{ textDecoration: 'none' }}>
             <img src={artlyLogo} alt="Artlysoft Logo" className="logo-image" />
             <span className="logo-text">Artlysoft</span>
           </Link>
 
-
-
-
-
-
           <div className="nav-actions">
-            <Link to="/" className="card-nav-cta-button icon-only home-icon-btn" aria-label="Home" onClick={closeMenu}>
+            <Link to="/" className="card-nav-cta-button icon-only home-icon-btn" aria-label="Home" onClick={closeMenu} onMouseEnter={() => preloadRoute('/')} onTouchStart={() => preloadRoute('/')}>
               <img src={homeGif} alt="Home" />
             </Link>
 
-            <Link to="/contact" className="card-nav-cta-button icon-only call-icon-btn" aria-label="Contact Us" onClick={closeMenu}>
+            <Link to="/contact" className="card-nav-cta-button icon-only call-icon-btn" aria-label="Contact Us" onClick={closeMenu} onMouseEnter={() => preloadRoute('/contact')} onTouchStart={() => preloadRoute('/contact')}>
               <FiPhone className="mobile-phone-icon" />
             </Link>
             
@@ -238,6 +233,8 @@ const Navbar = ({
               className="card-nav-cta-button text-btn"
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
               onClick={closeMenu}
+              onMouseEnter={() => preloadRoute('/contact')}
+              onTouchStart={() => preloadRoute('/contact')}
             >
               Contact Us
             </Link>
@@ -258,6 +255,11 @@ const Navbar = ({
               <div 
                 className="nav-card-label"
                 style={{ cursor: 'pointer' }}
+                onMouseEnter={() => {
+                  if (item.label === "Services") preloadRoute("/services");
+                  else if (item.label === "Products") preloadRoute("/products/talent-os");
+                  else if (item.label === "JoinUs") preloadRoute("/joinus/career");
+                }}
                 onClick={() => {
                   if (item.label === "Services") { navigate("/services"); closeMenu(); }
                   else if (item.label === "Products") { navigate("/products/talent-os"); closeMenu(); }
@@ -274,6 +276,8 @@ const Navbar = ({
                     to={lnk.href || lnk.to}
                     aria-label={lnk.ariaLabel}
                     onClick={closeMenu}
+                    onMouseEnter={() => preloadRoute(lnk.href || lnk.to)}
+                    onTouchStart={() => preloadRoute(lnk.href || lnk.to)}
                   >
                     <GoArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
                     {lnk.label}

@@ -173,7 +173,7 @@ const Career = () => {
   return (
     <section className="careers-page">
       <div className="career-hero-section">
-        <div className="career-hero-card" data-aos="fade-up" data-aos-duration="1000">
+        <div className="career-hero-card" data-aos="fade-up" data-aos-duration="400">
           <div className="career-hero-content">
             <div className="career-hero-badge">
               <span className="career-hero-badge-dot"></span>
@@ -193,6 +193,7 @@ const Career = () => {
               loop
               muted
               playsInline
+              preload="metadata"
               className="career-hero-video"
             />
           </div>

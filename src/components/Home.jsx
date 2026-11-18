@@ -19,10 +19,7 @@ import snakeGameVideo from '../assets/videos/Designs/Snake_Game.mp4';
 import peacockVideo from '../assets/videos/Designs/preethi peacock.mp4';
 import countdownVideo from '../assets/videos/Designs/countdown.mp4';
 import fizzVideo from '../assets/videos/Designs/Fizz.mp4';
-import videoAbout from '../assets/videos/Hero/About.mp4';
-import videoServices from '../assets/videos/Hero/Services.mp4';
-import videoTalentOS from '../assets/videos/Hero/Artlysoft talent OS.mp4';
-import videoCareer from '../assets/videos/Hero/Career.mp4';
+import artlyMainImg from '../assets/images/Artly_Main.png';
 import '../assets/style/Home.css';
 import par1Img from '../assets/images/Par1.jpg';
 
@@ -74,7 +71,28 @@ function CreativeLabVideoModal({ card, onClose }) {
 
 function CreativeLabCard({ card, idx, onOpenModal }) {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const videoEl = videoRef.current;
+    if (!videoEl) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          videoEl.play().catch(() => {});
+          setIsPlaying(true);
+        } else {
+          videoEl.pause();
+          setIsPlaying(false);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(videoEl);
+    return () => observer.disconnect();
+  }, []);
 
   const togglePlay = (e) => {
     e.stopPropagation();
@@ -101,10 +119,10 @@ function CreativeLabCard({ card, idx, onOpenModal }) {
         <video
           ref={videoRef}
           src={card.video}
-          autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
           className="creative-lab-video"
         />
         <div className="creative-lab-video-overlay" />
@@ -288,8 +306,6 @@ const HERO_SLIDES = [
     themeClass: "hero-theme-brand",
     accentColor: "rgba(0, 198, 255, 1)",
     gradient: "linear-gradient(135deg, rgba(0, 114, 243, 0.15) 0%, rgba(0, 198, 255, 0.15) 100%)",
-    video: videoAbout,
-    videoPosition: "right",
     highlights: (
       <div className="hero-slide-highlights highlights-brand">
         <div className="brand-pillar-pill">
@@ -313,8 +329,6 @@ const HERO_SLIDES = [
     themeClass: "hero-theme-services",
     accentColor: "rgba(224, 104, 14, 1)",
     gradient: "linear-gradient(135deg, rgba(224, 104, 14, 0.15) 0%, rgba(255, 156, 51, 0.15) 100%)",
-    video: videoServices,
-    videoPosition: "left",
     highlights: (
       <div className="hero-slide-highlights highlights-services">
         <div className="service-pillar-card">
@@ -348,8 +362,6 @@ const HERO_SLIDES = [
     themeClass: "hero-theme-talentos",
     accentColor: "rgba(168, 85, 247, 1)",
     gradient: "linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(192, 132, 252, 0.15) 100%)",
-    video: videoTalentOS,
-    videoPosition: "right",
     highlights: (
       <div className="hero-slide-highlights highlights-talentos">
         <div className="bullet-highlight-pill">
@@ -373,8 +385,6 @@ const HERO_SLIDES = [
     themeClass: "hero-theme-careers",
     accentColor: "rgba(16, 185, 129, 1)",
     gradient: "linear-gradient(135deg, rgba(5, 150, 105, 0.15) 0%, rgba(52, 211, 153, 0.15) 100%)",
-    video: videoCareer,
-    videoPosition: "left",
     highlights: (
       <div className="hero-slide-highlights highlights-careers">
         <div className="career-pill">
@@ -404,38 +414,54 @@ const Home = () => {
   const [isPaused, setIsPaused] = useState(false);
 
   const touchStartX = useRef(null);
+  const touchStartY = useRef(null);
   const touchEndX = useRef(null);
+  const touchEndY = useRef(null);
 
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 4500);
+    }, 3000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
   const handleTouchStart = (e) => {
     setIsPaused(true);
     touchStartX.current = e.targetTouches[0].clientX;
+    touchStartY.current = e.targetTouches[0].clientY;
     touchEndX.current = null;
+    touchEndY.current = null;
   };
 
   const handleTouchMove = (e) => {
     touchEndX.current = e.targetTouches[0].clientX;
+    touchEndY.current = e.targetTouches[0].clientY;
   };
 
   const handleTouchEnd = () => {
     setIsPaused(false);
     if (touchStartX.current === null || touchEndX.current === null) return;
     const deltaX = touchEndX.current - touchStartX.current;
-    const minSwipeDistance = 35;
-    if (deltaX < -minSwipeDistance) {
-      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    } else if (deltaX > minSwipeDistance) {
-      setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+    const deltaY = (touchEndY.current && touchStartY.current)
+      ? Math.abs(touchEndY.current - touchStartY.current)
+      : 0;
+
+    // Fluid edge swipe: trigger slide switch if horizontal swipe exceeds 30px and is primarily horizontal
+    const minSwipeDistance = 30;
+    if (Math.abs(deltaX) > minSwipeDistance && Math.abs(deltaX) > deltaY) {
+      if (deltaX < 0) {
+        // Swiped left -> next slide
+        setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+      } else {
+        // Swiped right -> previous slide
+        setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+      }
     }
     touchStartX.current = null;
+    touchStartY.current = null;
     touchEndX.current = null;
+    touchEndY.current = null;
   };
 
   const heroSectionRef = useRef(null);
@@ -631,136 +657,83 @@ const Home = () => {
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {/* Side Navigation Arrows (Left & Right) */}
-            <button
-              className="hero-nav-arrow prev-arrow"
-              onClick={(e) => {
-                e.stopPropagation();
-                setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
-              }}
-              aria-label="Previous slide"
-              title="Previous slide"
-            >
-              &#8249;
-            </button>
-
-            <button
-              className="hero-nav-arrow next-arrow"
-              onClick={(e) => {
-                e.stopPropagation();
-                setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-              }}
-              aria-label="Next slide"
-              title="Next slide"
-            >
-              &#8250;
-            </button>
-
             {/* Single Unified Hero Container */}
             <div 
-              key={currentSlide} 
-              className={`hero-unified-card animate-entrance ${HERO_SLIDES[currentSlide].themeClass}`}
+              className={`hero-unified-card ${HERO_SLIDES[currentSlide].themeClass}`}
               style={{ '--accent-theme': HERO_SLIDES[currentSlide].accentColor }}
             >
               <div className="card-ambient-glow" style={{ background: HERO_SLIDES[currentSlide].gradient }} />
 
-              <div className={`hero-slide-grid layout-${HERO_SLIDES[currentSlide].videoPosition}`}>
-                {/* Column 1 (Left) */}
-                <div className="hero-grid-col col-left">
-                  {HERO_SLIDES[currentSlide].videoPosition === 'right' ? (
-                    <div className="hero-text-pane">
-                      <div className="hero-badge">
-                        <span className="badge-dot" style={{ backgroundColor: HERO_SLIDES[currentSlide].accentColor }} />
-                        {HERO_SLIDES[currentSlide].badge}
-                      </div>
+              {/* Navigation Arrows Placed Directly Over the Container */}
+              <button
+                className="hero-nav-arrow prev-arrow"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+                }}
+                aria-label="Previous slide"
+                title="Previous slide"
+              >
+                &#8249;
+              </button>
 
-                      <h1 className={`hero-headline ${HERO_SLIDES[currentSlide].headlineClass || ''}`}>
-                        {HERO_SLIDES[currentSlide].headline}
-                      </h1>
+              <button
+                className="hero-nav-arrow next-arrow"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+                }}
+                aria-label="Next slide"
+                title="Next slide"
+              >
+                &#8250;
+              </button>
 
-                      <p className="hero-subheadline">
-                        {HERO_SLIDES[currentSlide].subheadline}
-                      </p>
+              <div className="hero-slide-grid">
+                {/* Column 1 (Left): Carousel Text Pane (Transitions every 3s) */}
+                <div className="hero-grid-col col-text">
+                  <div key={currentSlide} className="hero-text-pane animate-text-slide">
+                    <div className="hero-badge">
+                      <span className="badge-dot" style={{ backgroundColor: HERO_SLIDES[currentSlide].accentColor }} />
+                      {HERO_SLIDES[currentSlide].badge}
+                    </div>
 
-                      <div className="hero-highlights">
-                        {HERO_SLIDES[currentSlide].highlights}
-                      </div>
+                    <h1 className={`hero-headline ${HERO_SLIDES[currentSlide].headlineClass || ''}`}>
+                      {HERO_SLIDES[currentSlide].headline}
+                    </h1>
 
-                      <div className="hero-actions">
-                        <Link to={HERO_SLIDES[currentSlide].ctaLink} className="hero-cta-btn primary-btn">
-                          {HERO_SLIDES[currentSlide].ctaText}
+                    <p className="hero-subheadline">
+                      {HERO_SLIDES[currentSlide].subheadline}
+                    </p>
+
+                    <div className="hero-highlights">
+                      {HERO_SLIDES[currentSlide].highlights}
+                    </div>
+
+                    <div className="hero-actions">
+                      <Link to={HERO_SLIDES[currentSlide].ctaLink} className="hero-cta-btn primary-btn">
+                        {HERO_SLIDES[currentSlide].ctaText}
+                      </Link>
+                      {HERO_SLIDES[currentSlide].secondaryCtaText && (
+                        <Link to={HERO_SLIDES[currentSlide].secondaryCtaLink} className="hero-cta-btn secondary-btn">
+                          {HERO_SLIDES[currentSlide].secondaryCtaText}
                         </Link>
-                        {HERO_SLIDES[currentSlide].secondaryCtaText && (
-                          <Link to={HERO_SLIDES[currentSlide].secondaryCtaLink} className="hero-cta-btn secondary-btn">
-                            {HERO_SLIDES[currentSlide].secondaryCtaText}
-                          </Link>
-                        )}
-                      </div>
+                      )}
                     </div>
-                  ) : (
-                    <div className="hero-video-pane">
-                      <div className="video-card-inner">
-                        <video
-                          key={HERO_SLIDES[currentSlide].video}
-                          src={HERO_SLIDES[currentSlide].video}
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          className="hero-slide-video"
-                        />
-                      </div>
-                    </div>
-                  )}
+                  </div>
                 </div>
 
-                {/* Column 2 (Right) */}
-                <div className="hero-grid-col col-right">
-                  {HERO_SLIDES[currentSlide].videoPosition === 'right' ? (
-                    <div className="hero-video-pane">
-                      <div className="video-card-inner">
-                        <video
-                          key={HERO_SLIDES[currentSlide].video}
-                          src={HERO_SLIDES[currentSlide].video}
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          className="hero-slide-video"
-                        />
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="hero-text-pane">
-                      <div className="hero-badge">
-                        <span className="badge-dot" style={{ backgroundColor: HERO_SLIDES[currentSlide].accentColor }} />
-                        {HERO_SLIDES[currentSlide].badge}
-                      </div>
-
-                      <h1 className={`hero-headline ${HERO_SLIDES[currentSlide].headlineClass || ''}`}>
-                        {HERO_SLIDES[currentSlide].headline}
-                      </h1>
-
-                      <p className="hero-subheadline">
-                        {HERO_SLIDES[currentSlide].subheadline}
-                      </p>
-
-                      <div className="hero-highlights">
-                        {HERO_SLIDES[currentSlide].highlights}
-                      </div>
-
-                      <div className="hero-actions">
-                        <Link to={HERO_SLIDES[currentSlide].ctaLink} className="hero-cta-btn primary-btn">
-                          {HERO_SLIDES[currentSlide].ctaText}
-                        </Link>
-                        {HERO_SLIDES[currentSlide].secondaryCtaText && (
-                          <Link to={HERO_SLIDES[currentSlide].secondaryCtaLink} className="hero-cta-btn secondary-btn">
-                            {HERO_SLIDES[currentSlide].secondaryCtaText}
-                          </Link>
-                        )}
-                      </div>
-                    </div>
-                  )}
+                {/* Column 2 (Right): Constant Image (Zero Reload / No Flicker) */}
+                <div className="hero-grid-col col-image">
+                  <div className="hero-image-pane">
+                    <img
+                      src={artlyMainImg}
+                      alt="Artlysoft Digital Solutions"
+                      className="hero-constant-image"
+                      fetchpriority="high"
+                      decoding="async"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

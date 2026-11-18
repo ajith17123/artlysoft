@@ -117,7 +117,7 @@ const Contact = () => {
   return (
     <div className="contact-page-wrapper">
       <section className="contact-hero-section">
-        <div className="contact-hero-card" data-aos="fade-up" data-aos-duration="1000">
+        <div className="contact-hero-card" data-aos="fade-up" data-aos-duration="400">
           <div className="contact-hero-content">
             <div className="contact-hero-badge">
               <span className="contact-hero-badge-dot"></span>
@@ -137,6 +137,7 @@ const Contact = () => {
               loop
               muted
               playsInline
+              preload="metadata"
               className="contact-hero-video"
             />
           </div>
@@ -355,12 +356,27 @@ const Contact = () => {
             <div className="map-card-glow" />
             <iframe
               title="Artlysoft Private Limited Location Map"
-              src="https://maps.google.com/maps?q=Artlysoft%20Private%20Limited%2C%20L-176%2C%205th%20Main%20Rd%2C%20Sector%206%2C%20HSR%20Layout%2C%20Bengaluru%2C%20Karnataka%20560102&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7516954271373!2d77.62947187483984!3d12.915945287394192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac470931839411%3A0xd5ca641a983f56bc!2sArtlysoft%20Private%20Limited!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
               className="map-iframe"
-              allowFullScreen=""
+              style={{ border: 0 }}
+              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
+            <div className="map-card-footer-bar">
+              <span className="map-address-text">
+                <FaMapMarkerAlt className="map-pin-icon" /> L-176, 5th Main Rd, Sector 6, HSR Layout, Bengaluru, Karnataka 560102
+              </span>
+              <a
+                href="https://www.google.com/maps/place/Artlysoft+Private+Limited/@12.9159453,77.6320468,17z/data=!3m1!4b1!4m6!3m5!1s0x3bac470931839411:0xd5ca641a983f56bc!8m2!3d12.9159453!4d77.6320468!16s%2Fg%2F11x2x7f6yt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="map-open-link"
+              >
+                <span>Get Directions</span>
+                <FaExternalLinkAlt className="map-ext-icon" />
+              </a>
+            </div>
           </div>
         </div>
 

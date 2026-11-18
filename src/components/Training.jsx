@@ -379,7 +379,7 @@ const Training = () => {
   return (
     <div className="training-page">
       <section className="training-hero-section">
-        <div className="training-hero-card" data-aos="fade-up" data-aos-duration="1000">
+        <div className="training-hero-card" data-aos="fade-up" data-aos-duration="400">
           <div className="training-hero-content">
             <div className="training-hero-badge">
               <span className="training-hero-badge-dot"></span>
@@ -399,6 +399,7 @@ const Training = () => {
               loop
               muted
               playsInline
+              preload="metadata"
               className="training-hero-video"
             />
           </div>

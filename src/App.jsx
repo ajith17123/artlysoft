@@ -3,20 +3,22 @@ import { Routes, Route, BrowserRouter, Outlet, useLocation } from 'react-router-
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Preloader from './components/Preloader';
+import FloatingNav from './components/FloatingNav';
+import Particles from './components/Particles';
+
+// Eagerly import all page components for true 0ms instant navigation
+import Home from './components/Home';
 import About from './components/About';
 import Career from './components/Career';
 import Contact from './components/Contact';
 import TalentOS from './product_page/TalentOS';
 import Services from './components/Services';
 import Training from './components/Training';
-import Preloader from './components/Preloader';
-import FloatingNav from './components/FloatingNav';
-import Particles from './components/Particles';
 
-// Automatically reset scroll position to top and refresh AOS animations on every page change
+// Automatically reset scroll position to top and refresh AOS animations smoothly
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -24,12 +26,12 @@ const ScrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
-    
-    // Refresh AOS positions on page navigation
-    const timer = setTimeout(() => {
-      AOS.refresh();
-    }, 120);
-    return () => clearTimeout(timer);
+
+    // Instantly refresh AOS animations on page change
+    const rafId = requestAnimationFrame(() => {
+      AOS.refreshHard();
+    });
+    return () => cancelAnimationFrame(rafId);
   }, [pathname]);
 
   return null;
@@ -48,18 +50,22 @@ const MainLayout = () => {
 function App () {
   const [isLoading, setIsLoading] = useState(true);
 
+  const handlePreloaderComplete = () => {
+    setIsLoading(false);
+  };
+
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
+      duration: 500,
+      easing: 'ease-out',
       once: true,
-      offset: 60,
+      offset: 30,
     });
   }, []);
 
   return(
     <>
-      {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Particles />
         <ScrollToTop />

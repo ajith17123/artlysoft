@@ -2,6 +2,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram, FaYoutube, FaGithu
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import footerImg from '../assets/images/footer.png';
 import '../assets/style/Footer.css';
+import { preloadRoute } from '../utils/routePreloader';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -34,12 +35,12 @@ const Footer = () => {
         <div className="footer-right-content" data-aos="fade-left" data-aos-duration="1000">
           {/* Top: 3-column x 2-row Navigation Buttons */}
           <div className="footer-buttons-grid">
-            <Link to="/about" className="footer-nav-btn">About</Link>
-            <Link to="/products/talent-os" className="footer-nav-btn">Talent OS</Link>
-            <Link to="/joinus/career" className="footer-nav-btn">Career</Link>
-            <Link to="/contact" className="footer-nav-btn">Contact Us</Link>
-            <Link to="/services" className="footer-nav-btn">Services</Link>
-            <Link to="/joinus/training" className="footer-nav-btn">Training</Link>
+            <Link to="/about" className="footer-nav-btn" onMouseEnter={() => preloadRoute('/about')} onTouchStart={() => preloadRoute('/about')}>About</Link>
+            <Link to="/products/talent-os" className="footer-nav-btn" onMouseEnter={() => preloadRoute('/products/talent-os')} onTouchStart={() => preloadRoute('/products/talent-os')}>Talent OS</Link>
+            <Link to="/joinus/career" className="footer-nav-btn" onMouseEnter={() => preloadRoute('/joinus/career')} onTouchStart={() => preloadRoute('/joinus/career')}>Career</Link>
+            <Link to="/contact" className="footer-nav-btn" onMouseEnter={() => preloadRoute('/contact')} onTouchStart={() => preloadRoute('/contact')}>Contact Us</Link>
+            <Link to="/services" className="footer-nav-btn" onMouseEnter={() => preloadRoute('/services')} onTouchStart={() => preloadRoute('/services')}>Services</Link>
+            <Link to="/joinus/training" className="footer-nav-btn" onMouseEnter={() => preloadRoute('/joinus/training')} onTouchStart={() => preloadRoute('/joinus/training')}>Training</Link>
           </div>
 
           {/* Middle: Contact Details Links */}

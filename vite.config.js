@@ -5,6 +5,24 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: "/artlysoft/",
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'vendor-react';
+            }
+            if (id.includes('gsap')) {
+              return 'vendor-gsap';
+            }
+            if (id.includes('chart.js')) {
+              return 'vendor-charts';
+            }
+          }
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
+  }
 })
-
-

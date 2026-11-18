@@ -13,7 +13,7 @@
    ========================================== */
 
 .hero-section {
-  padding: 1rem 2rem 0.5rem;
+  padding: 0.5rem 1rem 0.5rem;
   margin-top: 60px;                    /* exact navbar height */
   height: calc(100svh - 60px);        /* lock to one viewport */
   max-height: calc(100svh - 60px);    /* never overflow */
@@ -24,7 +24,7 @@
   overflow: hidden;
 }
 
-/* Carousel Outer Container */
+/* Carousel Outer Container - Expanded width to minimize side gaps */
 .hero-carousel-container {
   flex: 1;
   display: flex;
@@ -33,72 +33,75 @@
   position: relative;
   height: 100%;
   width: 100%;
-  max-width: var(--container-hero-width, 1280px);
+  max-width: 1680px;
+  width: 100%;
   margin: 0 auto;
+  touch-action: pan-y;
 }
 
-/* Side Navigation Arrows (Left & Right) */
+/* Floating Navigation Arrows - Placed directly over the container */
 .hero-nav-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
-  width: 32px;
-  height: 32px;
+  z-index: 25;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(10, 25, 47, 0.12);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.95);
   color: var(--navy-bronze-primary);
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 12px rgba(10, 25, 47, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.18);
 }
 
 .hero-nav-arrow:hover {
-  background: var(--navy-bronze-primary);
-  color: #ffffff;
-  border-color: var(--navy-bronze-primary);
-  transform: translateY(-50%) scale(1.08);
+  background: #ffffff;
+  color: var(--navy-bronze-primary);
+  border-color: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 24px rgba(10, 25, 47, 0.24);
 }
 
 .hero-nav-arrow.prev-arrow {
-  left: 0;
+  left: 18px;                          /* Floating over the left text pane */
 }
 
 .hero-nav-arrow.next-arrow {
-  right: 0;
+  right: 18px;                         /* Floating over the right image pane */
 }
 
-/* Single Unified Glass Container */
+/* Single Unified Glass Container - Matched to Image Ice-Blue Atmosphere */
 .hero-unified-card {
-  width: calc(100% - 80px);            /* leave space for side arrows */
+  width: 100%;                         /* fills container completely */
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.75);
+  background: linear-gradient(125deg, #eaf2fd 0%, #dce9fb 45%, #d1e3fa 100%);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.95);
   border-radius: 1.25rem;
-  padding: 0.45rem 1.25rem;
-  box-shadow: 0 20px 40px -12px rgba(10, 25, 47, 0.05), 
-              0 0 45px -10px rgba(10, 25, 47, 0.02);
+  padding: 0;                          /* Zero padding so image completely fills right boundary */
+  box-shadow: 0 20px 45px -12px rgba(10, 45, 95, 0.08), 
+              0 0 50px -10px rgba(0, 114, 243, 0.05);
   position: relative;
   overflow: hidden;
-  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease, background 0.5s ease;
 }
 
 .hero-slide-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr 1.22fr;   /* Slightly wider right column for visual balance */
+  gap: 0;
   width: 100%;
   height: 100%;
   align-items: stretch;
@@ -113,6 +116,17 @@
   justify-content: stretch;
 }
 
+.hero-grid-col.col-text {
+  padding: 1.25rem 2rem 1.25rem 3.25rem;           /* Dedicated breathing room for slide typography */
+  box-sizing: border-box;
+}
+
+.hero-grid-col.col-image {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
 /* Text & Video Panes inside single unified container */
 .hero-text-pane {
   display: flex;
@@ -122,7 +136,7 @@
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
-  padding: 0.5rem 0.5rem;
+  padding: 0.25rem 0.25rem;
   margin-top: 0;
   box-sizing: border-box;
 }
@@ -144,6 +158,86 @@
 .hero-text-pane > .hero-highlights,
 .hero-text-pane > .hero-actions {
   margin: 0 !important;
+}
+
+.hero-image-pane {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 1.25rem 1.25rem 0;  /* Matches the card's right corners flush */
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  background: transparent;
+  position: relative;
+  /* Seamless soft blend along the left edge into the text container background */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 28px, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 28px, black 100%);
+}
+
+.hero-constant-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                   /* Fill 100% height and width without letterboxing */
+  object-position: center center;
+  display: block;
+  animation: heroArtworkFloat 6.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* 3D Floating Living Artwork Animation */
+@keyframes heroArtworkFloat {
+  0% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 8px 18px rgba(0, 114, 243, 0.08));
+  }
+  100% {
+    transform: translateY(-7px) scale(1.008);
+    filter: drop-shadow(0 16px 28px rgba(0, 114, 243, 0.18));
+  }
+}
+
+/* Smooth Staggered Cascade Text Entrance on 3s Slide Rotation */
+.animate-text-slide {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.animate-text-slide .hero-badge {
+  animation: heroTextCascade 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.03s both;
+}
+
+.animate-text-slide .hero-headline {
+  animation: heroTextCascade 0.44s cubic-bezier(0.16, 1, 0.3, 1) 0.09s both;
+}
+
+.animate-text-slide .hero-subheadline {
+  animation: heroTextCascade 0.46s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
+}
+
+.animate-text-slide .hero-highlights {
+  animation: heroTextCascade 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+
+.animate-text-slide .hero-actions {
+  animation: heroTextCascade 0.52s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+
+@keyframes heroTextCascade {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-video-pane {
@@ -171,18 +265,31 @@
   display: block;
 }
 
-/* Glass card ambient interior blur glow */
+/* Glass card ambient interior blur glow - Living Aurora Orbit */
 .card-ambient-glow {
   position: absolute;
-  top: -40%;
-  right: -40%;
-  width: 200px;
-  height: 200px;
+  top: -30%;
+  right: -30%;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
-  filter: blur(50px);
+  filter: blur(65px);
   z-index: 1;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.65;
+  animation: ambientAuroraOrbit 15s ease-in-out infinite alternate;
+}
+
+@keyframes ambientAuroraOrbit {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50px, 35px) scale(1.15);
+  }
+  100% {
+    transform: translate(30px, -25px) scale(0.92);
+  }
 }
 
 /* Badge Eyebrow styling */
@@ -190,8 +297,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(10, 25, 47, 0.04);
-  border: 1px solid rgba(10, 25, 47, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(10, 45, 95, 0.06);
   border-radius: 100px;
   padding: 0.22rem 0.8rem;
   font-family: var(--font-plus-jakarta);
@@ -289,9 +397,38 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
 }
 
 .hero-cta-btn.primary-btn {
+  position: relative;
+  overflow: hidden;
   background: var(--accent-theme);
   color: var(--white);
   box-shadow: 0 6px 16px -6px var(--accent-theme);
+}
+
+.hero-cta-btn.primary-btn::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 45%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.48),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: ctaShimmerSweep 4.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ctaShimmerSweep {
+  0%, 65% {
+    left: -75%;
+  }
+  80%, 100% {
+    left: 140%;
+  }
 }
 
 .hero-cta-btn.primary-btn:hover {
@@ -589,7 +726,9 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
     width: 100%;
   }
   
-  .hero-video-pane {
+  
+
+.hero-video-pane {
     height: clamp(260px, 38vh, 340px);
     width: 100%;
     border-radius: 14px;
@@ -650,8 +789,32 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
   }
 
   .hero-slide-grid.layout-right .col-right,
-  .hero-slide-grid.layout-left .col-left {
+  .hero-slide-grid.layout-left .col-left,
+  .hero-grid-col.col-image {
     order: -1 !important;
+    width: 100% !important;
+    height: 230px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hero-image-pane {
+    height: 100% !important;
+    width: 100% !important;
+    border-radius: 1.25rem 1.25rem 0 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+  .hero-constant-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
   }
 
   .hero-grid-col {
@@ -670,7 +833,9 @@ body:not([data-page="talentos"]) h1.hero-headline.headline-lg,
   }
 
   /* Video Pane Styling for Mobile */
-  .hero-video-pane {
+  
+
+.hero-video-pane {
     height: 200px !important;
     width: 100% !important;
     border-radius: 14px !important;

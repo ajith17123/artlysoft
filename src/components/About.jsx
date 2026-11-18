@@ -270,7 +270,7 @@ const About = () => {
   return (
     <>
       <section className="about-hero-section">
-        <div className="about-hero-card" data-aos="fade-up" data-aos-duration="1000">
+        <div className="about-hero-card" data-aos="fade-up" data-aos-duration="400">
           <div className="about-hero-content">
             <div className="about-hero-badge">
               <span className="about-hero-badge-dot"></span>
@@ -290,6 +290,7 @@ const About = () => {
               loop
               muted
               playsInline
+              preload="metadata"
               className="about-hero-video"
             />
           </div>
@@ -563,6 +564,8 @@ const About = () => {
                         className="team-card__img"
                         src={person.img}
                         alt={person.name}
+                        loading="lazy"
+                        decoding="async"
                         draggable={false}
                       />
                       <span className="team-card__shade" />
@@ -664,7 +667,7 @@ const About = () => {
                   <div key={`r1-${idx}-${cand.id}`} className="candidate-marquee-card">
                     <div className="candidate-card-inner">
                       <div className="candidate-img-wrapper">
-                        <img src={cand.img} alt={cand.name} loading="lazy" />
+                        <img src={cand.img} alt={cand.name} loading="lazy" decoding="async" />
                       </div>
                       <div className="candidate-info-box">
                         <h3 className="candidate-name">{cand.name}</h3>
@@ -682,7 +685,7 @@ const About = () => {
                   <div key={`r2-${idx}-${cand.id}`} className="candidate-marquee-card">
                     <div className="candidate-card-inner">
                       <div className="candidate-img-wrapper">
-                        <img src={cand.img} alt={cand.name} loading="lazy" />
+                        <img src={cand.img} alt={cand.name} loading="lazy" decoding="async" />
                       </div>
                       <div className="candidate-info-box">
                         <h3 className="candidate-name">{cand.name}</h3>

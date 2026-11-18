@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { BsWhatsapp } from 'react-icons/bs';
 import '../assets/style/FloatingNav.css';
+import { preloadRoute } from '../utils/routePreloader';
 
 const PAGE_ORDER = [
   { name: 'Home', path: '/', match: (p) => p === '/' },
@@ -67,6 +68,8 @@ export default function FloatingNav() {
             type="button"
             className="button-3d"
             onClick={handlePrev}
+            onMouseEnter={() => preloadRoute(prevPage.path)}
+            onTouchStart={() => preloadRoute(prevPage.path)}
             aria-label={`Go to ${prevPage.name}`}
             title={`Previous: ${prevPage.name}`}
           >
@@ -84,6 +87,8 @@ export default function FloatingNav() {
             type="button"
             className="button-3d"
             onClick={handleNext}
+            onMouseEnter={() => preloadRoute(nextPage.path)}
+            onTouchStart={() => preloadRoute(nextPage.path)}
             aria-label={`Go to ${nextPage.name}`}
             title={`Next: ${nextPage.name}`}
           >
