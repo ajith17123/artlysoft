@@ -1095,7 +1095,7 @@ function Home() {
             
             {/* Floating Elements */}
             <div className="float-badge float-top-left">
-                <div className="fb-icon bg-light-purple"><img src={gifBrain} alt="AI Tutor" className="gif-icon gif-icon-sm" /></div>
+                <div className="fb-icon bg-light-purple"><img src={gifBrain} alt="AI Tutor" className="gif-icon gif-icon-sm" loading="lazy" decoding="async" /></div>
                 <div className="fb-text">
                     <span className="fbt-title">AI Tutor Active</span>
                     <span className="fbt-value">3,241 sessions</span>
@@ -1103,7 +1103,7 @@ function Home() {
             </div>
             
             <div className="float-badge float-mid-right">
-                <div className="fb-icon bg-light-green"><img src={gifMindMap} alt="Attendance Rate" className="gif-icon gif-icon-sm" /></div>
+                <div className="fb-icon bg-light-green"><img src={gifMindMap} alt="Attendance Rate" className="gif-icon gif-icon-sm" loading="lazy" decoding="async" /></div>
                 <div className="fb-text">
                     <span className="fbt-title">Attendance Rate</span>
                     <span className="fbt-value">96.8%</span>
@@ -1111,7 +1111,7 @@ function Home() {
             </div>
             
             <div className="float-badge float-btm-right">
-                <div className="fb-icon bg-light-pink"><img src={gifQuestion} alt="AI Paper" className="gif-icon gif-icon-sm" /></div>
+                <div className="fb-icon bg-light-pink"><img src={gifQuestion} alt="AI Paper" className="gif-icon gif-icon-sm" loading="lazy" decoding="async" /></div>
                 <div className="fb-text">
                     <span className="fbt-title">AI Paper Generated</span>
                     <span className="fbt-value">Just now</span>
@@ -1119,7 +1119,7 @@ function Home() {
             </div>
             
             <div className="float-badge float-btm-left">
-                <div className="fb-icon bg-light-yellow"><img src={gifCertificate} alt="Certificates" className="gif-icon gif-icon-sm" /></div>
+                <div className="fb-icon bg-light-yellow"><img src={gifCertificate} alt="Certificates" className="gif-icon gif-icon-sm" loading="lazy" decoding="async" /></div>
                 <div className="fb-text">
                     <span className="fbt-title">Certificates Issued</span>
                     <span className="fbt-value">18,420 today</span>
@@ -1165,7 +1165,7 @@ function Home() {
               <div className="stats-cards-container" ref={trustedStatsRef}>
                   <div className="stat-card">
                       <div className="stat-card-icon icon-purple">
-                          <img src={gifCertificate} alt="School Enquiry" className="gif-icon gif-icon-md" />
+                          <img src={gifCertificate} alt="School Enquiry" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
                       </div>
                       <StatCardCounter end={50} decimals={0} suffix="+" trigger={trustedVisible} />
                       <div className="stat-card-label">School Enquiry</div>
@@ -1173,7 +1173,7 @@ function Home() {
                   
                   <div className="stat-card">
                       <div className="stat-card-icon icon-blue">
-                          <img src={gifBriefcase} alt="Institute Enquiry" className="gif-icon gif-icon-md" />
+                          <img src={gifBriefcase} alt="Institute Enquiry" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
                       </div>
                       <StatCardCounter end={70} decimals={0} suffix="+" trigger={trustedVisible} />
                       <div className="stat-card-label">Institute Enquiry</div>
@@ -1181,7 +1181,7 @@ function Home() {
                   
                   <div className="stat-card">
                       <div className="stat-card-icon icon-green">
-                          <img src={gifCertification} alt="College Enquiry" className="gif-icon gif-icon-md" />
+                          <img src={gifCertification} alt="College Enquiry" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
                       </div>
                       <StatCardCounter end={45} decimals={0} suffix="+" trigger={trustedVisible} />
                       <div className="stat-card-label">College Enquiry</div>
@@ -1189,7 +1189,7 @@ function Home() {
                   
                   <div className="stat-card">
                       <div className="stat-card-icon icon-orange">
-                          <img src={gifStar} alt="Customer Satisfaction" className="gif-icon gif-icon-md" />
+                          <img src={gifStar} alt="Customer Satisfaction" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
                       </div>
                       <StatCardCounter end={98.7} decimals={1} suffix="%" trigger={trustedVisible} />
                       <div className="stat-card-label">Customer Satisfaction</div>
@@ -1218,7 +1218,7 @@ function Home() {
             {/* Card 1: AI-Powered Learning */}
             <div className="platform-card" data-aos="fade-up" data-aos-delay="100">
               <div className="platform-card-icon icon-purple">
-                <img src={gifBrain} alt="AI-Powered Learning" className="gif-icon gif-icon-md" />
+                <img src={gifBrain} alt="AI-Powered Learning" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="platform-card-title">AI-Powered Learning</h3>
               <p className="platform-card-desc">
@@ -1229,7 +1229,7 @@ function Home() {
             {/* Card 2: Unified Dashboard */}
             <div className="platform-card" data-aos="fade-up" data-aos-delay="150">
               <div className="platform-card-icon icon-blue">
-                <img src={gifMindMap} alt="Unified Dashboard" className="gif-icon gif-icon-md" />
+                <img src={gifMindMap} alt="Unified Dashboard" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="platform-card-title">Unified Dashboard</h3>
               <p className="platform-card-desc">
@@ -1240,7 +1240,7 @@ function Home() {
             {/* Card 3: Complete LMS */}
             <div className="platform-card" data-aos="fade-up" data-aos-delay="200">
               <div className="platform-card-icon icon-green">
-                <img src={gifCertification} alt="Complete LMS" className="gif-icon gif-icon-md" />
+                <img src={gifCertification} alt="Complete LMS" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="platform-card-title">Complete LMS</h3>
               <p className="platform-card-desc">
@@ -1251,7 +1251,7 @@ function Home() {
             {/* Card 4: Smart Fee Management */}
             <div className="platform-card" data-aos="fade-up" data-aos-delay="250">
               <div className="platform-card-icon icon-orange">
-                <img src={gifDollar} alt="Smart Fee Management" className="gif-icon gif-icon-md" />
+                <img src={gifDollar} alt="Smart Fee Management" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="platform-card-title">Smart Fee Management</h3>
               <p className="platform-card-desc">
@@ -1262,7 +1262,7 @@ function Home() {
             {/* Card 5: Attendance & Timetable */}
             <div className="platform-card" data-aos="fade-up" data-aos-delay="300">
               <div className="platform-card-icon icon-royalblue">
-                <img src={gifClipboard} alt="Attendance & Timetable" className="gif-icon gif-icon-md" />
+                <img src={gifClipboard} alt="Attendance & Timetable" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="platform-card-title">Attendance &amp; Timetable</h3>
               <p className="platform-card-desc">
@@ -1273,7 +1273,7 @@ function Home() {
             {/* Card 6: Exam & Certification */}
             <div className="platform-card" data-aos="fade-up" data-aos-delay="350">
               <div className="platform-card-icon icon-pink">
-                <img src={gifCertificate} alt="Exam & Certification" className="gif-icon gif-icon-md" />
+                <img src={gifCertificate} alt="Exam & Certification" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="platform-card-title">Exam &amp; Certification</h3>
               <p className="platform-card-desc">
@@ -1284,7 +1284,7 @@ function Home() {
             {/* Card 7: Placement Engine */}
             <div className="platform-card" data-aos="fade-up" data-aos-delay="400">
               <div className="platform-card-icon icon-indigo">
-                <img src={gifBriefcase} alt="Placement Engine" className="gif-icon gif-icon-md" />
+                <img src={gifBriefcase} alt="Placement Engine" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="platform-card-title">Placement Engine</h3>
               <p className="platform-card-desc">
@@ -1295,7 +1295,7 @@ function Home() {
             {/* Card 8: AI Resume Builder */}
             <div className="platform-card" data-aos="fade-up" data-aos-delay="450">
               <div className="platform-card-icon icon-cyan">
-                <img src={gifFile} alt="AI Resume Builder" className="gif-icon gif-icon-md" />
+                <img src={gifFile} alt="AI Resume Builder" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="platform-card-title">AI Resume Builder</h3>
               <p className="platform-card-desc">
@@ -1325,28 +1325,28 @@ function Home() {
               className={`ai-tab-btn tab-tutor ${activeTab === 'tutor' ? 'active' : ''}`}
               onClick={() => setActiveTab('tutor')}
             >
-              <img src={gifBrain} alt="AI Tutor" className="ai-tab-icon gif-icon gif-icon-sm" />
+              <img src={gifBrain} alt="AI Tutor" className="ai-tab-icon gif-icon gif-icon-sm" loading="lazy" decoding="async" />
               <span>AI Tutor</span>
             </button>
             <button 
               className={`ai-tab-btn tab-paper ${activeTab === 'paper' ? 'active' : ''}`}
               onClick={() => setActiveTab('paper')}
             >
-              <img src={gifQuestion} alt="Question Paper AI" className="ai-tab-icon gif-icon gif-icon-sm" />
+              <img src={gifQuestion} alt="Question Paper AI" className="ai-tab-icon gif-icon gif-icon-sm" loading="lazy" decoding="async" />
               <span>Question Paper AI</span>
             </button>
             <button 
               className={`ai-tab-btn tab-resume ${activeTab === 'resume' ? 'active' : ''}`}
               onClick={() => setActiveTab('resume')}
             >
-              <img src={gifFile} alt="AI Resume Builder" className="ai-tab-icon gif-icon gif-icon-sm" />
+              <img src={gifFile} alt="AI Resume Builder" className="ai-tab-icon gif-icon gif-icon-sm" loading="lazy" decoding="async" />
               <span>AI Resume Builder</span>
             </button>
             <button 
               className={`ai-tab-btn tab-chat ${activeTab === 'chat' ? 'active' : ''}`}
               onClick={() => setActiveTab('chat')}
             >
-              <img src={gifChatbot} alt="AI Campus Chat" className="ai-tab-icon gif-icon gif-icon-sm" />
+              <img src={gifChatbot} alt="AI Campus Chat" className="ai-tab-icon gif-icon gif-icon-sm" loading="lazy" decoding="async" />
               <span>AI Campus Chat</span>
             </button>
           </div>
@@ -1359,7 +1359,7 @@ function Home() {
               <div className="ai-panel tutor-panel">
                 <div className="ai-panel-info">
                   <div className="ai-panel-icon-box bg-light-purple">
-                    <img src={gifBrain} alt="AI Tutor" className="gif-icon gif-icon-lg" />
+                    <img src={gifBrain} alt="AI Tutor" className="gif-icon gif-icon-lg" loading="lazy" decoding="async" />
                   </div>
                   <h3 className="ai-panel-title">AI Tutor</h3>
                   <p className="ai-panel-desc">
@@ -1421,7 +1421,7 @@ function Home() {
               <div className="ai-panel paper-panel">
                 <div className="ai-panel-info">
                   <div className="ai-panel-icon-box bg-light-blue">
-                    <img src={gifQuestion} alt="Question Paper AI" className="gif-icon gif-icon-lg" />
+                    <img src={gifQuestion} alt="Question Paper AI" className="gif-icon gif-icon-lg" loading="lazy" decoding="async" />
                   </div>
                   <h3 className="ai-panel-title">Question Paper AI</h3>
                   <p className="ai-panel-desc">
@@ -1498,7 +1498,7 @@ function Home() {
               <div className="ai-panel resume-panel">
                 <div className="ai-panel-info">
                   <div className="ai-panel-icon-box bg-light-green">
-                    <img src={gifFile} alt="AI Resume Builder" className="gif-icon gif-icon-lg" />
+                    <img src={gifFile} alt="AI Resume Builder" className="gif-icon gif-icon-lg" loading="lazy" decoding="async" />
                   </div>
                   <h3 className="ai-panel-title">AI Resume Builder</h3>
                   <p className="ai-panel-desc">
@@ -1554,7 +1554,7 @@ function Home() {
               <div className="ai-panel chat-panel">
                 <div className="ai-panel-info">
                   <div className="ai-panel-icon-box bg-light-yellow">
-                    <img src={gifChatbot} alt="AI Campus Chat" className="gif-icon gif-icon-lg" />
+                    <img src={gifChatbot} alt="AI Campus Chat" className="gif-icon gif-icon-lg" loading="lazy" decoding="async" />
                   </div>
                   <h3 className="ai-panel-title">AI Campus Chat</h3>
                   <p className="ai-panel-desc">
@@ -1639,7 +1639,7 @@ function Home() {
             {/* 1. Admissions */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="50">
               <div className="module-icon-wrapper icon-box-purple">
-                <img src={gifUser} alt="Admissions" className="gif-icon gif-icon-md" />
+                <img src={gifUser} alt="Admissions" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Admissions</h3>
               <p className="module-desc">Online applications, merit lists, document verification</p>
@@ -1648,7 +1648,7 @@ function Home() {
             {/* 2. LMS */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="100">
               <div className="module-icon-wrapper icon-box-blue">
-                <img src={gifCertification} alt="LMS" className="gif-icon gif-icon-md" />
+                <img src={gifCertification} alt="LMS" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">LMS</h3>
               <p className="module-desc">Courses, video lectures, quizzes, live classes</p>
@@ -1657,7 +1657,7 @@ function Home() {
             {/* 3. Fee Management */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="150">
               <div className="module-icon-wrapper icon-box-green">
-                <img src={gifDollar} alt="Fee Management" className="gif-icon gif-icon-md" />
+                <img src={gifDollar} alt="Fee Management" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Fee Management</h3>
               <p className="module-desc">Collection, receipts, reminders, reports</p>
@@ -1666,7 +1666,7 @@ function Home() {
             {/* 4. Attendance */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="200">
               <div className="module-icon-wrapper icon-box-cyan">
-                <img src={gifClipboard} alt="Attendance" className="gif-icon gif-icon-md" />
+                <img src={gifClipboard} alt="Attendance" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Attendance</h3>
               <p className="module-desc">Biometric, RFID, mobile geo-fencing</p>
@@ -1675,7 +1675,7 @@ function Home() {
             {/* 5. Examinations */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="50">
               <div className="module-icon-wrapper icon-box-orange">
-                <img src={gifQuestion} alt="Examinations" className="gif-icon gif-icon-md" />
+                <img src={gifQuestion} alt="Examinations" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Examinations</h3>
               <p className="module-desc">Scheduling, seating, OMR, results, grades</p>
@@ -1684,7 +1684,7 @@ function Home() {
             {/* 6. Timetable */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="100">
               <div className="module-icon-wrapper icon-box-pink">
-                <img src={gifClipboard} alt="Timetable" className="gif-icon gif-icon-md" />
+                <img src={gifClipboard} alt="Timetable" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Timetable</h3>
               <p className="module-desc">Auto-generation, faculty allocation, conflict resolution</p>
@@ -1693,7 +1693,7 @@ function Home() {
             {/* 7. Placements */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="150">
               <div className="module-icon-wrapper icon-box-violet">
-                <img src={gifBriefcase} alt="Placements" className="gif-icon gif-icon-md" />
+                <img src={gifBriefcase} alt="Placements" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Placements</h3>
               <p className="module-desc">Company drives, offers, placement analytics</p>
@@ -1702,7 +1702,7 @@ function Home() {
             {/* 8. Internship Portal */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="200">
               <div className="module-icon-wrapper icon-box-sky">
-                <img src={gifWeb} alt="Internship Portal" className="gif-icon gif-icon-md" />
+                <img src={gifWeb} alt="Internship Portal" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Internship Portal</h3>
               <p className="module-desc">Industry connections, applications, mentorship</p>
@@ -1711,7 +1711,7 @@ function Home() {
             {/* 9. Job Portal */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="50">
               <div className="module-icon-wrapper icon-box-green">
-                <img src={gifBriefcase} alt="Job Portal" className="gif-icon gif-icon-md" />
+                <img src={gifBriefcase} alt="Job Portal" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Job Portal</h3>
               <p className="module-desc">Job listings, applications, interview tracking</p>
@@ -1720,7 +1720,7 @@ function Home() {
             {/* 10. Certificates */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="100">
               <div className="module-icon-wrapper icon-box-cyan">
-                <img src={gifCertificate} alt="Certificates" className="gif-icon gif-icon-md" />
+                <img src={gifCertificate} alt="Certificates" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Certificates</h3>
               <p className="module-desc">Digital issuance, blockchain verification</p>
@@ -1729,7 +1729,7 @@ function Home() {
             {/* 11. Analytics */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="150">
               <div className="module-icon-wrapper icon-box-orange">
-                <img src={gifMindMap} alt="Analytics" className="gif-icon gif-icon-md" />
+                <img src={gifMindMap} alt="Analytics" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Analytics</h3>
               <p className="module-desc">Institution-wide insights and custom reports</p>
@@ -1738,7 +1738,7 @@ function Home() {
             {/* 12. Resume Builder */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="200">
               <div className="module-icon-wrapper icon-box-pink">
-                <img src={gifFile} alt="Resume Builder" className="gif-icon gif-icon-md" />
+                <img src={gifFile} alt="Resume Builder" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Resume Builder</h3>
               <p className="module-desc">AI-crafted, ATS-optimized resumes</p>
@@ -1747,7 +1747,7 @@ function Home() {
             {/* 13. AI Tutor */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="50">
               <div className="module-icon-wrapper icon-box-purple">
-                <img src={gifBrain} alt="AI Tutor" className="gif-icon gif-icon-md" />
+                <img src={gifBrain} alt="AI Tutor" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">AI Tutor</h3>
               <p className="module-desc">Personalized learning assistant, 24/7</p>
@@ -1756,7 +1756,7 @@ function Home() {
             {/* 14. AI Chat */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="100">
               <div className="module-icon-wrapper icon-box-blue">
-                <img src={gifChatbot} alt="AI Chat" className="gif-icon gif-icon-md" />
+                <img src={gifChatbot} alt="AI Chat" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">AI Chat</h3>
               <p className="module-desc">Campus bot answering queries in 12 languages</p>
@@ -1765,7 +1765,7 @@ function Home() {
             {/* 15. Hostel Mgmt */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="150">
               <div className="module-icon-wrapper icon-box-green">
-                <img src={gifUsers} alt="Hostel Management" className="gif-icon gif-icon-md" />
+                <img src={gifUsers} alt="Hostel Management" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Hostel Mgmt</h3>
               <p className="module-desc">Room allotment, attendance, mess, complaints</p>
@@ -1774,7 +1774,7 @@ function Home() {
             {/* 16. Super Admin */}
             <div className="module-card" data-aos="fade-up" data-aos-delay="200">
               <div className="module-icon-wrapper icon-box-cyan">
-                <img src={gifMindMap} alt="Super Admin" className="gif-icon gif-icon-md" />
+                <img src={gifMindMap} alt="Super Admin" className="gif-icon gif-icon-md" loading="lazy" decoding="async" />
               </div>
               <h3 className="module-title">Super Admin</h3>
               <p className="module-desc">Multi-institution governance and controls</p>

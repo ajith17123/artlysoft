@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaLinkedinIn, FaGithub, FaInstagram, FaWhatsapp, FaRocket, FaBuilding, FaGlobeAmericas, FaAward, FaCheckCircle } from 'react-icons/fa';
 import '../assets/style/About.css';
-import heroVideo from '../assets/videos/Hero Pages/Logo.mp4';
+import heroGif from '../assets/videos/Hero Pages/Logo.gif';
 import missionTargetSvg from '../assets/gifs/mission_target.svg?raw';
 import visionEyeSvg from '../assets/gifs/vision_eye.svg?raw';
 import valueBulbSvg from '../assets/gifs/value_bulb.svg?raw';
@@ -284,14 +284,12 @@ const About = () => {
             </p>
           </div>
           <div className="about-hero-video-wrapper">
-            <video
-              src={heroVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
+            <img
+              src={heroGif}
+              alt="Artlysoft Logo"
               className="about-hero-video"
+              fetchpriority="high"
+              decoding="async"
             />
           </div>
         </div>

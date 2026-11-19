@@ -224,6 +224,7 @@ const Contact = () => {
                   alt={item.title} 
                   className="marquee-img" 
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="marquee-card-overlay">
                   <span className="marquee-card-title">{item.title}</span>

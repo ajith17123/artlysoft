@@ -27,7 +27,7 @@ const Footer = () => {
         {/* Left Side: Image Card */}
         <div className="footer-image-card-wrapper" data-aos="fade-right" data-aos-duration="1000">
           <div className="footer-image-card">
-            <img src={footerImg} alt="Artlysoft Footer" className="footer-card-img" />
+            <img src={footerImg} alt="Artlysoft Footer" className="footer-card-img" loading="lazy" decoding="async" />
           </div>
         </div>
 

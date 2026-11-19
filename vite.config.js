@@ -10,7 +10,12 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+            if (
+              id.includes('react') ||
+              id.includes('react-dom') ||
+              id.includes('react-router-dom') ||
+              id.includes('react-router-hash-link')
+            ) {
               return 'vendor-react';
             }
             if (id.includes('gsap')) {
@@ -18,6 +23,9 @@ export default defineConfig({
             }
             if (id.includes('chart.js')) {
               return 'vendor-charts';
+            }
+            if (id.includes('bootstrap') || id.includes('react-icons') || id.includes('aos')) {
+              return 'vendor-ui';
             }
           }
         }

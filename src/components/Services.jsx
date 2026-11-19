@@ -340,7 +340,7 @@ const Services = () => {
         <div className="modernization-spotlight-card accent-blue" data-aos="fade-up" data-aos-duration="1000">
           <div className="spotlight-card-content">
             <div className="spotlight-icon-box">
-              <img src={modernizationIcon} alt="Software Modernization" className="spotlight-icon-image" />
+              <img src={modernizationIcon} alt="Software Modernization" className="spotlight-icon-image" loading="lazy" decoding="async" />
             </div>
             <div className="spotlight-text-block">
               <h2 className="spotlight-card-title">SOFTWARE MODERNIZATION</h2>
@@ -362,7 +362,7 @@ const Services = () => {
             >
               <div className="sub-card-header">
                 <div className="sub-card-icon-box">
-                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" loading="lazy" decoding="async" />
                 </div>
                 <h3 className="sub-card-title">{card.title}</h3>
               </div>
@@ -388,7 +388,7 @@ const Services = () => {
         <div className="modernization-spotlight-card accent-blue" data-aos="fade-up" data-aos-duration="1000">
           <div className="spotlight-card-content">
             <div className="spotlight-icon-box">
-              <img src={consultingIcon} alt="Software Consulting" className="spotlight-icon-image" />
+              <img src={consultingIcon} alt="Software Consulting" className="spotlight-icon-image" loading="lazy" decoding="async" />
             </div>
             <div className="spotlight-text-block">
               <h2 className="spotlight-card-title">SOFTWARE CONSULTING</h2>
@@ -410,7 +410,7 @@ const Services = () => {
             >
               <div className="sub-card-header">
                 <div className="sub-card-icon-box">
-                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" loading="lazy" decoding="async" />
                 </div>
                 <h3 className="sub-card-title">{card.title}</h3>
               </div>
@@ -436,7 +436,7 @@ const Services = () => {
         <div className="modernization-spotlight-card accent-blue" data-aos="fade-up" data-aos-duration="1000">
           <div className="spotlight-card-content">
             <div className="spotlight-icon-box">
-              <img src={customDevIcon} alt="Custom Software Development" className="spotlight-icon-image" />
+              <img src={customDevIcon} alt="Custom Software Development" className="spotlight-icon-image" loading="lazy" decoding="async" />
             </div>
             <div className="spotlight-text-block">
               <h2 className="spotlight-card-title">CUSTOM SOFTWARE DEVELOPMENT</h2>
@@ -458,7 +458,7 @@ const Services = () => {
             >
               <div className="sub-card-header">
                 <div className="sub-card-icon-box">
-                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" loading="lazy" decoding="async" />
                 </div>
                 <h3 className="sub-card-title">{card.title}</h3>
               </div>
@@ -484,7 +484,7 @@ const Services = () => {
         <div className="modernization-spotlight-card accent-blue" data-aos="fade-up" data-aos-duration="1000">
           <div className="spotlight-card-content">
             <div className="spotlight-icon-box">
-              <img src={codeIcon} alt="Product Engineering" className="spotlight-icon-image" />
+              <img src={codeIcon} alt="Product Engineering" className="spotlight-icon-image" loading="lazy" decoding="async" />
             </div>
             <div className="spotlight-text-block">
               <h2 className="spotlight-card-title">PRODUCT ENGINEERING</h2>
@@ -506,7 +506,7 @@ const Services = () => {
             >
               <div className="sub-card-header">
                 <div className="sub-card-icon-box">
-                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" loading="lazy" decoding="async" />
                 </div>
                 <h3 className="sub-card-title">{card.title}</h3>
               </div>
@@ -532,7 +532,7 @@ const Services = () => {
         <div className="modernization-spotlight-card accent-blue" data-aos="fade-up" data-aos-duration="1000">
           <div className="spotlight-card-content">
             <div className="spotlight-icon-box">
-              <img src={aimlIcon} alt="Data & AI" className="spotlight-icon-image" />
+              <img src={aimlIcon} alt="Data & AI" className="spotlight-icon-image" loading="lazy" decoding="async" />
             </div>
             <div className="spotlight-text-block">
               <h2 className="spotlight-card-title">DATA & AI</h2>
@@ -554,7 +554,7 @@ const Services = () => {
             >
               <div className="sub-card-header">
                 <div className="sub-card-icon-box">
-                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" loading="lazy" decoding="async" />
                 </div>
                 <h3 className="sub-card-title">{card.title}</h3>
               </div>
@@ -580,7 +580,7 @@ const Services = () => {
         <div className="modernization-spotlight-card accent-blue" data-aos="fade-up" data-aos-duration="1000">
           <div className="spotlight-card-content">
             <div className="spotlight-icon-box">
-              <img src={automationIcon} alt="Intelligent Automation" className="spotlight-icon-image" />
+              <img src={automationIcon} alt="Intelligent Automation" className="spotlight-icon-image" loading="lazy" decoding="async" />
             </div>
             <div className="spotlight-text-block">
               <h2 className="spotlight-card-title">INTELLIGENT AUTOMATION</h2>
@@ -602,7 +602,7 @@ const Services = () => {
             >
               <div className="sub-card-header">
                 <div className="sub-card-icon-box">
-                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" loading="lazy" decoding="async" />
                 </div>
                 <h3 className="sub-card-title">{card.title}</h3>
               </div>
@@ -628,7 +628,7 @@ const Services = () => {
         <div className="modernization-spotlight-card accent-blue" data-aos="fade-up" data-aos-duration="1000">
           <div className="spotlight-card-content">
             <div className="spotlight-icon-box">
-              <img src={cloudIcon} alt="Cloud Services" className="spotlight-icon-image" />
+              <img src={cloudIcon} alt="Cloud Services" className="spotlight-icon-image" loading="lazy" decoding="async" />
             </div>
             <div className="spotlight-text-block">
               <h2 className="spotlight-card-title">CLOUD SERVICES</h2>
@@ -650,7 +650,7 @@ const Services = () => {
             >
               <div className="sub-card-header">
                 <div className="sub-card-icon-box">
-                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" />
+                  <img src={card.iconImg} alt={card.title} className="sub-card-icon-image" loading="lazy" decoding="async" />
                 </div>
                 <h3 className="sub-card-title">{card.title}</h3>
               </div>

@@ -349,7 +349,7 @@ const Career = () => {
             >
               <div className="position-card-top">
                 <div className="position-icon-box">
-                  <img src={pos.iconImg} alt={pos.title} className="position-icon-image" />
+                  <img src={pos.iconImg} alt={pos.title} className="position-icon-image" loading="lazy" decoding="async" />
                 </div>
                 <div className="position-header-text">
                   <h3 className="position-card-title">{pos.title}</h3>

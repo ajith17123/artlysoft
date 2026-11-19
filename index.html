@@ -3,9 +3,27 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="logo.png" />
+  <link rel="icon" type="image/png" href="/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artlysoft</title>
+
+  <!-- Preload the preloader GIF so browser fetches it immediately -->
+  <link rel="preload" href="/src/assets/videos/Preloader1.gif" as="image" type="image/gif" />
+
+  <!-- Single Page Apps for GitHub Pages URL decode script -->
+  <script type="text/javascript">
+    // MIT License - https://github.com/rafgraph/spa-github-pages
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&');
+        }).join('?');
+        window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location));
+  </script>
 </head>
 
 <body>

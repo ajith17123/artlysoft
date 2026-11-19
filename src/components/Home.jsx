@@ -62,6 +62,7 @@ function CreativeLabVideoModal({ card, onClose }) {
           autoPlay
           controls
           playsInline
+          preload="metadata"
           className="creative-lab-modal-video"
         />
       </div>
@@ -80,7 +81,7 @@ function CreativeLabCard({ card, idx, onOpenModal }) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          videoEl.play().catch(() => {});
+          videoEl.play().catch(() => { });
           setIsPlaying(true);
         } else {
           videoEl.pause();
@@ -649,7 +650,7 @@ const Home = () => {
       <div className="hero-section parallax-section" ref={heroSectionRef}>
         <div className="parallax-bg hero-parallax-bg" ref={heroBgRef} />
         <div className="parallax-content" ref={heroContentRef}>
-          <div 
+          <div
             className="hero-carousel-container"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
@@ -658,7 +659,7 @@ const Home = () => {
             onTouchEnd={handleTouchEnd}
           >
             {/* Single Unified Hero Container */}
-            <div 
+            <div
               className={`hero-unified-card ${HERO_SLIDES[currentSlide].themeClass}`}
               style={{ '--accent-theme': HERO_SLIDES[currentSlide].accentColor }}
             >
@@ -762,7 +763,7 @@ const Home = () => {
           >
             <div className="cap-card-header">
               <div className="cap-icon-box">
-                <img src={codeIcon} alt="Product Engineering" className="cap-icon-image" />
+                <img src={codeIcon} alt="Product Engineering" className="cap-icon-image" loading="lazy" decoding="async" />
               </div>
               <h3 className="cap-card-title">PRODUCT ENGINEERING</h3>
             </div>
@@ -781,7 +782,7 @@ const Home = () => {
           >
             <div className="cap-card-header">
               <div className="cap-icon-box">
-                <img src={aimlIcon} alt="Data & AI" className="cap-icon-image" />
+                <img src={aimlIcon} alt="Data & AI" className="cap-icon-image" loading="lazy" decoding="async" />
               </div>
               <h3 className="cap-card-title">DATA & AI</h3>
             </div>
@@ -800,7 +801,7 @@ const Home = () => {
           >
             <div className="cap-card-header">
               <div className="cap-icon-box">
-                <img src={automationIcon} alt="Intelligent Automation" className="cap-icon-image" />
+                <img src={automationIcon} alt="Intelligent Automation" className="cap-icon-image" loading="lazy" decoding="async" />
               </div>
               <h3 className="cap-card-title">INTELLIGENT AUTOMATION</h3>
             </div>
@@ -819,7 +820,7 @@ const Home = () => {
           >
             <div className="cap-card-header">
               <div className="cap-icon-box">
-                <img src={cloudIcon} alt="Cloud Services" className="cap-icon-image" />
+                <img src={cloudIcon} alt="Cloud Services" className="cap-icon-image" loading="lazy" decoding="async" />
               </div>
               <h3 className="cap-card-title">CLOUD SERVICES</h3>
             </div>
@@ -838,7 +839,7 @@ const Home = () => {
           >
             <div className="cap-card-header">
               <div className="cap-icon-box">
-                <img src={securityIcon} alt="Cybersecurity" className="cap-icon-image" />
+                <img src={securityIcon} alt="Cybersecurity" className="cap-icon-image" loading="lazy" decoding="async" />
               </div>
               <h3 className="cap-card-title">CYBERSECURITY</h3>
             </div>
@@ -857,7 +858,7 @@ const Home = () => {
           >
             <div className="cap-card-header">
               <div className="cap-icon-box">
-                <img src={transformIcon} alt="Digital Transformation" className="cap-icon-image" />
+                <img src={transformIcon} alt="Digital Transformation" className="cap-icon-image" loading="lazy" decoding="async" />
               </div>
               <h3 className="cap-card-title">DIGITAL TRANSFORMATION</h3>
             </div>
@@ -954,7 +955,7 @@ const Home = () => {
                 data-aos-duration="1000"
               >
                 <div className="why-stat-icon-box">
-                  <img src={handshakeIcon} alt="Satisfied Clients" className="why-stat-icon" />
+                  <img src={handshakeIcon} alt="Satisfied Clients" className="why-stat-icon" loading="lazy" decoding="async" />
                 </div>
                 <div className="why-stat-number">
                   <RunningNumber value="50+" />
@@ -970,7 +971,7 @@ const Home = () => {
                 data-aos-duration="1000"
               >
                 <div className="why-stat-icon-box">
-                  <img src={codeIcon} alt="Projects Completed" className="why-stat-icon" />
+                  <img src={codeIcon} alt="Projects Completed" className="why-stat-icon" loading="lazy" decoding="async" />
                 </div>
                 <div className="why-stat-number">
                   <RunningNumber value="200+" />
@@ -986,7 +987,7 @@ const Home = () => {
                 data-aos-duration="1000"
               >
                 <div className="why-stat-icon-box">
-                  <img src={automationIcon} alt="Years of Excellence" className="why-stat-icon" />
+                  <img src={automationIcon} alt="Years of Excellence" className="why-stat-icon" loading="lazy" decoding="async" />
                 </div>
                 <div className="why-stat-number">
                   <RunningNumber value="1.5+" />
@@ -1002,7 +1003,7 @@ const Home = () => {
                 data-aos-duration="1000"
               >
                 <div className="why-stat-icon-box">
-                  <img src={teamIcon} alt="Expert Team Members" className="why-stat-icon" />
+                  <img src={teamIcon} alt="Expert Team Members" className="why-stat-icon" loading="lazy" decoding="async" />
                 </div>
                 <div className="why-stat-number">
                   <RunningNumber value="50+" />

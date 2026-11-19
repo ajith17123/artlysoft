@@ -172,7 +172,8 @@
     background: #ffffff;
   }
 
-  .about-hero-video-wrapper video {
+  .about-hero-video-wrapper video,
+  .about-hero-video-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -1794,6 +1795,7 @@
 
 /* 1. Large Display Laptops & Tall Viewports (height >= 800px) */
 @media (min-width: 993px) and (min-height: 800px) {
+
   .about-story-section,
   .about-values-section,
   .about-team-section,

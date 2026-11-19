@@ -94,7 +94,7 @@ const keyHighlights = [
   { id: '5', title: 'Resume & Interview Support', desc: 'Professional resume building and mock interviews.' },
   { id: '6', title: '100% Placement Assistance', desc: 'Job referrals through our partner network.' },
   { id: '7', title: 'Lifetime Learning Access', desc: 'Recorded sessions and resources available forever.' },
-  { id: '8', title: 'Expert Mentorship', desc: 'Learn from developers with 5+ years experience.'},
+  { id: '8', title: 'Expert Mentorship', desc: 'Learn from developers with 5+ years experience.' },
   { id: '9', title: 'Suitable for All Levels', desc: 'Beginners, career switchers, and professionals welcome.' },
   { id: '10', title: 'Certificate of Completion', desc: 'Recognized credential for job applications.' }
 ];
@@ -421,7 +421,7 @@ const Training = () => {
               <div className="philosophy-pillar-number">{pillar.number}</div>
               <div className="philosophy-card-header">
                 <div className="philosophy-icon-box">
-                  <img src={pillar.icon} alt={pillar.title} className="philosophy-icon" />
+                  <img src={pillar.icon} alt={pillar.title} className="philosophy-icon" loading="lazy" decoding="async" />
                 </div>
                 <h3 className="philosophy-card-title">{pillar.title}</h3>
               </div>
@@ -451,7 +451,7 @@ const Training = () => {
             <div key={idx} className={`overview-card ${card.accent}`}>
               <div className="overview-card-header">
                 <div className="overview-card-icon-box">
-                  <img src={card.icon} alt={card.title} className="overview-card-icon" />
+                  <img src={card.icon} alt={card.title} className="overview-card-icon" loading="lazy" decoding="async" />
                 </div>
                 <h3 className="overview-card-title">{card.title}</h3>
               </div>
@@ -498,7 +498,7 @@ const Training = () => {
             <div key={idx} className={`why-choose-card ${reason.accent}`}>
               <div className="why-choose-card-header">
                 <div className="why-choose-icon-box">
-                  <img src={reason.icon} alt={reason.title} className="why-choose-icon" />
+                  <img src={reason.icon} alt={reason.title} className="why-choose-icon" loading="lazy" decoding="async" />
                 </div>
                 <h3 className="why-choose-card-title">{reason.title}</h3>
               </div>
@@ -549,7 +549,7 @@ const Training = () => {
             <div key={techCat.number} className="tech-stack-card">
               <div className="tech-card-header">
                 <div className="tech-card-icon-box">
-                  <img src={techCat.icon} alt={techCat.category} className="tech-card-icon" />
+                  <img src={techCat.icon} alt={techCat.category} className="tech-card-icon" loading="lazy" decoding="async" />
                 </div>
                 <div>
                   <span className="tech-card-num">{techCat.number}</span>
@@ -611,7 +611,7 @@ const Training = () => {
           {careerRoles.map((role, idx) => (
             <div key={idx} className="career-role-card">
               <div className="role-icon-box">
-                <img src={role.icon} alt={role.title} className="role-icon" />
+                <img src={role.icon} alt={role.title} className="role-icon" loading="lazy" decoding="async" />
               </div>
               <h3 className="role-title">{role.title}</h3>
               <p className="role-desc">{role.desc}</p>
@@ -621,7 +621,7 @@ const Training = () => {
 
         <div className="salary-banner-card">
           <div className="salary-icon-box">
-            <img src={activitiesIcon} alt="Salary" className="salary-icon" />
+            <img src={activitiesIcon} alt="Salary" className="salary-icon" loading="lazy" decoding="async" />
           </div>
           <div className="salary-text-block">
             <h4 className="salary-title">Average Starting Salary Range</h4>
@@ -646,206 +646,206 @@ const Training = () => {
           style={{ backgroundImage: `url(${par2Img})` }}
         />
         <section id="enrollment-section" className="training-section enrollment-section" data-aos="fade-up" data-aos-duration="1000">
-        <div className="training-section-header">
-          <h2 className="training-section-title">CONTACT US & ENROLLMENT</h2>
-          <p className="training-section-subtitle">
-            Get in touch with our admissions team to kickstart your journey toward becoming a certified full stack developer.
-          </p>
-        </div>
-
-        <div className="contact-info-cards-grid">
-          <div className="contact-info-card">
-            <div className="contact-info-icon-box">
-              <img src={activitiesIcon} alt="Email" className="contact-info-icon" />
-            </div>
-            <div className="contact-info-text">
-              <h3 className="contact-info-label">Email</h3>
-              <a href="mailto:hr@artlysoft.com" className="contact-info-value">hr@artlysoft.com</a>
-            </div>
-          </div>
-
-          <div className="contact-info-card">
-            <div className="contact-info-icon-box">
-              <img src={webMobileIcon} alt="Website" className="contact-info-icon" />
-            </div>
-            <div className="contact-info-text">
-              <h3 className="contact-info-label">Website</h3>
-              <a href="https://www.artlysoft.com" target="_blank" rel="noopener noreferrer" className="contact-info-value">www.artlysoft.com</a>
-            </div>
-          </div>
-
-          <div className="contact-info-card">
-            <div className="contact-info-icon-box">
-              <img src={callIcon} alt="Phone" className="contact-info-icon" />
-            </div>
-            <div className="contact-info-text">
-              <h3 className="contact-info-label">Phone</h3>
-              <a href="tel:9901718700" className="contact-info-value">9901718700</a>
-            </div>
-          </div>
-        </div>
-
-        {/* FULL STACK PYTHON & JAVA PROGRAM BANNER & STATS CARDS (MOVED BELOW CONTACT CARDS) */}
-        <div className="program-banner-block" data-aos="fade-up" data-aos-duration="1000">
-          <h2 className="program-banner-title">
-            FULL STACK PYTHON & JAVA ONLINE TRAINING PROGRAM
-          </h2>
-          <p className="program-banner-subtitle">
-            Transform your career with industry-aligned training, live interactive sessions, hands-on capstone projects, and 100% placement support.
-          </p>
-
-          <div className="program-banner-actions">
-            <button className="training-cta-primary-btn" onClick={scrollToEnrollment}>
-              Enroll Now & Download Brochure &rarr;
-            </button>
-          </div>
-
-          <div className="training-hero-stats-grid">
-            {heroStats.map((stat, idx) => (
-              <div key={idx} className="hero-stat-card">
-                <div className="stat-card-value">{stat.value}</div>
-                <div className="stat-card-label">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="enrollment-process-block">
-          <h3 className="process-block-title">ENROLLMENT PROCESS</h3>
-          <div className="enrollment-steps-grid">
-            {enrollmentSteps.map((stepItem) => (
-              <div key={stepItem.step} className="enroll-step-card">
-                <span className="enroll-step-num">{stepItem.step}</span>
-                <h4 className="enroll-step-title">{stepItem.title}</h4>
-                <p className="enroll-step-desc">{stepItem.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ENQUIRY FORM & BROCHURE CONTAINER */}
-        <div className="enquiry-form-container">
-          <div className="brochure-preview-side">
-            <div className="brochure-icon-box">
-              <img src={qualityIcon} alt="Brochure" className="brochure-icon" />
-            </div>
-            <h3 className="brochure-side-title">COURSE BROCHURE</h3>
-            <p className="brochure-side-desc">
-              Get detailed curriculum, syllabus, project details, and program highlights in our comprehensive brochure.
+          <div className="training-section-header">
+            <h2 className="training-section-title">CONTACT US & ENROLLMENT</h2>
+            <p className="training-section-subtitle">
+              Get in touch with our admissions team to kickstart your journey toward becoming a certified full stack developer.
             </p>
-            <div className="brochure-download-note">
-              <span className="lock-icon">&#128274;</span> Submit form to instantly download the PDF brochure.
+          </div>
+
+          <div className="contact-info-cards-grid">
+            <div className="contact-info-card">
+              <div className="contact-info-icon-box">
+                <img src={activitiesIcon} alt="Email" className="contact-info-icon" loading="lazy" decoding="async" />
+              </div>
+              <div className="contact-info-text">
+                <h3 className="contact-info-label">Email</h3>
+                <a href="mailto:hr@artlysoft.com" className="contact-info-value">hr@artlysoft.com</a>
+              </div>
+            </div>
+
+            <div className="contact-info-card">
+              <div className="contact-info-icon-box">
+                <img src={webMobileIcon} alt="Website" className="contact-info-icon" loading="lazy" decoding="async" />
+              </div>
+              <div className="contact-info-text">
+                <h3 className="contact-info-label">Website</h3>
+                <a href="https://www.artlysoft.com" target="_blank" rel="noopener noreferrer" className="contact-info-value">www.artlysoft.com</a>
+              </div>
+            </div>
+
+            <div className="contact-info-card">
+              <div className="contact-info-icon-box">
+                <img src={callIcon} alt="Phone" className="contact-info-icon" loading="lazy" decoding="async" />
+              </div>
+              <div className="contact-info-text">
+                <h3 className="contact-info-label">Phone</h3>
+                <a href="tel:9901718700" className="contact-info-value">9901718700</a>
+              </div>
             </div>
           </div>
 
-          <div className="enquiry-form-side">
-            <h3 className="enquiry-form-title">ENQUIRE NOW</h3>
-            <p className="enquiry-form-subtitle">Fill out the form below and our counseling team will get back to you shortly.</p>
+          {/* FULL STACK PYTHON & JAVA PROGRAM BANNER & STATS CARDS (MOVED BELOW CONTACT CARDS) */}
+          <div className="program-banner-block" data-aos="fade-up" data-aos-duration="1000">
+            <h2 className="program-banner-title">
+              FULL STACK PYTHON & JAVA ONLINE TRAINING PROGRAM
+            </h2>
+            <p className="program-banner-subtitle">
+              Transform your career with industry-aligned training, live interactive sessions, hands-on capstone projects, and 100% placement support.
+            </p>
 
-            {formSubmitted && (
-              <div className="form-success-alert">
-                &#10004; Thank you! Your enquiry has been submitted successfully. The official course brochure is downloading automatically.
-              </div>
-            )}
-
-            {errorMessage && (
-              <div className="form-error-alert">
-                &#9888; {errorMessage}
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="training-enquiry-form">
-              <div className="form-field-group">
-                <label className="form-field-label">Full Name *</label>
-                <input
-                  type="text"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  placeholder="Enter your full name"
-                  className="form-input-field"
-                  required
-                />
-              </div>
-
-              <div className="form-row-two-col">
-                <div className="form-field-group">
-                  <label className="form-field-label">Phone Number *</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="Enter your phone number"
-                    className="form-input-field"
-                    required
-                  />
-                </div>
-
-                <div className="form-field-group">
-                  <label className="form-field-label">Email Address *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Enter your email address"
-                    className="form-input-field"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="form-row-two-col">
-                <div className="form-field-group">
-                  <label className="form-field-label">Qualification / Background</label>
-                  <select
-                    name="qualification"
-                    value={formData.qualification}
-                    onChange={handleChange}
-                    className="form-select-field"
-                  >
-                    <option value="Student">Student (Pursuing Degree)</option>
-                    <option value="Fresh Graduate">Fresh Graduate</option>
-                    <option value="Career Switcher">Career Switcher (Non-IT)</option>
-                    <option value="Working Professional">Working IT Professional</option>
-                  </select>
-                </div>
-
-                <div className="form-field-group">
-                  <label className="form-field-label">Interested Program</label>
-                  <select
-                    name="interestedCourse"
-                    value={formData.interestedCourse}
-                    onChange={handleChange}
-                    className="form-select-field"
-                  >
-                    <option value="Full Stack Python & Java">Full Stack Python & Java</option>
-                    <option value="Full Stack Java Development">Full Stack Java Development</option>
-                    <option value="Full Stack Python Development">Full Stack Python Development</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="form-field-group">
-                <label className="form-field-label">Message / Specific Queries</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us about your career goals or specific questions..."
-                  className="form-textarea-field"
-                  rows="2"
-                ></textarea>
-              </div>
-
-              <button type="submit" className="form-submit-btn">
-                Submit Enquiry & Download Brochure &rarr;
+            <div className="program-banner-actions">
+              <button className="training-cta-primary-btn" onClick={scrollToEnrollment}>
+                Enroll Now & Download Brochure &rarr;
               </button>
-            </form>
+            </div>
+
+            <div className="training-hero-stats-grid">
+              {heroStats.map((stat, idx) => (
+                <div key={idx} className="hero-stat-card">
+                  <div className="stat-card-value">{stat.value}</div>
+                  <div className="stat-card-label">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+
+          <div className="enrollment-process-block">
+            <h3 className="process-block-title">ENROLLMENT PROCESS</h3>
+            <div className="enrollment-steps-grid">
+              {enrollmentSteps.map((stepItem) => (
+                <div key={stepItem.step} className="enroll-step-card">
+                  <span className="enroll-step-num">{stepItem.step}</span>
+                  <h4 className="enroll-step-title">{stepItem.title}</h4>
+                  <p className="enroll-step-desc">{stepItem.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ENQUIRY FORM & BROCHURE CONTAINER */}
+          <div className="enquiry-form-container">
+            <div className="brochure-preview-side">
+              <div className="brochure-icon-box">
+                <img src={qualityIcon} alt="Brochure" className="brochure-icon" loading="lazy" decoding="async" />
+              </div>
+              <h3 className="brochure-side-title">COURSE BROCHURE</h3>
+              <p className="brochure-side-desc">
+                Get detailed curriculum, syllabus, project details, and program highlights in our comprehensive brochure.
+              </p>
+              <div className="brochure-download-note">
+                <span className="lock-icon">&#128274;</span> Submit form to instantly download the PDF brochure.
+              </div>
+            </div>
+
+            <div className="enquiry-form-side">
+              <h3 className="enquiry-form-title">ENQUIRE NOW</h3>
+              <p className="enquiry-form-subtitle">Fill out the form below and our counseling team will get back to you shortly.</p>
+
+              {formSubmitted && (
+                <div className="form-success-alert">
+                  &#10004; Thank you! Your enquiry has been submitted successfully. The official course brochure is downloading automatically.
+                </div>
+              )}
+
+              {errorMessage && (
+                <div className="form-error-alert">
+                  &#9888; {errorMessage}
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="training-enquiry-form">
+                <div className="form-field-group">
+                  <label className="form-field-label">Full Name *</label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    placeholder="Enter your full name"
+                    className="form-input-field"
+                    required
+                  />
+                </div>
+
+                <div className="form-row-two-col">
+                  <div className="form-field-group">
+                    <label className="form-field-label">Phone Number *</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Enter your phone number"
+                      className="form-input-field"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-field-group">
+                    <label className="form-field-label">Email Address *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Enter your email address"
+                      className="form-input-field"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="form-row-two-col">
+                  <div className="form-field-group">
+                    <label className="form-field-label">Qualification / Background</label>
+                    <select
+                      name="qualification"
+                      value={formData.qualification}
+                      onChange={handleChange}
+                      className="form-select-field"
+                    >
+                      <option value="Student">Student (Pursuing Degree)</option>
+                      <option value="Fresh Graduate">Fresh Graduate</option>
+                      <option value="Career Switcher">Career Switcher (Non-IT)</option>
+                      <option value="Working Professional">Working IT Professional</option>
+                    </select>
+                  </div>
+
+                  <div className="form-field-group">
+                    <label className="form-field-label">Interested Program</label>
+                    <select
+                      name="interestedCourse"
+                      value={formData.interestedCourse}
+                      onChange={handleChange}
+                      className="form-select-field"
+                    >
+                      <option value="Full Stack Python & Java">Full Stack Python & Java</option>
+                      <option value="Full Stack Java Development">Full Stack Java Development</option>
+                      <option value="Full Stack Python Development">Full Stack Python Development</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="form-field-group">
+                  <label className="form-field-label">Message / Specific Queries</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us about your career goals or specific questions..."
+                    className="form-textarea-field"
+                    rows="2"
+                  ></textarea>
+                </div>
+
+                <button type="submit" className="form-submit-btn">
+                  Submit Enquiry & Download Brochure &rarr;
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

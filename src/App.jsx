@@ -55,41 +55,50 @@ function App () {
   };
 
   useEffect(() => {
-    AOS.init({
-      duration: 500,
-      easing: 'ease-out',
-      once: true,
-      offset: 30,
-    });
-  }, []);
+    // Initialize AOS once the main page mounts after the preloader finishes
+    if (!isLoading) {
+      AOS.init({
+        duration: 500,
+        easing: 'ease-out',
+        once: true,
+        offset: 30,
+      });
+      requestAnimationFrame(() => {
+        AOS.refreshHard();
+      });
+    }
+  }, [isLoading]);
 
-  return(
+  return (
     <>
-      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <Particles />
-        <ScrollToTop />
-        <FloatingNav />
-        <Routes>
-          {/* Main Website Layout (Global Navbar & Footer) */}
-          <Route element={<MainLayout />}>
-            <Route path='/' element={< Home />} />
-            <Route path='/about' element={< About />} />
-            <Route path='/joinus/career' element={< Career />} />
-            <Route path='/careers' element={< Career />} />
-            <Route path='/contact' element={< Contact />} />
-            <Route path='/services' element={< Services />} />
-            <Route path='/joinus/training' element={< Training />} />
-            <Route path='/training' element={< Training />} />
-            <Route path='/courses' element={< Training />} />
-          </Route>
+      {isLoading ? (
+        <Preloader onComplete={handlePreloaderComplete} />
+      ) : (
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <Particles />
+          <ScrollToTop />
+          <FloatingNav />
+          <Routes>
+            {/* Main Website Layout (Global Navbar & Footer) */}
+            <Route element={<MainLayout />}>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/joinus/career' element={<Career />} />
+              <Route path='/careers' element={<Career />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/services' element={<Services />} />
+              <Route path='/joinus/training' element={<Training />} />
+              <Route path='/training' element={<Training />} />
+              <Route path='/courses' element={<Training />} />
+            </Route>
 
-          {/* Dedicated TalentOS Product Page (Standalone Navbar & Footer) */}
-          <Route path='/products/talent-os' element={<TalentOS />} />
-        </Routes>
-      </BrowserRouter>
+            {/* Dedicated TalentOS Product Page (Standalone Navbar & Footer) */}
+            <Route path='/products/talent-os' element={<TalentOS />} />
+          </Routes>
+        </BrowserRouter>
+      )}
     </>
-  )
+  );
 }
 
 export default App;
