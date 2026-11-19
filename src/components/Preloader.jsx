@@ -1,33 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
 import '../assets/style/Preloader.css';
-import preloaderGif from '../assets/videos/Preloader1.gif';
+import preloaderVideo from '../assets/videos/Preloader1.mp4';
 
 export default function Preloader({ onComplete }) {
   const [isFading, setIsFading] = useState(false);
   const completedRef = useRef(false);
-  const timerRef = useRef(null);
-  const imgRef = useRef(null);
+  const videoRef = useRef(null);
 
   const finish = () => {
     if (completedRef.current) return;
     completedRef.current = true;
-    if (timerRef.current) clearTimeout(timerRef.current);
     setIsFading(true);
 
     // 350ms smooth fade-out matching CSS transition
     setTimeout(() => {
       if (onComplete) onComplete();
     }, 350);
-  };
-
-  const handleGifLoaded = () => {
-    if (completedRef.current || timerRef.current) return;
-
-    // Start fade-out at 650ms so the preloader completely disappears right as cycle 1 completes,
-    // before any second cycle can ever start.
-    timerRef.current = setTimeout(() => {
-      finish();
-    }, 650);
   };
 
   useEffect(() => {
@@ -40,19 +28,23 @@ export default function Preloader({ onComplete }) {
     document.documentElement.style.overflow = 'hidden';
     document.body.style.touchAction = 'none';
 
-    // If image is already cached in memory
-    if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
-      handleGifLoaded();
+    // Ensure video is muted and plays immediately (essential for mobile/Safari autoplay policies)
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.defaultMuted = true;
+      videoRef.current.play().catch(() => {
+        // Fallback only if browser strictly blocks autoplay
+        finish();
+      });
     }
 
-    // Safety fallback timer in case network fails
+    // Safety fallback timer (8s) only in case network completely hangs
     const safetyTimer = setTimeout(() => {
       finish();
-    }, 3000);
+    }, 8000);
 
     return () => {
       clearTimeout(safetyTimer);
-      if (timerRef.current) clearTimeout(timerRef.current);
       document.body.style.overflow = originalBodyOverflow;
       document.documentElement.style.overflow = originalHtmlOverflow;
       document.body.style.touchAction = originalTouchAction;
@@ -62,13 +54,16 @@ export default function Preloader({ onComplete }) {
   return (
     <div className={`preloader-container ${isFading ? 'fade-out' : ''}`}>
       <div className="preloader-video-wrapper">
-        <img
-          ref={imgRef}
-          src={preloaderGif}
-          alt="Artlysoft Preloader"
-          className="preloader-gif center-video"
-          onLoad={handleGifLoaded}
+        <video
+          ref={videoRef}
+          src={preloaderVideo}
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          onEnded={finish}
           onError={finish}
+          className="preloader-video center-video"
         />
       </div>
     </div>
